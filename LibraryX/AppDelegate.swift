@@ -19,11 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
+        
+        
         if Auth.auth().currentUser == nil{
             let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let authVC = storyBoard.instantiateViewController(withIdentifier: "AuthVC")
+            let loginVC = storyBoard.instantiateViewController(withIdentifier: "LoginVC")
             window?.makeKeyAndVisible()
-            window?.rootViewController?.present(authVC, animated: true, completion: nil)
+            window?.rootViewController?.present(loginVC, animated: true, completion: nil)
         }else{
             
         }

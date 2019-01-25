@@ -7,24 +7,51 @@
 //
 
 import UIKit
-
+import Firebase
 class ProfileVC: UIViewController {
 
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var editProfileBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        editProfileBtn.layer.cornerRadius = 8
+        fullNameLabel.text = "Loading..."
+        emailLabel.text = "Loading..."
+       
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        DataService.instance.getFullName(uid: (Auth.auth().currentUser?.uid)!) { (returnedFullName) in
+            self.fullNameLabel.text = returnedFullName
+        }
+        DataService.instance.getEmail(uid: (Auth.auth().currentUser?.uid)!) { (returnedEmail) in
+            self.emailLabel.text = returnedEmail
+        }
+        
+       
     }
-    */
 
+    @IBAction func logoutBtn(_ sender: Any) {
+        
+       let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action:UIAlertAction) in
+            print("No")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action:UIAlertAction) in
+            do{
+                try Auth.auth().signOut()
+                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+                self.present(loginVC!, animated: true, completion: nil)
+            }catch{
+                print(error)
+            }        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
+

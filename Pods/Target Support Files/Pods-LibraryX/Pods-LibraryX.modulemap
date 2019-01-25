@@ -1,0 +1,6 @@
+framework module Pods_LibraryX {
+  umbrella header "Pods-LibraryX-umbrella.h"
+
+  export *
+  module * { export * }
+}
