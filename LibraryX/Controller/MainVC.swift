@@ -16,6 +16,9 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var floaty: Floaty!
     
+    var bookTotal = 0
+    
+    @IBOutlet weak var allBookLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +43,8 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         DataService.instance.getAllBooks { (returnedEachBookObj) in
             self.bookArr = returnedEachBookObj
             self.myTableView.reloadData()
+            self.bookTotal = self.bookArr.count
+            self.allBookLabel.text = "All books (" + "\(self.bookTotal))"
         }
         
     }

@@ -14,7 +14,7 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var boxVev: UIVisualEffectView!
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
-
+    var returnedCode: Double = 0
     @IBOutlet weak var closeBtn: UIButton!
     
     override func viewDidLoad() {
@@ -94,14 +94,63 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            
             found(code: stringValue)
         }
         
-        dismiss(animated: true)
     }
     
+    
+    
     func found(code: String) {
-        print(code)
+        if let returnedCode2 = Double(code) {
+            DataService.instance.scannedBookFromImgTitle(imgTitleinMS: returnedCode2, myBookTitle: { (returnedStr) in // if str is returnedStr is empty ("") then it's a fake qrcode but its double (not found on db)
+                if returnedStr != ""{
+                    self.returnedCode = returnedCode2
+                    print(self.returnedCode)
+                    self.performSegue(withIdentifier: "toAfterBarcodeVC", sender: self)
+                }else{
+                    let alert = UIAlertController(title: "Invalid QR Code", message: "QR Code scanned is invalid.", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { (action:UIAlertAction) in
+                        self.captureSession.startRunning()
+                        
+                    }))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+            }) { (num) in
+                return
+            }
+           
+        } else { // not a double valued qrcode
+            let alert = UIAlertController(title: "Invalid QR Code", message: "QR Code scanned is invalid.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { (action:UIAlertAction) in
+                self.captureSession.startRunning()
+                
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+    
+       
+
+       
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if returnedCode != 0{
+            if segue.identifier == "toAfterBarcodeVC"{
+                if let afterBarcodeVC = segue.destination as? AfterBarcodeVC {
+                    afterBarcodeVC.imgTitleInMS = returnedCode
+                    afterBarcodeVC.prevVC = self
+                }
+            }
+        }
     }
     
     @IBAction func closeBtn(_ sender: Any) {

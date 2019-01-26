@@ -21,17 +21,35 @@ class SingleBookVC: UIViewController {
     var imgTitleinMs: Double = 0
     var bookTitle = ""
     var authorName = ""
-    var genres = ""
     var year = ""
     
+    @IBOutlet weak var bookImgView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.titleLabel.numberOfLines = 0
+        self.titleLabel.lineBreakMode = .byWordWrapping
+        self.titleLabel.sizeToFit()
         
-        
-        titleLabel.text = bookTitle
-        authorLabel.text = "Author: \(authorName)"
-        yearLabel.text = "Year Released: \(year)"
+        self.authorLabel.numberOfLines = 0
+        self.authorLabel.lineBreakMode = .byWordWrapping
+        self.authorLabel.sizeToFit()
+        if imgTitleinMs != 0{
+            print(imgTitleinMs)
+            print("WOIII")
+            let reference = STORAGE.child("bookPics/\(Int(imgTitleinMs))")
+            
+            let placeholderImage = UIImage(named: "placeholder-Copy-3")
+            
+            
+            bookImgView.sd_setImage(with: reference, placeholderImage: placeholderImage)
+            DataService.instance.getGenresFromImgTitle(imgTitleInMS: imgTitleinMs) { (returnedGenresStr) in
+                self.genreLabel.text = "Genres: \(returnedGenresStr)"
+            }
+            titleLabel.text = bookTitle
+            authorLabel.text = "Author: \(authorName)"
+            yearLabel.text = "Year Released: \(year)"
+        }
         
         
         // Do any additional setup after loading the view.

@@ -10,10 +10,12 @@
 		B508324421FA9E0E0056B730 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508324321FA9E0E0056B730 /* GradientView.swift */; };
 		B508324621FB50600056B730 /* BookDetailForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508324521FB50600056B730 /* BookDetailForCell.swift */; };
 		B50AB12C21F8BC8B004B3B1A /* Handy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50AB12B21F8BC8B004B3B1A /* Handy.swift */; };
+		B512EC6D21FCE7D90042084E /* DynamicLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B512EC6C21FCE7D90042084E /* DynamicLabel.swift */; };
 		B524D4FD21F776AA00EA5AF7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B524D4FC21F776AA00EA5AF7 /* LoginVC.swift */; };
 		B524D4FF21F778C400EA5AF7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B524D4FE21F778C400EA5AF7 /* AuthService.swift */; };
 		B524D50121F7795400EA5AF7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B524D50021F7795400EA5AF7 /* DataService.swift */; };
 		B52604D121F8ACCD00BC9BB5 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52604D021F8ACCD00BC9BB5 /* ProfileVC.swift */; };
+		B531F12B21FCCE9D00687782 /* AfterBarcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531F12A21FCCE9D00687782 /* AfterBarcodeVC.swift */; };
 		B54C60D821F9E850000B51EF /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54C60D721F9E850000B51EF /* ScannerVC.swift */; };
 		B5891A3A21F6BADD001248CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A3921F6BADD001248CB /* AppDelegate.swift */; };
 		B5891A3F21F6BADD001248CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5891A3D21F6BADD001248CB /* Main.storyboard */; };
@@ -57,10 +59,12 @@
 		B508324321FA9E0E0056B730 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B508324521FB50600056B730 /* BookDetailForCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailForCell.swift; sourceTree = "<group>"; };
 		B50AB12B21F8BC8B004B3B1A /* Handy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handy.swift; sourceTree = "<group>"; };
+		B512EC6C21FCE7D90042084E /* DynamicLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLabel.swift; sourceTree = "<group>"; };
 		B524D4FC21F776AA00EA5AF7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B524D4FE21F778C400EA5AF7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B524D50021F7795400EA5AF7 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B52604D021F8ACCD00BC9BB5 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		B531F12A21FCCE9D00687782 /* AfterBarcodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterBarcodeVC.swift; sourceTree = "<group>"; };
 		B54C60D721F9E850000B51EF /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
 		B5891A3621F6BADD001248CB /* LibraryX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibraryX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5891A3921F6BADD001248CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				B5DF6A1721F7810C00C93D56 /* AuthVC.swift */,
 				B52604D021F8ACCD00BC9BB5 /* ProfileVC.swift */,
 				B54C60D721F9E850000B51EF /* ScannerVC.swift */,
+				B531F12A21FCCE9D00687782 /* AfterBarcodeVC.swift */,
 				B5ED100721FB748D008C59C9 /* SingleBookVC.swift */,
 			);
 			path = Controller;
@@ -202,6 +207,7 @@
 				B5DF6A1F21F781F000C93D56 /* FloatyManager.swift */,
 				B5DF6A1C21F781EE00C93D56 /* FloatyWindow.swift */,
 				B508324321FA9E0E0056B730 /* GradientView.swift */,
+				B512EC6C21FCE7D90042084E /* DynamicLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +405,8 @@
 				B524D4FD21F776AA00EA5AF7 /* LoginVC.swift in Sources */,
 				B5DF6A2321F781F100C93D56 /* Floaty.swift in Sources */,
 				B5DF6A2121F781F100C93D56 /* FloatyItem.swift in Sources */,
+				B531F12B21FCCE9D00687782 /* AfterBarcodeVC.swift in Sources */,
+				B512EC6D21FCE7D90042084E /* DynamicLabel.swift in Sources */,
 				B5DF6A2721F7842D00C93D56 /* FloatyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
