@@ -36,13 +36,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LibraryX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPI-0j-wMs">
-                                        <rect key="frame" x="20" y="119" width="335" height="44"/>
+                                        <rect key="frame" x="20" y="119" width="335" height="51.5"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Italic" family="Soin Sans Neue" pointSize="44"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BeA-yr-ZwS">
-                                        <rect key="frame" x="40" y="213" width="295" height="45"/>
+                                        <rect key="frame" x="40" y="220.5" width="295" height="45"/>
                                         <color key="backgroundColor" red="0.95972795050000004" green="0.95972795050000004" blue="0.95972795050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="mzB-hW-ttO"/>
@@ -52,7 +52,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dL6-HA-W7H">
-                                        <rect key="frame" x="40" y="266" width="295" height="45"/>
+                                        <rect key="frame" x="40" y="273.5" width="295" height="45"/>
                                         <color key="backgroundColor" red="0.95972795050000004" green="0.95972795050000004" blue="0.95972795050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="v59-8B-5Re"/>
@@ -62,7 +62,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn0-Dx-cVY">
-                                        <rect key="frame" x="40" y="336" width="295" height="50"/>
+                                        <rect key="frame" x="40" y="343.5" width="295" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.58999323839999995" blue="0.99930530790000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="KAX-Mb-q9g"/>
@@ -76,7 +76,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJO-Ya-WNW">
-                                        <rect key="frame" x="45" y="426" width="285" height="0.0"/>
+                                        <rect key="frame" x="45" y="433.5" width="285" height="0.0"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Light" family="Soin Sans Neue" pointSize="22"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -562,6 +562,9 @@
                                 <state key="normal" title="Scan &amp; Borrow!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="OpJ-ya-oFp" kind="show" id="ZjM-Mg-zsf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -661,9 +664,11 @@
                         <outlet property="boxVev" destination="dmm-Ka-K6m" id="dW8-NF-y9S"/>
                         <outlet property="closeBtn" destination="G5O-59-Dbn" id="tM1-wd-ZAK"/>
                         <segue destination="aO3-92-yoq" kind="show" identifier="toAfterBarcodeVC" id="SrA-PI-jaw"/>
+                        <segue destination="Daf-NR-fdW" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainWithSegue:" id="SgR-md-f2l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mJ-AC-rnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Daf-NR-fdW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="678" y="-244"/>
         </scene>
@@ -869,4 +874,7 @@
         <image name="me-tabIcon" width="25" height="25"/>
         <image name="placeholder-Copy-3" width="420" height="420"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZjM-Mg-zsf"/>
+    </inferredMetricsTieBreakers>
 </document>

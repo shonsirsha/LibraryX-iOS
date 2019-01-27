@@ -176,21 +176,17 @@ class DataService{
     func borrowBook(imgTitleInMS: Double, uid: String, start: Double, until: Double){
         
         
-        REF_BOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observe(DataEventType.value) { (snapshot) in
-            
+        REF_BOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
             var bookKey = ""
             for book in snapshot{
                 bookKey = book.key
             }
-            if bookKey != ""{
-                self.REF_BOOK.child(bookKey).updateChildValues(["start":start, "until":until, "status":"no"])
-           
-            }
-
-        }
+            self.REF_BOOK.child(bookKey).updateChildValues(["start":start, "until":until, "status":"no"])
+            self.REF_USER.child(uid).child("borrowing").childByAutoId().updateChildValues(["start":start, "until":until, "bookImgTitleInMS":imgTitleInMS])
+        })
         
-         REF_USER.child(uid).child("borrowing").childByAutoId().updateChildValues(["start":start, "until":until, "bookImgTitleInMS":imgTitleInMS])
+        
         
     }
     

@@ -34,6 +34,7 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         
         floaty.addGestureRecognizer(tap)
+     
       
     }
     
@@ -110,4 +111,5 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         searchField.resignFirstResponder()
     }
+  
 }

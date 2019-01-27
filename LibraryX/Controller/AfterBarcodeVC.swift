@@ -31,8 +31,7 @@ class AfterBarcodeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      // prevVC.dismiss(animated: true, completion: nil)
-
+      //
         DataService.instance.scannedBookFromImgTitle(imgTitleinMS: imgTitleInMS, myBookTitle: { (returnedBookTitle) in
             let reference = STORAGE.child("bookPics/\(Int(self.imgTitleInMS))")
             let placeholderImage = UIImage(named: "placeholder-Copy-3")
@@ -93,6 +92,7 @@ class AfterBarcodeVC: UIViewController {
         let start = NSDate().timeIntervalSince1970
         let until = start + Double((days * oneDayInEpoch))
         DataService.instance.borrowBook(imgTitleInMS: imgTitleInMS, uid: (Auth.auth().currentUser?.uid)!, start: start, until: until)
+      
     }
     @IBAction func closeBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
