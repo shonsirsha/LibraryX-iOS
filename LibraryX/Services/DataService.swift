@@ -157,6 +157,19 @@ class DataService{
             allBooksArray = [BookDetailForCell]()
             
         }
+    }
+    
+    func getABookStatus(imgTitleInMS: Double,handler: @escaping(_ status: String)->()){
+        REF_BOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observe(DataEventType.value) { (snapshot) in
+            
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            
+            for book in snapshot{
+                let status = book.childSnapshot(forPath: "status").value as! String
+                handler(status)
+            }
+            
+        }
         
     }
     

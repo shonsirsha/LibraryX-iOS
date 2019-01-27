@@ -17,6 +17,7 @@ class SingleBookVC: UIViewController {
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
  
+    @IBOutlet weak var toScanVCbtn: UIButton!
     @IBOutlet weak var authorLabel: UILabel!
     var imgTitleinMs: Double = 0
     var bookTitle = ""
@@ -27,6 +28,24 @@ class SingleBookVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DataService.instance.getABookStatus(imgTitleInMS: imgTitleinMs) { (returnedBookStatus) in
+            if returnedBookStatus == "avail"{
+                self.toScanVCbtn.isHidden = false
+                self.statusLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
+                self.statusLabel.text = "Available at aisle number: C2051"
+            }else{
+                self.toScanVCbtn.isHidden = true
+                self.statusLabel.textColor = #colorLiteral(red: 1, green: 0.148809104, blue: 0.2488994031, alpha: 1)
+                self.statusLabel.text = "CURRENTLY UNAVAILABLE."
+
+            }
+            DataService.instance.getGenresFromImgTitle(imgTitleInMS: self.imgTitleinMs) { (returnedGenresStr) in
+                self.genreLabel.text = "Genres: \(returnedGenresStr)"
+            }
+
+        }
+        
         self.titleLabel.numberOfLines = 0
         self.titleLabel.lineBreakMode = .byWordWrapping
         self.titleLabel.sizeToFit()
@@ -36,19 +55,15 @@ class SingleBookVC: UIViewController {
         self.authorLabel.sizeToFit()
         if imgTitleinMs != 0{
             print(imgTitleinMs)
-            print("WOIII")
             let reference = STORAGE.child("bookPics/\(Int(imgTitleinMs))")
             
             let placeholderImage = UIImage(named: "placeholder-Copy-3")
             
-            
             bookImgView.sd_setImage(with: reference, placeholderImage: placeholderImage)
-            DataService.instance.getGenresFromImgTitle(imgTitleInMS: imgTitleinMs) { (returnedGenresStr) in
-                self.genreLabel.text = "Genres: \(returnedGenresStr)"
-            }
             titleLabel.text = bookTitle
             authorLabel.text = "Author: \(authorName)"
             yearLabel.text = "Year Released: \(year)"
+            
         }
         
         

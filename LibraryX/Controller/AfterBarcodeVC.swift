@@ -32,25 +32,38 @@ class AfterBarcodeVC: UIViewController {
         super.viewDidLoad()
         
       // prevVC.dismiss(animated: true, completion: nil)
-        
-        
+
         DataService.instance.scannedBookFromImgTitle(imgTitleinMS: imgTitleInMS, myBookTitle: { (returnedBookTitle) in
             let reference = STORAGE.child("bookPics/\(Int(self.imgTitleInMS))")
             let placeholderImage = UIImage(named: "placeholder-Copy-3")
             self.bookImgView.sd_setImage(with: reference, placeholderImage: placeholderImage)
         self.titleLabel.text = returnedBookTitle
         }) { (returnedMaxDays) in
-            self.maxDays = returnedMaxDays
-            self.maxDaysLabel.text = "Maximum: \(returnedMaxDays) days"
-            self.days = self.maxDays
-            self.daysLabel.text = "\(self.days)"
-            self.minusBtn.isHidden = false
-            self.addBtn.isHidden = false
+            DataService.instance.getABookStatus(imgTitleInMS: self.imgTitleInMS, handler: { (returnedStatus) in
+                if returnedStatus == "avail"{ // available for borrowment
+                    self.maxDays = returnedMaxDays
+                    self.maxDaysLabel.text = "Maximum: \(returnedMaxDays) days"
+                    self.days = self.maxDays
+                    self.daysLabel.text = "\(self.days)"
+                    self.minusBtn.isHidden = false
+                    self.addBtn.isHidden = false
+                    self.borrowingPeriodPlaceholder.text = "Borrowing period (days):"
+                    self.borrowBtn.isHidden = false
+
+                }else{
+                    self.minusBtn.isHidden = true
+                    self.addBtn.isHidden = true
+                    self.borrowBtn.isHidden = true
+                    
+                    self.borrowingPeriodPlaceholder.text = "CURRENTLY UNAVAILABLE."
+                    self.maxDaysLabel.text = ""
+                    self.daysLabel.text = ""
+
+                }
+            })
+            
         }
-        
-        print(imgTitleInMS)
-        
-        
+
         self.titleLabel.numberOfLines = 0
         self.titleLabel.lineBreakMode = .byWordWrapping
         self.titleLabel.sizeToFit()
