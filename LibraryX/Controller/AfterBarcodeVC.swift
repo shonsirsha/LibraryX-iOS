@@ -14,7 +14,7 @@ class AfterBarcodeVC: UIViewController {
     var imgTitleInMS: Double = 0
     var days: Int = 1
     var maxDays: Int = 0
-    
+    let oneDayInEpoch: Int = 86400
     @IBOutlet weak var maxDaysLabel: UILabel!
     @IBOutlet weak var borrowingPeriodPlaceholder: UILabel!
     var prevVC: ScannerVC!
@@ -75,8 +75,25 @@ class AfterBarcodeVC: UIViewController {
         daysLabel.text = "\(days)"
     }
     
-
-   
+    @IBAction func minusBtn(_ sender: Any) {
+        if days > 1{
+            days -= 1
+            daysLabel.text = "\(days)"
+        }
+    }
+    
+    @IBAction func addBtn(_ sender: Any) {
+        if days < maxDays{
+            days += 1
+            daysLabel.text = "\(days)"
+        }
+    }
+    
+    @IBAction func borrowBtn(_ sender: Any) {
+        let start = NSDate().timeIntervalSince1970
+        let until = start + Double((days * oneDayInEpoch))
+        DataService.instance.borrowBook(imgTitleInMS: imgTitleInMS, uid: (Auth.auth().currentUser?.uid)!, start: start, until: until)
+    }
     @IBAction func closeBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

@@ -172,6 +172,29 @@ class DataService{
         }
         
     }
+
+    func borrowBook(imgTitleInMS: Double, uid: String, start: Double, until: Double){
+        
+        
+        REF_BOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observe(DataEventType.value) { (snapshot) in
+            
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            var bookKey = ""
+            for book in snapshot{
+                bookKey = book.key
+            }
+            if bookKey != ""{
+                self.REF_BOOK.child(bookKey).updateChildValues(["start":start, "until":until, "status":"no"])
+           
+            }
+
+        }
+        
+         REF_USER.child(uid).child("borrowing").childByAutoId().updateChildValues(["start":start, "until":until, "bookImgTitleInMS":imgTitleInMS])
+        
+    }
+    
+    
     
   /*  func getABookByImgTitle(imageTitleInMs: Double ,handler: @escaping(_ bookObj: [BookDetailForCell])->()){ // img title is in ms
         var bookArr = [BookDetailForCell]()
