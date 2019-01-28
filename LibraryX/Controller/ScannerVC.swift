@@ -64,6 +64,12 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         boxVev.clipsToBounds = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if toMyAccVC == true{
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
     func failed() {
         let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))

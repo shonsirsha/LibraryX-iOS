@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import FirebaseUI
-
 class AfterBarcodeVC: UIViewController {
     var imgTitleInMS: Double = 0
     var days: Int = 1
@@ -18,6 +17,7 @@ class AfterBarcodeVC: UIViewController {
     @IBOutlet weak var maxDaysLabel: UILabel!
     @IBOutlet weak var borrowingPeriodPlaceholder: UILabel!
     var prevVC: ScannerVC!
+   
     
     @IBOutlet weak var borrowBtn: UIButton!
     @IBOutlet weak var daysLabel: UILabel!
@@ -73,6 +73,7 @@ class AfterBarcodeVC: UIViewController {
         
         daysLabel.text = "\(days)"
     }
+
     
     @IBAction func minusBtn(_ sender: Any) {
         if days > 1{
@@ -91,9 +92,16 @@ class AfterBarcodeVC: UIViewController {
     @IBAction func borrowBtn(_ sender: Any) {
         let start = NSDate().timeIntervalSince1970
         let until = start + Double((days * oneDayInEpoch))
-        DataService.instance.borrowBook(imgTitleInMS: imgTitleInMS, uid: (Auth.auth().currentUser?.uid)!, start: start, until: until)
+        DataService.instance.borrowBook(imgTitleInMS: imgTitleInMS, uid: (Auth.auth().currentUser?.uid)!, title: titleLabel.text!, start: start, until: until)
+       
+        toMyAccVC = true
+        dismiss(animated: true, completion: nil)
+        
+        
       
     }
+    
+    
     @IBAction func closeBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

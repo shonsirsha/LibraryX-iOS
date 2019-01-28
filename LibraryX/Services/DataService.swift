@@ -125,6 +125,40 @@ class DataService{
         }
     }
     
+    func getTop10BorrowedBooks(uid: String, handler: @escaping(_ eachBookObj: [BookTitleForProfileCell])->()){
+        REF_USER.child(uid).child("mybooks").queryOrdered(byChild: "status").queryEqual(toValue: "borrowing").queryLimited(toFirst: 10).observe(DataEventType.value) { (snapshot) in
+            var bookTitlesArr = [BookTitleForProfileCell]()
+
+            if snapshot.exists(){
+                guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+                
+                for book in snapshot{
+                    let bookTitle = book.childSnapshot(forPath: "title").value as! String
+                    let bookTitleObj = BookTitleForProfileCell(bookTitle: bookTitle)
+                    bookTitlesArr.append(bookTitleObj)
+                    
+                }
+                
+                
+                handler(bookTitlesArr.reversed())
+                bookTitlesArr = [BookTitleForProfileCell]()
+                
+            }else{ // no book borrowed yet
+            }
+        }
+
+    }
+    
+    func everBorrow(uid: String, everBorrow: @escaping(_ ever: Bool)->()){
+        REF_USER.child(uid).child("mybooks").observe(DataEventType.value) { (snapshot) in
+            if snapshot.exists(){
+                everBorrow(true)
+            }else{
+                everBorrow(false)
+            }
+        }
+    }
+    
     func getAllBooks(handler: @escaping(_ eachBookObj: [BookDetailForCell])->()){ // browse book
         var allBooksArray = [BookDetailForCell]()
         var unwrappedGenre2 = ""
@@ -173,7 +207,7 @@ class DataService{
         
     }
 
-    func borrowBook(imgTitleInMS: Double, uid: String, start: Double, until: Double){
+    func borrowBook(imgTitleInMS: Double, uid: String, title: String, start: Double, until: Double){
         
         
         REF_BOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
@@ -183,7 +217,7 @@ class DataService{
                 bookKey = book.key
             }
             self.REF_BOOK.child(bookKey).updateChildValues(["start":start, "until":until, "status":"no"])
-            self.REF_USER.child(uid).child("borrowing").childByAutoId().updateChildValues(["start":start, "until":until, "bookImgTitleInMS":imgTitleInMS])
+            self.REF_USER.child(uid).child("mybooks").childByAutoId().updateChildValues(["start":start, "until":until, "title":title ,"bookImgTitleInMS":imgTitleInMS, "status":"borrowing"])
         })
         
         

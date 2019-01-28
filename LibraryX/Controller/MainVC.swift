@@ -8,14 +8,16 @@
 
 import UIKit
 import Firebase
+var toMyAccVC = false
+
 class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
      var bookArr = [BookDetailForCell]()
   
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var floaty: Floaty!
-    
+   
+
     var bookTotal = 0
     
     @IBOutlet weak var allBookLabel: UILabel!
@@ -28,18 +30,19 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         
         
         self.myTableView.tableFooterView = UIView()
-        
-      
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-        
-        floaty.addGestureRecognizer(tap)
-     
       
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        
+        if toMyAccVC == true{
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc: UITabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+            vc.selectedIndex = 1
+            self.present(vc, animated: false, completion: nil)
+        }
+        
         
         DataService.instance.getAllBooks { (returnedEachBookObj) in
             self.bookArr = returnedEachBookObj
@@ -49,10 +52,7 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         }
         
     }
-    
-    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        performSegue(withIdentifier: "toScannerVC", sender: self)
-    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookArr.count
@@ -91,6 +91,9 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    @IBAction func toScanVC(_ sender: Any) {
+        performSegue(withIdentifier: "toScannerVC", sender: self)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let ixPath = myTableView.indexPathForSelectedRow{
             if segue.identifier == "toSingleBookVC"{
