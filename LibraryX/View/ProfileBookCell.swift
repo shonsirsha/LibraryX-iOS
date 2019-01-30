@@ -25,7 +25,7 @@ class ProfileBookCell: UITableViewCell {
         
         
         if status == "borrowing"{
-            statusLabel.text = "BORROWING"
+            statusLabel.text = "BORROWED"
             borrowingPillView.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
             daysAgoPillView.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
             notifBulletView.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)

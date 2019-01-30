@@ -1219,6 +1219,7 @@
                         <viewLayoutGuide key="safeArea" id="Gob-2r-vAS"/>
                     </view>
                     <connections>
+                        <outlet property="actionBtn" destination="RmA-EB-uNU" id="Dfp-6d-FCg"/>
                         <outlet property="bookImgView" destination="ZJd-Px-2ro" id="zDU-a0-PER"/>
                         <outlet property="dateBorrowLabel" destination="vFV-sW-b6G" id="oTS-o3-WRC"/>
                         <outlet property="dateReturnLabel" destination="DsW-qb-sJy" id="tIA-6y-2QB"/>

@@ -97,9 +97,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             if segue.identifier == "toMyBookSingleVC"{
                 if let myBookSingleVC = segue.destination as? MyBookSingleVC {
                     myBookSingleVC.imgTitleInMS = bookArr[ixPath.row].imgTitleInMS
-                    myBookSingleVC.start = bookArr[ixPath.row].start
-                    myBookSingleVC.until = bookArr[ixPath.row].until
-                    myBookSingleVC.bookTitle = bookArr[ixPath.row].bookTitle
+                    myBookSingleVC.startBorrowDate = bookArr[ixPath.row].start
+                    
                 }
             }
         }
@@ -109,10 +108,6 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         performSegue(withIdentifier: "toMyBookSingleVC", sender: self)
     }
 
-    
-    @IBAction func allBooksBtn(_ sender: Any) {
-        print("Test")
-    }
     
     @IBAction func logOutBtn(_ sender: Any) {
         let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
