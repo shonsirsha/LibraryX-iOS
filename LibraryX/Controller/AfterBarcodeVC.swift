@@ -17,7 +17,7 @@ class AfterBarcodeVC: UIViewController {
     @IBOutlet weak var maxDaysLabel: UILabel!
     @IBOutlet weak var borrowingPeriodPlaceholder: UILabel!
     var prevVC: ScannerVC!
-   
+   var statusBook = ""
     
     @IBOutlet weak var borrowBtn: UIButton!
     @IBOutlet weak var daysLabel: UILabel!
@@ -40,6 +40,7 @@ class AfterBarcodeVC: UIViewController {
         }) { (returnedMaxDays) in
             DataService.instance.getABookStatus(imgTitleInMS: self.imgTitleInMS, handler: { (returnedStatus) in
                 if returnedStatus == "avail"{ // available for borrowment
+                    self.statusBook = "gonnaBorrow"
                     self.maxDays = returnedMaxDays
                     self.maxDaysLabel.text = "Maximum: \(returnedMaxDays) days"
                     self.days = self.maxDays
@@ -50,13 +51,28 @@ class AfterBarcodeVC: UIViewController {
                     self.borrowBtn.isHidden = false
 
                 }else{
-                    self.minusBtn.isHidden = true
-                    self.addBtn.isHidden = true
-                    self.borrowBtn.isHidden = true
-                    
-                    self.borrowingPeriodPlaceholder.text = "CURRENTLY UNAVAILABLE."
-                    self.maxDaysLabel.text = ""
-                    self.daysLabel.text = ""
+                    DataService.instance.amIBorrowing(uid: (Auth.auth().currentUser?.uid)!, imgTitleInMS: self.imgTitleInMS, statusBorrowing: { (status) in
+                        if status == "borrow"{
+                            self.statusBook = "gonnaReturn"
+                            self.minusBtn.isHidden = true
+                            self.addBtn.isHidden = true
+                            self.borrowBtn.isHidden = false
+                            self.borrowBtn.setTitle("Return", for: UIControl.State.normal)
+                            self.borrowingPeriodPlaceholder.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
+                            self.borrowingPeriodPlaceholder.text = "You're currently borrowing this book. Return now?"
+                            self.maxDaysLabel.text = ""
+                            self.daysLabel.text = ""
+                        }else if status == "notByMe" || status == "returned"{
+                            self.minusBtn.isHidden = true
+                            self.addBtn.isHidden = true
+                            self.borrowBtn.isHidden = true
+                            self.borrowingPeriodPlaceholder.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+                            self.borrowingPeriodPlaceholder.text = "CURRENTLY UNAVAILABLE."
+                            self.maxDaysLabel.text = ""
+                            self.daysLabel.text = ""
+                        }
+                    })
+                   
 
                 }
             })
@@ -90,12 +106,17 @@ class AfterBarcodeVC: UIViewController {
     }
     
     @IBAction func borrowBtn(_ sender: Any) {
-        let start = NSDate().timeIntervalSince1970
-        let until = start + Double((days * oneDayInEpoch))
-        DataService.instance.borrowBook(imgTitleInMS: imgTitleInMS, uid: (Auth.auth().currentUser?.uid)!, title: titleLabel.text!, start: start, until: until)
-       
-        toMyAccVC = true
-        dismiss(animated: true, completion: nil)
+        if statusBook == "gonnaBorrow"{
+            let start = NSDate().timeIntervalSince1970
+            let until = start + Double((days * oneDayInEpoch))
+            DataService.instance.borrowBook(imgTitleInMS: imgTitleInMS, uid: (Auth.auth().currentUser?.uid)!, title: titleLabel.text!, start: start, until: until)
+            
+            toMyAccVC = true
+            dismiss(animated: true, completion: nil)
+        }else if statusBook == "gonnaReturn"{
+            //TOODO!!!!
+        }
+        
         
         
       

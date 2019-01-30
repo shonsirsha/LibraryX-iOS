@@ -10,12 +10,44 @@ import Foundation
 
 class BookTitleForProfileCell{
     private var _bookTitle: String
+    private var _imgTitleInMS: Double
+    private var _start: Double
+    private var _until: Double
+    private var _opened: Int
+    private var _status: String
+
     
     var bookTitle: String{
         return _bookTitle
     }
     
-    init(bookTitle: String){
+    var imgTitleInMS: Double{
+        return _imgTitleInMS
+    }
+    
+    var start: Double{
+        return _start
+    }
+    
+    var until: Double{
+        return _until
+    }
+    var opened: Int{
+        return _opened
+    }
+    
+    
+    var status: String{
+        return _status
+    }
+    
+    init(bookTitle: String, imgTitleInMS: Double, start: Double, until: Double, opened: Int, status: String){
         self._bookTitle = bookTitle
+        self._imgTitleInMS = imgTitleInMS
+        self._start = start
+        self._until = until
+        self._opened = opened
+        self._status = status
+
     }
 }

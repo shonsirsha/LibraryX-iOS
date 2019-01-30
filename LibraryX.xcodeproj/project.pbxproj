@@ -19,6 +19,7 @@
 		B54C60D821F9E850000B51EF /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54C60D721F9E850000B51EF /* ScannerVC.swift */; };
 		B5585D7D21FDEE9F0044F2AD /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5585D7C21FDEE9F0044F2AD /* SegueFromLeft.swift */; };
 		B5585D7F21FDEF9A0044F2AD /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5585D7E21FDEF9A0044F2AD /* SegueFromRight.swift */; };
+		B55C3BA92200265200E111C1 /* MyBookSingleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C3BA82200265200E111C1 /* MyBookSingleVC.swift */; };
 		B585802A21FF72410046068E /* ProfileBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585802921FF72410046068E /* ProfileBookCell.swift */; };
 		B5891A3A21F6BADD001248CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A3921F6BADD001248CB /* AppDelegate.swift */; };
 		B5891A3F21F6BADD001248CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5891A3D21F6BADD001248CB /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		B5891A7421F6D23C001248CB /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A7321F6D23C001248CB /* MainVC.swift */; };
 		B5891A7721F6D28F001248CB /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A7621F6D28F001248CB /* MainCell.swift */; };
 		B5891A7921F6DA70001248CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5891A7821F6DA70001248CB /* GoogleService-Info.plist */; };
+		B5CC5A782200A0EC005113AB /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC5A772200A0EC005113AB /* RoundView.swift */; };
 		B5D6233721FF6AF600993DB5 /* BookTitleForProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6233621FF6AF600993DB5 /* BookTitleForProfileCell.swift */; };
 		B5DF6A1821F7810C00C93D56 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A1721F7810C00C93D56 /* AuthVC.swift */; };
 		B5DF6A1A21F781AD00C93D56 /* Floaty in Resources */ = {isa = PBXBuildFile; fileRef = B5DF6A1921F781AD00C93D56 /* Floaty */; };
@@ -72,6 +74,7 @@
 		B54C60D721F9E850000B51EF /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
 		B5585D7C21FDEE9F0044F2AD /* SegueFromLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
 		B5585D7E21FDEF9A0044F2AD /* SegueFromRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
+		B55C3BA82200265200E111C1 /* MyBookSingleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookSingleVC.swift; sourceTree = "<group>"; };
 		B585802921FF72410046068E /* ProfileBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBookCell.swift; sourceTree = "<group>"; };
 		B5891A3621F6BADD001248CB /* LibraryX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibraryX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5891A3921F6BADD001248CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		B5891A7321F6D23C001248CB /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		B5891A7621F6D28F001248CB /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		B5891A7821F6DA70001248CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5CC5A772200A0EC005113AB /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		B5D6233621FF6AF600993DB5 /* BookTitleForProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTitleForProfileCell.swift; sourceTree = "<group>"; };
 		B5DF6A1721F7810C00C93D56 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		B5DF6A1921F781AD00C93D56 /* Floaty */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Floaty; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 				B54C60D721F9E850000B51EF /* ScannerVC.swift */,
 				B531F12A21FCCE9D00687782 /* AfterBarcodeVC.swift */,
 				B5ED100721FB748D008C59C9 /* SingleBookVC.swift */,
+				B55C3BA82200265200E111C1 /* MyBookSingleVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				B5585D7C21FDEE9F0044F2AD /* SegueFromLeft.swift */,
 				B5585D7E21FDEF9A0044F2AD /* SegueFromRight.swift */,
 				B585802921FF72410046068E /* ProfileBookCell.swift */,
+				B5CC5A772200A0EC005113AB /* RoundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -400,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52604D121F8ACCD00BC9BB5 /* ProfileVC.swift in Sources */,
+				B55C3BA92200265200E111C1 /* MyBookSingleVC.swift in Sources */,
 				B5DF6A2421F781F100C93D56 /* FloatyManager.swift in Sources */,
 				B5DF6A2221F781F100C93D56 /* FloatyWindow.swift in Sources */,
 				B5ED100821FB748D008C59C9 /* SingleBookVC.swift in Sources */,
@@ -423,6 +430,7 @@
 				B5D6233721FF6AF600993DB5 /* BookTitleForProfileCell.swift in Sources */,
 				B5585D7F21FDEF9A0044F2AD /* SegueFromRight.swift in Sources */,
 				B585802A21FF72410046068E /* ProfileBookCell.swift in Sources */,
+				B5CC5A782200A0EC005113AB /* RoundView.swift in Sources */,
 				B5DF6A2721F7842D00C93D56 /* FloatyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

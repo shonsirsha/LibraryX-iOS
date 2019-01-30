@@ -35,10 +35,18 @@ class SingleBookVC: UIViewController {
                 self.statusLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
                 self.statusLabel.text = "Available at aisle number: C2051"
             }else{
-                self.toScanVCbtn.isHidden = true
-                self.statusLabel.textColor = #colorLiteral(red: 1, green: 0.148809104, blue: 0.2488994031, alpha: 1)
-                self.statusLabel.text = "CURRENTLY UNAVAILABLE."
-
+                DataService.instance.amIBorrowing(uid: (Auth.auth().currentUser?.uid)!, imgTitleInMS: self.imgTitleinMs, statusBorrowing: { (returnedStatus) in
+                    if returnedStatus == "borrow"{
+                        self.toScanVCbtn.isHidden = true
+                        self.statusLabel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+                        self.statusLabel.text = "You are currently borrowing this book."
+                    }else{
+                        self.toScanVCbtn.isHidden = true
+                        self.statusLabel.textColor = #colorLiteral(red: 1, green: 0.148809104, blue: 0.2488994031, alpha: 1)
+                        self.statusLabel.text = "This book is currently unavailable."
+                    }
+                })
+                
             }
             DataService.instance.getGenresFromImgTitle(imgTitleInMS: self.imgTitleinMs) { (returnedGenresStr) in
                 self.genreLabel.text = "Genres: \(returnedGenresStr)"
@@ -49,6 +57,10 @@ class SingleBookVC: UIViewController {
         self.titleLabel.numberOfLines = 0
         self.titleLabel.lineBreakMode = .byWordWrapping
         self.titleLabel.sizeToFit()
+        
+        self.statusLabel.numberOfLines = 0
+        self.statusLabel.lineBreakMode = .byWordWrapping
+        self.statusLabel.sizeToFit()
         
         self.authorLabel.numberOfLines = 0
         self.authorLabel.lineBreakMode = .byWordWrapping
