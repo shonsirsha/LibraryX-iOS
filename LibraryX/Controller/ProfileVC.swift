@@ -71,7 +71,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         let startDate = bookArr[indexPath.row].start
         let untilDate = bookArr[indexPath.row].until
         let status = bookArr[indexPath.row].status
-        cell.configCell(bookTitle: eachBookTitle, opened: opened, start: startDate, until: untilDate, status: status)
+        let actualReturned = bookArr[indexPath.row].actualReturned
+        cell.configCell(bookTitle: eachBookTitle, opened: opened, start: startDate, until: untilDate, status: status, actualReturned: actualReturned)
         
         
         if (cell.responds(to: #selector(setter: UITableViewCell.separatorInset))) {

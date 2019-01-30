@@ -111,15 +111,13 @@ class AfterBarcodeVC: UIViewController {
             let until = start + Double((days * oneDayInEpoch))
             DataService.instance.borrowBook(imgTitleInMS: imgTitleInMS, uid: (Auth.auth().currentUser?.uid)!, title: titleLabel.text!, start: start, until: until)
             
-            toMyAccVC = true
-            dismiss(animated: true, completion: nil)
+           
         }else if statusBook == "gonnaReturn"{
-            //TOODO!!!!
+            let actualReturned = NSDate().timeIntervalSince1970
+            DataService.instance.returnBook(imgTitleInMS: imgTitleInMS, uid: (Auth.auth().currentUser?.uid)!, title: titleLabel.text!, actualReturned: actualReturned)
         }
-        
-        
-        
-      
+        toMyAccVC = true
+        dismiss(animated: true, completion: nil)
     }
     
     

@@ -15,6 +15,7 @@ class BookTitleForProfileCell{
     private var _until: Double
     private var _opened: Int
     private var _status: String
+    private var _actualReturned: Double
 
     
     var bookTitle: String{
@@ -41,13 +42,17 @@ class BookTitleForProfileCell{
         return _status
     }
     
-    init(bookTitle: String, imgTitleInMS: Double, start: Double, until: Double, opened: Int, status: String){
+    var actualReturned: Double{
+        return _actualReturned
+    }
+    
+    init(bookTitle: String, imgTitleInMS: Double, start: Double, until: Double, opened: Int, status: String, actualReturned: Double){
         self._bookTitle = bookTitle
         self._imgTitleInMS = imgTitleInMS
         self._start = start
         self._until = until
         self._opened = opened
         self._status = status
-
+        self._actualReturned = actualReturned
     }
 }

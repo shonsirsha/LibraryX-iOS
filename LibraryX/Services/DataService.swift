@@ -150,7 +150,7 @@ class DataService{
     }*/
     
     func get10RecentActivities(uid: String, handler: @escaping(_ eachBookObj: [BookTitleForProfileCell])->()){
-        REF_USER.child(uid).child("mybooks").queryLimited(toFirst: 10).observe(DataEventType.value) { (snapshot) in
+        REF_USER.child(uid).child("mybooks").queryOrdered(byChild: "actualReturned").queryLimited(toFirst: 10).observe(DataEventType.value) { (snapshot) in
             var bookTitlesArr = [BookTitleForProfileCell]()
 
             if snapshot.exists(){
@@ -163,8 +163,9 @@ class DataService{
                     let untilDate = book.childSnapshot(forPath: "until").value as! Double
                     let hasOpened = book.childSnapshot(forPath: "hasOpened").value as! Int
                     let status = book.childSnapshot(forPath: "status").value as! String
+                    let actualReturned = book.childSnapshot(forPath: "actualReturned").value as! Double
                     print(book)
-                    let bookTitleObj = BookTitleForProfileCell(bookTitle: bookTitle, imgTitleInMS: imgTitleInMS, start: startDate, until: untilDate, opened: hasOpened, status: status)
+                    let bookTitleObj = BookTitleForProfileCell(bookTitle: bookTitle, imgTitleInMS: imgTitleInMS, start: startDate, until: untilDate, opened: hasOpened, status: status, actualReturned: actualReturned)
                    
                     
                     bookTitlesArr.append(bookTitleObj)
@@ -267,6 +268,33 @@ class DataService{
             }
             self.REF_BOOK.child(bookKey).updateChildValues(["start":start, "until":until, "status":"no"])
             self.REF_USER.child(uid).child("mybooks").childByAutoId().updateChildValues(["start":start, "until":until, "title":title ,"bookImgTitleInMS":imgTitleInMS, "status":"borrowing", "hasOpened": 0, "actualReturned": 0])
+        })
+        
+        
+        
+    }
+    
+    func returnBook(imgTitleInMS: Double, uid: String, title: String, actualReturned: Double){
+        
+        REF_BOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            var bookKey = ""
+            var myboookKey = ""
+            for book in snapshot{
+                bookKey = book.key
+            }
+            self.REF_BOOK.child(bookKey).updateChildValues(["start":0, "until":0, "status":"avail"])
+            
+            self.REF_USER.child(uid).child("mybooks").queryOrdered(byChild: "bookImgTitleInMS").queryEqual(toValue: imgTitleInMS).observe(DataEventType.value, with: { (snapshot) in
+                guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+                
+                for book2 in snapshot{
+                    myboookKey = book2.key
+                     self.REF_USER.child(uid).child("mybooks").child(myboookKey).updateChildValues(["status":"returned", "actualReturned": actualReturned])
+                }
+                
+            })
+           
         })
         
         
