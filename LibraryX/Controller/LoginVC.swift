@@ -47,6 +47,9 @@ class LoginVC: UIViewController {
     }
     
 
+    @IBAction func signInWithDiffMethod(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         emailField.resignFirstResponder()

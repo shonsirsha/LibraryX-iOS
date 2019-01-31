@@ -91,14 +91,14 @@ class MyBookSingleVC: UIViewController {
                             self.returnInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                             
                         }else if formatter.string(from: date) == "Yesterday"{
-                            self.returnInLabel.text = "You're late to return this book!"
+                            self.returnInLabel.text = "You're late to return this book! (Yesterday)"
                             self.returnInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                         }
                     } else if day > 1 {
                         self.returnInLabel.text = "Return this book in \(day) days"
                         self.returnInLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
                     } else {
-                        self.returnInLabel.text = "You're late to return this book!"
+                        self.returnInLabel.text = "You're late to return this book! (\(day) days ago)"
                         self.returnInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                     }
                 }

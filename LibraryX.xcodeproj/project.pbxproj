@@ -20,6 +20,9 @@
 		B5585D7D21FDEE9F0044F2AD /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5585D7C21FDEE9F0044F2AD /* SegueFromLeft.swift */; };
 		B5585D7F21FDEF9A0044F2AD /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5585D7E21FDEF9A0044F2AD /* SegueFromRight.swift */; };
 		B55C3BA92200265200E111C1 /* MyBookSingleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C3BA82200265200E111C1 /* MyBookSingleVC.swift */; };
+		B585150C2202BEE40023DF1E /* ActivitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585150B2202BEE40023DF1E /* ActivitiesVC.swift */; };
+		B585150E2202C0B20023DF1E /* ActivitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585150D2202C0B20023DF1E /* ActivitiesCell.swift */; };
+		B5851510220340580023DF1E /* ScanToLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585150F220340580023DF1E /* ScanToLoginVC.swift */; };
 		B585802A21FF72410046068E /* ProfileBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585802921FF72410046068E /* ProfileBookCell.swift */; };
 		B5891A3A21F6BADD001248CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A3921F6BADD001248CB /* AppDelegate.swift */; };
 		B5891A3F21F6BADD001248CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5891A3D21F6BADD001248CB /* Main.storyboard */; };
@@ -75,6 +78,9 @@
 		B5585D7C21FDEE9F0044F2AD /* SegueFromLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
 		B5585D7E21FDEF9A0044F2AD /* SegueFromRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
 		B55C3BA82200265200E111C1 /* MyBookSingleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookSingleVC.swift; sourceTree = "<group>"; };
+		B585150B2202BEE40023DF1E /* ActivitiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesVC.swift; sourceTree = "<group>"; };
+		B585150D2202C0B20023DF1E /* ActivitiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesCell.swift; sourceTree = "<group>"; };
+		B585150F220340580023DF1E /* ScanToLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanToLoginVC.swift; sourceTree = "<group>"; };
 		B585802921FF72410046068E /* ProfileBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBookCell.swift; sourceTree = "<group>"; };
 		B5891A3621F6BADD001248CB /* LibraryX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibraryX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5891A3921F6BADD001248CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +210,8 @@
 				B531F12A21FCCE9D00687782 /* AfterBarcodeVC.swift */,
 				B5ED100721FB748D008C59C9 /* SingleBookVC.swift */,
 				B55C3BA82200265200E111C1 /* MyBookSingleVC.swift */,
+				B585150B2202BEE40023DF1E /* ActivitiesVC.swift */,
+				B585150F220340580023DF1E /* ScanToLoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -225,6 +233,7 @@
 				B5585D7E21FDEF9A0044F2AD /* SegueFromRight.swift */,
 				B585802921FF72410046068E /* ProfileBookCell.swift */,
 				B5CC5A772200A0EC005113AB /* RoundView.swift */,
+				B585150D2202C0B20023DF1E /* ActivitiesCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,7 +311,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "LibraryX" */;
+			buildConfigurationList = B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "libraryX" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -412,6 +421,7 @@
 				B5ED100821FB748D008C59C9 /* SingleBookVC.swift in Sources */,
 				B524D50121F7795400EA5AF7 /* DataService.swift in Sources */,
 				B5DF6A2521F781F100C93D56 /* FloatyDelegate.swift in Sources */,
+				B585150C2202BEE40023DF1E /* ActivitiesVC.swift in Sources */,
 				B5DF6A1821F7810C00C93D56 /* AuthVC.swift in Sources */,
 				B5891A3A21F6BADD001248CB /* AppDelegate.swift in Sources */,
 				B508324421FA9E0E0056B730 /* GradientView.swift in Sources */,
@@ -424,9 +434,11 @@
 				B524D4FD21F776AA00EA5AF7 /* LoginVC.swift in Sources */,
 				B5585D7D21FDEE9F0044F2AD /* SegueFromLeft.swift in Sources */,
 				B5DF6A2321F781F100C93D56 /* Floaty.swift in Sources */,
+				B585150E2202C0B20023DF1E /* ActivitiesCell.swift in Sources */,
 				B5DF6A2121F781F100C93D56 /* FloatyItem.swift in Sources */,
 				B531F12B21FCCE9D00687782 /* AfterBarcodeVC.swift in Sources */,
 				B512EC6D21FCE7D90042084E /* DynamicLabel.swift in Sources */,
+				B5851510220340580023DF1E /* ScanToLoginVC.swift in Sources */,
 				B5D6233721FF6AF600993DB5 /* BookTitleForProfileCell.swift in Sources */,
 				B5585D7F21FDEF9A0044F2AD /* SegueFromRight.swift in Sources */,
 				B585802A21FF72410046068E /* ProfileBookCell.swift in Sources */,
@@ -620,7 +632,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "LibraryX" */ = {
+		B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "libraryX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5891A4621F6BAE2001248CB /* Debug */,

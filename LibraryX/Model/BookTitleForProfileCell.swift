@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BookTitleForProfileCell{
+class BookTitleForProfileCell{ // for ActivitesCell as well
     private var _bookTitle: String
     private var _imgTitleInMS: Double
     private var _start: Double

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Auth.auth().currentUser == nil{
             let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let loginVC = storyBoard.instantiateViewController(withIdentifier: "LoginVC")
+            let loginVC = storyBoard.instantiateViewController(withIdentifier: "ScanToLoginVC")
             window?.makeKeyAndVisible()
             window?.rootViewController?.present(loginVC, animated: true, completion: nil)
         }else{

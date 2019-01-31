@@ -15,13 +15,14 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var bookArr = [BookTitleForProfileCell]()
 
     @IBOutlet weak var myTableView: UITableView!
-    
+    @IBOutlet weak var noActLabel: UILabel!
     @IBOutlet weak var topBlock: UIView!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var editProfileBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        noActLabel.isHidden = true
         myTableView.dataSource = self
         myTableView.delegate = self
         self.myTableView.tableFooterView = UIView()
@@ -50,11 +51,16 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
         DataService.instance.everBorrow(uid: (Auth.auth().currentUser?.uid)!) { (ever) in
             if ever == true{
-                DataService.instance.get10RecentActivities(uid: (Auth.auth().currentUser?.uid)!) { (returnedBookTitle) in
+                self.myTableView.isHidden = false
+                self.noActLabel.isHidden = true
+            DataService.instance.get10RecentActivities(uid: (Auth.auth().currentUser?.uid)!) { (returnedBookTitle) in
                     self.bookArr = returnedBookTitle
                     self.myTableView.reloadData()
                 }
             }else{
+            
+                self.myTableView.isHidden = true
+                self.noActLabel.isHidden = false
                 print("never borrowed anyth")
             }
         }
@@ -119,7 +125,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action:UIAlertAction) in
             do{
                 try Auth.auth().signOut()
-                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "ScanToLoginVC") as? ScanToLoginVC
                 self.present(loginVC!, animated: true, completion: nil)
             }catch{
                 print(error)

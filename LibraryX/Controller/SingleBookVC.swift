@@ -86,7 +86,10 @@ class SingleBookVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
-        
+        super.viewDidAppear(true)
+        if toMyAccVC == true{
+            dismiss(animated: true, completion: nil)
+        }
     }
     
 

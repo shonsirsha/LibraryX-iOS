@@ -66,15 +66,11 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         genresArr.append(eachBookObj.genre1)
         genresArr.append(eachBookObj.genre2)
         genresArr.append(eachBookObj.genre3)
-        
-        for (ix, genre) in genresArr.enumerated() {
-            if genre == ""{
-                genresArr.remove(at: ix)
-            }
-        }
+        print(genresArr)
+        genresArr = genresArr.filter{!$0.isEmpty}
 
         let stringGenres = genresArr.joined(separator: ", ")
-        cell.configCell(bookTitle: eachBookObj.bookTitle, authorName: "Author: \(eachBookObj.authorName)", genre: "Genres: \(stringGenres)", year: "Year released: \(eachBookObj.year)")
+        cell.configCell(bookTitle: eachBookObj.bookTitle, authorName: "Author: \(eachBookObj.authorName)", genre: "Genres: \(stringGenres)", year: "Year released: \(eachBookObj.year)",imgTitleInMS: eachBookObj.imgTitle)
         
         if (cell.responds(to: #selector(setter: UITableViewCell.separatorInset))) {
             cell.separatorInset = UIEdgeInsets.zero
@@ -90,6 +86,8 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+    
+  
     
     @IBAction func toScanVC(_ sender: Any) {
         performSegue(withIdentifier: "toScannerVC", sender: self)
