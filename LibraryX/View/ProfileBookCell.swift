@@ -44,12 +44,12 @@ class ProfileBookCell: UITableViewCell {
                 if formatter.string(from: date) == "Tomorrow"{
                     returningInLabel.text = "Return this book by tomorrow"
                     returningInLabel.textColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-                    returningInLabel.setSizeFont(sizeFont: 19)
+                    returningInLabel.setSizeFont(sizeFont: 15)
 
                 }else if formatter.string(from: date) == "Today"{
                     returningInLabel.text = "Return this book by today"
                     returningInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-                    returningInLabel.setSizeFont(sizeFont: 19)
+                    returningInLabel.setSizeFont(sizeFont: 15)
 
                 }else if formatter.string(from: date) == "Yesterday"{
                     returningInLabel.text = "You're late to return this book! (yesterday)"
@@ -59,10 +59,11 @@ class ProfileBookCell: UITableViewCell {
             } else if day > 1 {
                 returningInLabel.text = "Return this book in \(day) days"
                 returningInLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
-                returningInLabel.setSizeFont(sizeFont: 19)
+                returningInLabel.setSizeFont(sizeFont: 15)
 
             } else {
-                returningInLabel.text = "You're late to return this book! ( \(day) days ago)."
+                let newDay = day * -1
+                returningInLabel.text = "You're late to return this book! ( \(newDay) days ago)."
                 returningInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                 returningInLabel.setSizeFont(sizeFont: 15)
 
@@ -91,7 +92,8 @@ class ProfileBookCell: UITableViewCell {
             } else if day2 > 1 {
                 //impossible
             } else {
-                startLabel.text = "\(day2) DAYS AGO"
+                let newDay = day2 * -1
+                startLabel.text = "\(newDay) DAYS AGO"
             }
         }else if status == "returned"{
             statusLabel.text = "RETURNED"
@@ -113,26 +115,27 @@ class ProfileBookCell: UITableViewCell {
                 if formatter.string(from: date) == "Tomorrow"{
                     //
                 }else if formatter.string(from: date) == "Today"{
-                    returningInLabel.text = "You returned this book today"
+                    returningInLabel.text = "You have returned this book today"
                     returningInLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
-                    returningInLabel.setSizeFont(sizeFont: 19)
+                    returningInLabel.setSizeFont(sizeFont: 15)
                     startLabel.text = "TODAY"
 
                     
                 }else if formatter.string(from: date) == "Yesterday"{
-                    returningInLabel.text = "You returned this book yesterday"
+                    returningInLabel.text = "You have returned this book yesterday"
                     returningInLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
-                    returningInLabel.setSizeFont(sizeFont: 19)
+                    returningInLabel.setSizeFont(sizeFont: 15)
                     startLabel.text = "YESTERDAY"
 
                 }
             } else if day > 1 {
                 //
             } else {
-                returningInLabel.text = "You returned this book \(day) days ago"
+                let newDay = day * -1
+                returningInLabel.text = "You have returned this book \(newDay) days ago"
                 returningInLabel.setSizeFont(sizeFont: 15)
                 returningInLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
-                startLabel.text = "\(day) DAYS AGO"
+                startLabel.text = "\(newDay) DAYS AGO"
             }
             
         }

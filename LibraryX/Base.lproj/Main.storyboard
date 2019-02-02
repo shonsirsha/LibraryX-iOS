@@ -79,7 +79,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LibraryX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajb-eK-9fB">
-                                            <rect key="frame" x="61.5" y="13.5" width="168" height="43"/>
+                                            <rect key="frame" x="66.5" y="10" width="158.5" height="50.5"/>
                                             <fontDescription key="fontDescription" name="SoinSansNeue-Italic" family="Soin Sans Neue" pointSize="43"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -134,13 +134,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LibraryX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPI-0j-wMs">
-                                        <rect key="frame" x="20" y="119" width="335" height="44"/>
+                                        <rect key="frame" x="20" y="119" width="335" height="51.5"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Italic" family="Soin Sans Neue" pointSize="44"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BeA-yr-ZwS">
-                                        <rect key="frame" x="40" y="213" width="295" height="45"/>
+                                        <rect key="frame" x="40" y="220.5" width="295" height="45"/>
                                         <color key="backgroundColor" red="0.95972795050000004" green="0.95972795050000004" blue="0.95972795050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="mzB-hW-ttO"/>
@@ -150,7 +150,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dL6-HA-W7H">
-                                        <rect key="frame" x="40" y="266" width="295" height="45"/>
+                                        <rect key="frame" x="40" y="273.5" width="295" height="45"/>
                                         <color key="backgroundColor" red="0.95972795050000004" green="0.95972795050000004" blue="0.95972795050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="v59-8B-5Re"/>
@@ -160,7 +160,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn0-Dx-cVY">
-                                        <rect key="frame" x="40" y="336" width="295" height="50"/>
+                                        <rect key="frame" x="40" y="343.5" width="295" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.58999323839999995" blue="0.99930530790000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="KAX-Mb-q9g"/>
@@ -174,13 +174,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJO-Ya-WNW">
-                                        <rect key="frame" x="45" y="426" width="285" height="0.0"/>
+                                        <rect key="frame" x="45" y="433.5" width="285" height="0.0"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Light" family="Soin Sans Neue" pointSize="22"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tq0-dt-CbS">
-                                        <rect key="frame" x="10" y="401" width="355" height="30"/>
+                                        <rect key="frame" x="10" y="408.5" width="355" height="33"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Light" family="Soin Sans Neue" pointSize="18"/>
                                         <state key="normal" title="Sign In With QR Code Scan">
                                             <color key="titleColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -390,7 +390,7 @@
                                                                     <rect key="frame" x="20" y="83" width="100" height="26"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BORROWED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs3-xW-1kr">
-                                                                            <rect key="frame" x="15" y="7.5" width="70" height="11"/>
+                                                                            <rect key="frame" x="15.5" y="7.5" width="69.5" height="11"/>
                                                                             <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="11"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -462,8 +462,8 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Activities Yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRR-3H-3CS">
-                                                <rect key="frame" x="5" y="438" width="365" height="28"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Activities Yet. Start Borrowing Now! 📚" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRR-3H-3CS">
+                                                <rect key="frame" x="5" y="388" width="365" height="56"/>
                                                 <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="28"/>
                                                 <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -493,7 +493,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="pj8-bV-otY" secondAttribute="trailing" id="1yY-Yy-ADw"/>
                                             <constraint firstItem="pj8-bV-otY" firstAttribute="leading" secondItem="9VJ-64-s76" secondAttribute="leading" id="3CO-8o-ve2"/>
-                                            <constraint firstItem="dRR-3H-3CS" firstAttribute="top" secondItem="lgj-ME-z74" secondAttribute="bottom" constant="200" id="44S-1e-paC"/>
+                                            <constraint firstItem="dRR-3H-3CS" firstAttribute="top" secondItem="lgj-ME-z74" secondAttribute="bottom" constant="150" id="44S-1e-paC"/>
                                             <constraint firstItem="pj8-bV-otY" firstAttribute="top" secondItem="lgj-ME-z74" secondAttribute="bottom" constant="10" id="CAM-3X-Gle"/>
                                             <constraint firstItem="tr6-6g-K3X" firstAttribute="top" secondItem="bNo-1q-rl3" secondAttribute="bottom" constant="20" id="Fn1-39-14j"/>
                                             <constraint firstAttribute="height" constant="596.5" id="HmM-nb-69O"/>
@@ -614,25 +614,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Book Loves You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugp-Om-e6s">
-                                                    <rect key="frame" x="120" y="13" width="240" height="21"/>
+                                                    <rect key="frame" x="120" y="13" width="240" height="24.5"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="21"/>
                                                     <color key="textColor" red="0.27536088197969544" green="0.27536088197969544" blue="0.27536088197969544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year released: 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yb-lA-8Y6">
-                                                    <rect key="frame" x="120" y="70" width="255" height="16"/>
+                                                    <rect key="frame" x="120" y="76.5" width="255" height="19"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: Felix Arvid Ulf Kjellberg" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRk-SL-4jc">
-                                                    <rect key="frame" x="120" y="44" width="240" height="16"/>
+                                                    <rect key="frame" x="120" y="47.5" width="240" height="19"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres: Horror" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ac-JP-x5x">
-                                                    <rect key="frame" x="120" y="97" width="255" height="14"/>
+                                                    <rect key="frame" x="120" y="106.5" width="255" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-LightItalic" family="Soin Sans Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -687,7 +687,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1w-bk-9Gb">
-                                        <rect key="frame" x="20" y="5" width="60.5" height="15"/>
+                                        <rect key="frame" x="20" y="5" width="62" height="15"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Medium" family="Soin Sans Neue" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1074,10 +1074,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="azP-iQ-vyc">
-                                <rect key="frame" x="200" y="169.5" width="155" height="47"/>
+                                <rect key="frame" x="200" y="169.5" width="155" height="53"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNT-uc-Ho5">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="47"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="53"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="35"/>
                                         <state key="normal" title="-">
                                             <color key="titleColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1087,7 +1087,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8p-rf-MBo">
-                                        <rect key="frame" x="0.0" y="0.0" width="155" height="47"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="iI5-d8-vZV"/>
                                         </constraints>
@@ -1096,7 +1096,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErV-q2-vY2">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="47"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="53"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="35"/>
                                         <state key="normal" title="+">
                                             <color key="titleColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1108,7 +1108,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum: 0 days" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlD-aD-uF9">
-                                <rect key="frame" x="195" y="221.5" width="170" height="20"/>
+                                <rect key="frame" x="195" y="227.5" width="170" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="A6B-Rj-M2m"/>
                                 </constraints>
@@ -1246,8 +1246,8 @@
                                         <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You borrowed on" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoJ-p7-N2a">
-                                        <rect key="frame" x="180" y="140.5" width="190" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You borrowed this book for:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoJ-p7-N2a">
+                                        <rect key="frame" x="180" y="140.5" width="185" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="1Bd-iq-Klr"/>
                                         </constraints>
@@ -1255,8 +1255,8 @@
                                         <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return on" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zp-NY-0AB">
-                                        <rect key="frame" x="180" y="210.5" width="195" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Until:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zp-NY-0AB">
+                                        <rect key="frame" x="180" y="321.5" width="185" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="ZOU-N3-4tX"/>
                                         </constraints>
@@ -1265,7 +1265,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFV-sW-b6G">
-                                        <rect key="frame" x="180" y="170.5" width="195" height="20"/>
+                                        <rect key="frame" x="180" y="281.5" width="195" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="lmJ-Uc-Xdz"/>
                                         </constraints>
@@ -1273,8 +1273,17 @@
                                         <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999 DAYS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJ0-lr-m2w">
+                                        <rect key="frame" x="180" y="200.5" width="185" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="SnO-8R-Pdc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="21"/>
+                                        <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsW-qb-sJy">
-                                        <rect key="frame" x="180" y="240.5" width="195" height="20"/>
+                                        <rect key="frame" x="180" y="351.5" width="195" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="YEH-Dw-2sh"/>
                                         </constraints>
@@ -1283,7 +1292,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return in 133 days" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pt-y8-Cq2">
-                                        <rect key="frame" x="170" y="280.5" width="205" height="21"/>
+                                        <rect key="frame" x="170" y="391.5" width="195" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="1C4-cT-Ncc"/>
                                         </constraints>
@@ -1307,10 +1316,20 @@
                                             <action selector="returnBtn:" destination="Aas-5J-Mzm" eventType="touchUpInside" id="bwq-3v-1uH"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting from:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5r-o1-mhz">
+                                        <rect key="frame" x="180" y="241.5" width="185" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="knO-1z-MUX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SoinSansNeue-Medium" family="Soin Sans Neue" pointSize="19"/>
+                                        <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="hLk-R8-Lnv" firstAttribute="leading" secondItem="6d6-IL-8fr" secondAttribute="leading" id="1Ng-KF-R05"/>
+                                    <constraint firstItem="p5r-o1-mhz" firstAttribute="trailing" secondItem="MJ0-lr-m2w" secondAttribute="trailing" id="2EZ-o0-uAs"/>
                                     <constraint firstItem="5pt-y8-Cq2" firstAttribute="top" secondItem="DsW-qb-sJy" secondAttribute="bottom" constant="20" id="2sG-Iu-LYE"/>
                                     <constraint firstAttribute="trailing" secondItem="5wY-0e-b2b" secondAttribute="trailing" constant="20" id="3hW-ph-wwz"/>
                                     <constraint firstItem="DsW-qb-sJy" firstAttribute="leading" secondItem="ZJd-Px-2ro" secondAttribute="trailing" constant="10" id="7Wo-qR-Mgc"/>
@@ -1318,29 +1337,34 @@
                                     <constraint firstItem="VoJ-p7-N2a" firstAttribute="top" secondItem="ZJd-Px-2ro" secondAttribute="top" id="8bm-FT-0W9"/>
                                     <constraint firstItem="0zp-NY-0AB" firstAttribute="top" secondItem="vFV-sW-b6G" secondAttribute="bottom" constant="20" id="Dkd-hv-vuM"/>
                                     <constraint firstItem="5wY-0e-b2b" firstAttribute="top" secondItem="hLk-R8-Lnv" secondAttribute="bottom" constant="25" id="IZe-Uy-Qka"/>
+                                    <constraint firstItem="vFV-sW-b6G" firstAttribute="top" secondItem="p5r-o1-mhz" secondAttribute="bottom" constant="20" id="Ice-bR-dEJ"/>
                                     <constraint firstAttribute="width" constant="375" id="IfZ-Fs-0xf"/>
-                                    <constraint firstAttribute="trailing" secondItem="5pt-y8-Cq2" secondAttribute="trailing" id="KIy-QX-ldG"/>
+                                    <constraint firstAttribute="trailing" secondItem="5pt-y8-Cq2" secondAttribute="trailing" constant="10" id="KIy-QX-ldG"/>
                                     <constraint firstAttribute="trailing" secondItem="DsW-qb-sJy" secondAttribute="trailing" id="Ljm-LL-YNz"/>
+                                    <constraint firstItem="MJ0-lr-m2w" firstAttribute="leading" secondItem="ZJd-Px-2ro" secondAttribute="trailing" constant="10" id="MRq-F6-Y2u"/>
                                     <constraint firstItem="ZJd-Px-2ro" firstAttribute="top" secondItem="5wY-0e-b2b" secondAttribute="bottom" constant="25" id="Nhc-Jw-Z7q"/>
                                     <constraint firstItem="hLk-R8-Lnv" firstAttribute="top" secondItem="wPP-n9-ffj" secondAttribute="bottom" id="OFu-RB-i4i"/>
                                     <constraint firstItem="0zp-NY-0AB" firstAttribute="leading" secondItem="vFV-sW-b6G" secondAttribute="leading" id="Qvd-aI-0Zr"/>
                                     <constraint firstAttribute="height" constant="667" id="R0B-tZ-PNC"/>
                                     <constraint firstAttribute="trailing" secondItem="vFV-sW-b6G" secondAttribute="trailing" id="U7y-I4-bjH"/>
                                     <constraint firstItem="wPP-n9-ffj" firstAttribute="top" secondItem="6d6-IL-8fr" secondAttribute="top" id="UUd-n8-JDO"/>
+                                    <constraint firstAttribute="trailing" secondItem="MJ0-lr-m2w" secondAttribute="trailing" constant="10" id="WuD-7F-Zd7"/>
+                                    <constraint firstItem="p5r-o1-mhz" firstAttribute="leading" secondItem="MJ0-lr-m2w" secondAttribute="leading" id="X04-hI-dA6"/>
                                     <constraint firstAttribute="trailing" secondItem="RmA-EB-uNU" secondAttribute="trailing" id="XHu-f2-JHA"/>
                                     <constraint firstItem="RmA-EB-uNU" firstAttribute="leading" secondItem="6d6-IL-8fr" secondAttribute="leading" id="alF-QG-7Dw"/>
                                     <constraint firstItem="DsW-qb-sJy" firstAttribute="leading" secondItem="0zp-NY-0AB" secondAttribute="leading" id="amN-ld-NoF"/>
                                     <constraint firstItem="ZJd-Px-2ro" firstAttribute="leading" secondItem="6d6-IL-8fr" secondAttribute="leading" constant="20" id="b3i-Jc-ubN"/>
+                                    <constraint firstItem="MJ0-lr-m2w" firstAttribute="top" secondItem="VoJ-p7-N2a" secondAttribute="bottom" constant="20" id="bwF-29-yX1"/>
                                     <constraint firstItem="VoJ-p7-N2a" firstAttribute="leading" secondItem="ZJd-Px-2ro" secondAttribute="trailing" constant="10" id="cSv-q5-gxc"/>
+                                    <constraint firstItem="p5r-o1-mhz" firstAttribute="top" secondItem="MJ0-lr-m2w" secondAttribute="bottom" constant="20" id="czr-9f-rKw"/>
                                     <constraint firstAttribute="bottom" secondItem="RmA-EB-uNU" secondAttribute="bottom" id="gAz-Zg-1Sc"/>
-                                    <constraint firstAttribute="trailing" secondItem="0zp-NY-0AB" secondAttribute="trailing" id="gMR-nu-zsX"/>
+                                    <constraint firstAttribute="trailing" secondItem="0zp-NY-0AB" secondAttribute="trailing" constant="10" id="gMR-nu-zsX"/>
                                     <constraint firstAttribute="trailing" secondItem="hLk-R8-Lnv" secondAttribute="trailing" id="iuo-ms-diO"/>
-                                    <constraint firstItem="vFV-sW-b6G" firstAttribute="top" secondItem="VoJ-p7-N2a" secondAttribute="bottom" constant="10" id="nDs-bw-PRz"/>
                                     <constraint firstItem="vFV-sW-b6G" firstAttribute="leading" secondItem="VoJ-p7-N2a" secondAttribute="leading" id="qvW-Iv-kU8"/>
                                     <constraint firstAttribute="trailing" secondItem="wPP-n9-ffj" secondAttribute="trailing" id="tRQ-rb-ewd"/>
                                     <constraint firstItem="wPP-n9-ffj" firstAttribute="leading" secondItem="6d6-IL-8fr" secondAttribute="leading" id="uXP-0Z-012"/>
                                     <constraint firstItem="5pt-y8-Cq2" firstAttribute="leading" secondItem="ZJd-Px-2ro" secondAttribute="trailing" id="vof-d4-qbH"/>
-                                    <constraint firstAttribute="trailing" secondItem="VoJ-p7-N2a" secondAttribute="trailing" constant="5" id="yOA-Me-hb4"/>
+                                    <constraint firstAttribute="trailing" secondItem="VoJ-p7-N2a" secondAttribute="trailing" constant="10" id="yOA-Me-hb4"/>
                                     <constraint firstItem="5wY-0e-b2b" firstAttribute="leading" secondItem="6d6-IL-8fr" secondAttribute="leading" constant="20" id="zW3-0h-PpW"/>
                                 </constraints>
                             </view>
@@ -1361,6 +1385,7 @@
                         <outlet property="dateReturnLabel" destination="DsW-qb-sJy" id="tIA-6y-2QB"/>
                         <outlet property="returnInLabel" destination="5pt-y8-Cq2" id="h70-Ad-wLt"/>
                         <outlet property="titleLabel" destination="5wY-0e-b2b" id="ILI-7m-edC"/>
+                        <outlet property="totalDaysLabel" destination="MJ0-lr-m2w" id="RWB-om-IfM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgh-ac-2ik" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1439,8 +1464,8 @@
                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You returned this book 3 days ago" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQi-B5-kvg">
-                                                    <rect key="frame" x="125" y="65" width="250" height="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have returned this book 311 days ago" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQi-B5-kvg">
+                                                    <rect key="frame" x="125" y="65" width="235" height="28"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.2057651579" green="0.65406084060000003" blue="0.45721101759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1453,10 +1478,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3P-b8-2B6" customClass="RoundView" customModule="LibraryX" customModuleProvider="target">
-                                                    <rect key="frame" x="125" y="89" width="100" height="26"/>
+                                                    <rect key="frame" x="125" y="103" width="100" height="26"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RETURNED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qes-9q-1aw">
-                                                            <rect key="frame" x="19" y="7.5" width="62" height="11"/>
+                                                            <rect key="frame" x="19.5" y="7.5" width="61.5" height="11"/>
                                                             <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="11"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1478,10 +1503,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yk-o2-QDf" customClass="RoundView" customModule="LibraryX" customModuleProvider="target">
-                                                    <rect key="frame" x="230" y="89" width="100" height="26"/>
+                                                    <rect key="frame" x="230" y="103" width="100" height="26"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YESTERDAY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRT-8c-vse">
-                                                            <rect key="frame" x="16.5" y="7.5" width="67" height="11"/>
+                                                            <rect key="frame" x="17" y="7.5" width="66.5" height="11"/>
                                                             <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="11"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1504,7 +1529,6 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="gQi-B5-kvg" secondAttribute="trailing" id="6Q3-9Y-r9n"/>
                                                 <constraint firstItem="R3P-b8-2B6" firstAttribute="leading" secondItem="8d9-H9-tMs" secondAttribute="trailing" constant="15" id="HWX-fg-eWV"/>
                                                 <constraint firstItem="gQi-B5-kvg" firstAttribute="leading" secondItem="8d9-H9-tMs" secondAttribute="trailing" constant="15" id="MIo-C7-EeW"/>
                                                 <constraint firstItem="8d9-H9-tMs" firstAttribute="leading" secondItem="EH2-3t-TC9" secondAttribute="leading" constant="15" id="NOu-Lg-8Sb"/>
@@ -1512,6 +1536,7 @@
                                                 <constraint firstItem="4yk-o2-QDf" firstAttribute="top" secondItem="gQi-B5-kvg" secondAttribute="bottom" constant="10" id="WBc-94-SLb"/>
                                                 <constraint firstItem="yHQ-jE-tDM" firstAttribute="leading" secondItem="8d9-H9-tMs" secondAttribute="trailing" constant="15" id="XAk-NS-adk"/>
                                                 <constraint firstItem="3JI-HE-Gas" firstAttribute="leading" secondItem="8d9-H9-tMs" secondAttribute="trailing" constant="15" id="cLP-pf-znq"/>
+                                                <constraint firstItem="gQi-B5-kvg" firstAttribute="trailing" secondItem="yHQ-jE-tDM" secondAttribute="trailing" id="f6y-lv-evM"/>
                                                 <constraint firstItem="yHQ-jE-tDM" firstAttribute="top" secondItem="3JI-HE-Gas" secondAttribute="bottom" constant="10" id="fin-Wy-cgG"/>
                                                 <constraint firstItem="8d9-H9-tMs" firstAttribute="top" secondItem="EH2-3t-TC9" secondAttribute="top" constant="13" id="lYv-YZ-nRn"/>
                                                 <constraint firstItem="3JI-HE-Gas" firstAttribute="top" secondItem="8d9-H9-tMs" secondAttribute="top" id="ler-WL-tse"/>
@@ -1536,19 +1561,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Activities Yet. Start Borrowing Now! 📚" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgM-UC-cyF">
+                                <rect key="frame" x="0.0" y="321" width="375" height="56"/>
+                                <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="28"/>
+                                <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9ii-dm-12W" firstAttribute="leading" secondItem="wQE-Yz-MCN" secondAttribute="leading" id="0gj-8p-JiD"/>
+                            <constraint firstItem="wQE-Yz-MCN" firstAttribute="trailing" secondItem="MgM-UC-cyF" secondAttribute="trailing" id="2vl-io-x1r"/>
                             <constraint firstItem="3xI-7j-1La" firstAttribute="centerY" secondItem="hpF-nx-wNR" secondAttribute="centerY" id="4kS-t3-zgf"/>
                             <constraint firstItem="wQE-Yz-MCN" firstAttribute="bottom" secondItem="8CS-45-XIy" secondAttribute="bottom" id="GNL-6k-syI"/>
                             <constraint firstAttribute="trailing" secondItem="xqk-iL-93O" secondAttribute="trailing" id="Gom-eN-EGO"/>
                             <constraint firstItem="9ii-dm-12W" firstAttribute="top" secondItem="LGB-JV-qg9" secondAttribute="top" id="Qv5-HQ-un1"/>
+                            <constraint firstItem="MgM-UC-cyF" firstAttribute="top" secondItem="3xI-7j-1La" secondAttribute="bottom" constant="250" id="ac7-NP-t7R"/>
                             <constraint firstItem="xqk-iL-93O" firstAttribute="top" secondItem="9ii-dm-12W" secondAttribute="bottom" id="adw-Xn-JDX"/>
                             <constraint firstItem="xqk-iL-93O" firstAttribute="leading" secondItem="LGB-JV-qg9" secondAttribute="leading" id="bey-N0-nwX"/>
                             <constraint firstItem="8CS-45-XIy" firstAttribute="top" secondItem="xqk-iL-93O" secondAttribute="bottom" id="cPx-AJ-vE8"/>
                             <constraint firstItem="3xI-7j-1La" firstAttribute="leading" secondItem="wQE-Yz-MCN" secondAttribute="leading" constant="10" id="ekt-xa-ePQ"/>
                             <constraint firstItem="wQE-Yz-MCN" firstAttribute="trailing" secondItem="8CS-45-XIy" secondAttribute="trailing" id="fVU-zU-qq0"/>
+                            <constraint firstItem="MgM-UC-cyF" firstAttribute="leading" secondItem="wQE-Yz-MCN" secondAttribute="leading" id="kK1-iB-kzC"/>
                             <constraint firstItem="8CS-45-XIy" firstAttribute="leading" secondItem="wQE-Yz-MCN" secondAttribute="leading" id="kqH-ZB-ejd"/>
                             <constraint firstItem="9ii-dm-12W" firstAttribute="trailing" secondItem="wQE-Yz-MCN" secondAttribute="trailing" id="mJT-HE-r7U"/>
                         </constraints>
@@ -1556,6 +1590,7 @@
                     </view>
                     <connections>
                         <outlet property="myTableView" destination="8CS-45-XIy" id="PGP-eI-Pns"/>
+                        <outlet property="noActLabel" destination="MgM-UC-cyF" id="fFK-4J-EAd"/>
                         <segue destination="Aas-5J-Mzm" kind="show" identifier="toMyBookSingleVC2" id="m5V-m6-IPF"/>
                     </connections>
                 </viewController>
@@ -1595,9 +1630,9 @@
         <image name="placeholder-Copy-3" width="420" height="420"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Cg-1E-cxh"/>
-        <segue reference="m5V-m6-IPF"/>
-        <segue reference="ZjM-Mg-zsf"/>
+        <segue reference="AyV-BF-ewb"/>
+        <segue reference="wpf-Db-Y0c"/>
+        <segue reference="CDq-Dk-u14"/>
         <segue reference="fyL-BG-KDd"/>
     </inferredMetricsTieBreakers>
 </document>

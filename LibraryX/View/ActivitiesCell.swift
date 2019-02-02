@@ -68,7 +68,8 @@ class ActivitiesCell: UITableViewCell {
                 returnInXLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
                 
             } else {
-                returnInXLabel.text = "You're late to return this book! ( \(day) days ago)."
+                let newDay = day * -1
+                returnInXLabel.text = "You're late to return this book! ( \(newDay) days ago)."
                 returnInXLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                 
             }
@@ -96,7 +97,8 @@ class ActivitiesCell: UITableViewCell {
             } else if day2 > 1 {
                 //impossible
             } else {
-                daysAgoLabel.text = "\(day2) DAYS AGO"
+                let newDay = day2 * -1
+                daysAgoLabel.text = "\(newDay) DAYS AGO"
             }
         }else if status == "returned"{
             statusLabel.text = "RETURNED"
@@ -122,13 +124,13 @@ class ActivitiesCell: UITableViewCell {
                 if formatter.string(from: date) == "Tomorrow"{
                     //
                 }else if formatter.string(from: date) == "Today"{
-                    returnInXLabel.text = "You returned this book today"
+                    returnInXLabel.text = "You have returned this book today"
                     returnInXLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
                     daysAgoLabel.text = "TODAY"
                     
                     
                 }else if formatter.string(from: date) == "Yesterday"{
-                    returnInXLabel.text = "You returned this book yesterday"
+                    returnInXLabel.text = "You have returned this book yesterday"
                     returnInXLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
                     daysAgoLabel.text = "YESTERDAY"
                     
@@ -136,9 +138,10 @@ class ActivitiesCell: UITableViewCell {
             } else if day > 1 {
                 //
             } else {
-                returnInXLabel.text = "You returned this book \(day) days ago"
+                let newDay = day * -1
+                returnInXLabel.text = "You have returned this book \(newDay) days ago"
                 returnInXLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
-                daysAgoLabel.text = "\(day) DAYS AGO"
+                daysAgoLabel.text = "\(newDay) DAYS AGO"
             }
             
         }

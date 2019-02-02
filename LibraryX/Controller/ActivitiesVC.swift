@@ -12,12 +12,14 @@ import FirebaseUI
 //myCell
 class ActivitiesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var bookArr = [BookTitleForProfileCell]()
-
+    @IBOutlet weak var noActLabel: UILabel!
+    
   //
     
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        noActLabel.isHidden = true
         myTableView.dataSource = self
         myTableView.delegate = self
         self.myTableView.tableFooterView = UIView()
@@ -31,12 +33,13 @@ class ActivitiesVC: UIViewController,UITableViewDelegate, UITableViewDataSource 
         }
         DataService.instance.everBorrow(uid: (Auth.auth().currentUser?.uid)!) { (ever) in
             if ever == true{
+                self.noActLabel.isHidden = true
                 DataService.instance.getAllActivities(uid: (Auth.auth().currentUser?.uid)!, handler: { (returnedActivities) in
                     self.bookArr = returnedActivities
                     self.myTableView.reloadData()
                 })
             }else{
-                
+                self.noActLabel.isHidden = false
             }
         }
     }

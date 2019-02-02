@@ -13,7 +13,7 @@ import FirebaseUI
 
 class MyBookSingleVC: UIViewController {
     var imgTitleInMS: Double = 0
-  
+
     var startBorrowDate: Double = 0
     var borrowUntilDate: Double = 0
     var actualReturnedDate: Double = 0
@@ -24,6 +24,7 @@ class MyBookSingleVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var actionBtn: UIButton!
     @IBOutlet weak var returnInLabel: UILabel!
+    @IBOutlet weak var totalDaysLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,12 +61,13 @@ class MyBookSingleVC: UIViewController {
             let date1 = NSDate(timeIntervalSince1970: returnedStartDate)
             let startDate = dayTimePeriodFormatter.string(from: date1 as Date)
             self.dateBorrowLabel.text = startDate
-
         }, until: { (returnedUntilDate) in
             self.borrowUntilDate = returnedUntilDate
             let date2 = NSDate(timeIntervalSince1970: returnedUntilDate)
             let untilDate = dayTimePeriodFormatter.string(from: date2 as Date)
             self.dateReturnLabel.text = untilDate
+            self.totalDaysLabel.text = "\(Int((self.borrowUntilDate - self.startBorrowDate)/86400)) DAYS" // to get total days from EPOCH
+
         }, title: { (returnedBookTitle) in
             self.titleLabel.text = returnedBookTitle
         }) { (returnedActualReturnedDate) in
@@ -84,21 +86,22 @@ class MyBookSingleVC: UIViewController {
                         formatter.timeStyle = .none
                         formatter.doesRelativeDateFormatting = true
                         if formatter.string(from: date) == "Tomorrow"{
-                            self.returnInLabel.text = "Return this book by Tomorrow"
+                            self.returnInLabel.text = "Return this book before or by tomorrow"
                             self.returnInLabel.textColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
                         }else if formatter.string(from: date) == "Today"{
-                            self.returnInLabel.text = "Return this book by Today"
+                            self.returnInLabel.text = "Return this book by today"
                             self.returnInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                             
                         }else if formatter.string(from: date) == "Yesterday"{
-                            self.returnInLabel.text = "You're late to return this book! (Yesterday)"
+                            self.returnInLabel.text = "You're late to return this book! (yesterday)"
                             self.returnInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                         }
                     } else if day > 1 {
-                        self.returnInLabel.text = "Return this book in \(day) days"
+                        self.returnInLabel.text = "You may return this book before or on the returning date (in \(day) days)."
                         self.returnInLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
                     } else {
-                        self.returnInLabel.text = "You're late to return this book! (\(day) days ago)"
+                        let newDay = day * -1
+                        self.returnInLabel.text = "You're late to return this book! (\(newDay) days ago)"
                         self.returnInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                     }
                 }
@@ -119,17 +122,18 @@ class MyBookSingleVC: UIViewController {
                     if formatter.string(from: date) == "Tomorrow"{
                         //
                     }else if formatter.string(from: date) == "Today"{
-                        self.returnInLabel.text  = "You returned this book Today"
+                        self.returnInLabel.text  = "You have returned this book today"
                         self.returnInLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
                         
                     }else if formatter.string(from: date) == "Yesterday"{
-                        self.returnInLabel.text  = "You returned this book Yesterday"
+                        self.returnInLabel.text  = "You have returned this book yesterday"
                         self.returnInLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
                     }
                 } else if day > 1 {
                     //
                 } else {
-                    self.returnInLabel.text  = "You returned this book \(day) days ago"
+                    let newDay = day * -1
+                    self.returnInLabel.text  = "You have returned this book \(newDay) days ago"
                     self.returnInLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
                 }
             }
