@@ -79,7 +79,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LibraryX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajb-eK-9fB">
-                                            <rect key="frame" x="66.5" y="10" width="158.5" height="50.5"/>
+                                            <rect key="frame" x="61.5" y="13.5" width="168" height="43"/>
                                             <fontDescription key="fontDescription" name="SoinSansNeue-Italic" family="Soin Sans Neue" pointSize="43"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -134,13 +134,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LibraryX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPI-0j-wMs">
-                                        <rect key="frame" x="20" y="119" width="335" height="51.5"/>
+                                        <rect key="frame" x="20" y="119" width="335" height="44"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Italic" family="Soin Sans Neue" pointSize="44"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BeA-yr-ZwS">
-                                        <rect key="frame" x="40" y="220.5" width="295" height="45"/>
+                                        <rect key="frame" x="40" y="213" width="295" height="45"/>
                                         <color key="backgroundColor" red="0.95972795050000004" green="0.95972795050000004" blue="0.95972795050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="mzB-hW-ttO"/>
@@ -150,7 +150,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dL6-HA-W7H">
-                                        <rect key="frame" x="40" y="273.5" width="295" height="45"/>
+                                        <rect key="frame" x="40" y="266" width="295" height="45"/>
                                         <color key="backgroundColor" red="0.95972795050000004" green="0.95972795050000004" blue="0.95972795050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="v59-8B-5Re"/>
@@ -160,7 +160,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn0-Dx-cVY">
-                                        <rect key="frame" x="40" y="343.5" width="295" height="50"/>
+                                        <rect key="frame" x="40" y="336" width="295" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.58999323839999995" blue="0.99930530790000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="KAX-Mb-q9g"/>
@@ -174,13 +174,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJO-Ya-WNW">
-                                        <rect key="frame" x="45" y="433.5" width="285" height="0.0"/>
+                                        <rect key="frame" x="45" y="426" width="285" height="0.0"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Light" family="Soin Sans Neue" pointSize="22"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tq0-dt-CbS">
-                                        <rect key="frame" x="10" y="408.5" width="355" height="33"/>
+                                        <rect key="frame" x="10" y="401" width="355" height="33"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Light" family="Soin Sans Neue" pointSize="18"/>
                                         <state key="normal" title="Sign In With QR Code Scan">
                                             <color key="titleColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -298,7 +298,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fw-uN-MGo">
-                                <rect key="frame" x="0.0" y="70.5" width="375" height="547.5"/>
+                                <rect key="frame" x="0.0" y="70.5" width="375" height="596.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VJ-64-s76">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="596.5"/>
@@ -362,13 +362,13 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Book Loves You" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCq-QA-KlS">
-                                                                    <rect key="frame" x="20" y="26" width="321" height="18"/>
+                                                                    <rect key="frame" x="20" y="26" width="321" height="21"/>
                                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="18"/>
                                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0t-Dw-khK" customClass="RoundView" customModule="LibraryX" customModuleProvider="target">
-                                                                    <rect key="frame" x="341" y="28" width="14" height="14"/>
+                                                                    <rect key="frame" x="341" y="29.5" width="14" height="14"/>
                                                                     <color key="backgroundColor" red="0.0" green="0.58999323839999995" blue="0.99930530790000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="14" id="8kz-rK-exK"/>
@@ -381,16 +381,16 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return this book in 133 days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyP-Qj-4tb">
-                                                                    <rect key="frame" x="20" y="54" width="340" height="19"/>
+                                                                    <rect key="frame" x="20" y="57" width="340" height="22.5"/>
                                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="19"/>
                                                                     <color key="textColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5L-Qh-FAC" customClass="RoundView" customModule="LibraryX" customModuleProvider="target">
-                                                                    <rect key="frame" x="20" y="83" width="100" height="26"/>
+                                                                    <rect key="frame" x="20" y="89.5" width="100" height="26"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BORROWED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs3-xW-1kr">
-                                                                            <rect key="frame" x="15.5" y="7.5" width="69.5" height="11"/>
+                                                                            <rect key="frame" x="18" y="6.5" width="64" height="13"/>
                                                                             <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="11"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -410,10 +410,10 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZg-DW-ZfF" customClass="RoundView" customModule="LibraryX" customModuleProvider="target">
-                                                                    <rect key="frame" x="125" y="83" width="100" height="26"/>
+                                                                    <rect key="frame" x="125" y="89.5" width="100" height="26"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130 DAYS AGO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiO-sh-TRD">
-                                                                            <rect key="frame" x="9.5" y="7.5" width="81" height="11"/>
+                                                                            <rect key="frame" x="11.5" y="6.5" width="77" height="13"/>
                                                                             <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="11"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -562,13 +562,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browse All Books" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfZ-TJ-Dhq">
-                                        <rect key="frame" x="10" y="40" width="355" height="22"/>
+                                        <rect key="frame" x="10" y="40" width="355" height="30"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qt-Js-SiK">
-                                        <rect key="frame" x="335" y="38.5" width="25" height="25"/>
+                                        <rect key="frame" x="335" y="42.5" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="8Ua-df-Z7L"/>
                                             <constraint firstAttribute="height" constant="25" id="Q7X-ps-Rlo"/>
@@ -583,7 +583,7 @@
                                 <constraints>
                                     <constraint firstItem="LfZ-TJ-Dhq" firstAttribute="leading" secondItem="mhW-T8-olB" secondAttribute="leading" constant="10" id="7Lu-kM-eBA"/>
                                     <constraint firstItem="7Qt-Js-SiK" firstAttribute="centerY" secondItem="LfZ-TJ-Dhq" secondAttribute="centerY" id="BLh-6W-PaF"/>
-                                    <constraint firstAttribute="bottom" secondItem="LfZ-TJ-Dhq" secondAttribute="bottom" constant="8" id="FeW-Yz-4FQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="LfZ-TJ-Dhq" secondAttribute="bottom" id="FeW-Yz-4FQ"/>
                                     <constraint firstAttribute="trailing" secondItem="LfZ-TJ-Dhq" secondAttribute="trailing" constant="10" id="HNS-LD-YgH"/>
                                     <constraint firstItem="LfZ-TJ-Dhq" firstAttribute="top" secondItem="mhW-T8-olB" secondAttribute="top" constant="40" id="It3-Bv-LYj"/>
                                     <constraint firstAttribute="trailing" secondItem="7Qt-Js-SiK" secondAttribute="trailing" constant="15" id="M7v-8k-08W"/>
@@ -592,7 +592,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LG-eH-Eru">
-                                <rect key="frame" x="15" y="38.5" width="25" height="25"/>
+                                <rect key="frame" x="15" y="42.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="AOt-hY-GSE"/>
                                     <constraint firstAttribute="width" constant="25" id="UHl-4T-ZSB"/>
@@ -603,7 +603,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="170" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ccc-e4-Rfr">
-                                <rect key="frame" x="0.0" y="145" width="375" height="473"/>
+                                <rect key="frame" x="0.0" y="161.5" width="375" height="456.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mycell" rowHeight="170" id="anh-dY-vzO" customClass="MainCell" customModule="LibraryX" customModuleProvider="target">
@@ -674,20 +674,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for book's title / author / genre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0k-w3-gxN">
-                                <rect key="frame" x="10" y="80" width="355" height="30"/>
-                                <color key="backgroundColor" red="0.89411764705882346" green="0.89803921568627454" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="4DZ-Tx-EjZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SoinSansNeue-Medium" family="Soin Sans Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJ8-0N-0Rr">
-                                <rect key="frame" x="0.0" y="120" width="375" height="25"/>
+                                <rect key="frame" x="0.0" y="136.5" width="375" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1w-bk-9Gb">
-                                        <rect key="frame" x="20" y="5" width="62" height="15"/>
+                                        <rect key="frame" x="20" y="5" width="60.5" height="15"/>
                                         <fontDescription key="fontDescription" name="SoinSansNeue-Medium" family="Soin Sans Neue" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -710,26 +701,35 @@
                                     <constraint firstAttribute="height" constant="0.29999999999999999" id="WBO-kf-pzr"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="Ao1-eD-mPD">
+                                <rect key="frame" x="0.0" y="75.5" width="375" height="56"/>
+                                <color key="backgroundColor" red="0.96999920685279184" green="0.96999920685279184" blue="0.96999920685279184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Harry Potter</string>
+                                    <string>Pachinko</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mhW-T8-olB" firstAttribute="top" secondItem="Crc-Io-RYb" secondAttribute="top" id="0f9-CY-zz5"/>
                             <constraint firstItem="mhW-T8-olB" firstAttribute="trailing" secondItem="fF9-b4-9ys" secondAttribute="trailing" id="3U4-wy-tk7"/>
                             <constraint firstItem="ccc-e4-Rfr" firstAttribute="leading" secondItem="fF9-b4-9ys" secondAttribute="leading" id="5AH-GS-aeo"/>
-                            <constraint firstItem="fF9-b4-9ys" firstAttribute="trailing" secondItem="b0k-w3-gxN" secondAttribute="trailing" constant="10" id="6xB-A9-3Vl"/>
-                            <constraint firstItem="b0k-w3-gxN" firstAttribute="top" secondItem="25z-55-FGK" secondAttribute="bottom" constant="9.5" id="7KP-0K-Tgj"/>
                             <constraint firstItem="fF9-b4-9ys" firstAttribute="bottom" secondItem="ccc-e4-Rfr" secondAttribute="bottom" id="CWe-pn-2g4"/>
                             <constraint firstItem="1LG-eH-Eru" firstAttribute="leading" secondItem="fF9-b4-9ys" secondAttribute="leading" constant="15" id="EUK-hV-xXk"/>
+                            <constraint firstItem="Ao1-eD-mPD" firstAttribute="leading" secondItem="fF9-b4-9ys" secondAttribute="leading" id="Gp1-6d-Ly5"/>
                             <constraint firstItem="ccc-e4-Rfr" firstAttribute="trailing" secondItem="fF9-b4-9ys" secondAttribute="trailing" id="Se7-jM-5R1"/>
                             <constraint firstItem="1LG-eH-Eru" firstAttribute="centerY" secondItem="LfZ-TJ-Dhq" secondAttribute="centerY" id="Sru-xM-P9a"/>
                             <constraint firstItem="mhW-T8-olB" firstAttribute="top" secondItem="Crc-Io-RYb" secondAttribute="top" id="Te1-hY-9B3"/>
+                            <constraint firstItem="QJ8-0N-0Rr" firstAttribute="top" secondItem="Ao1-eD-mPD" secondAttribute="bottom" constant="5" id="arE-lI-Jmq"/>
                             <constraint firstItem="QJ8-0N-0Rr" firstAttribute="leading" secondItem="fF9-b4-9ys" secondAttribute="leading" id="bH8-WT-xtn"/>
                             <constraint firstItem="25z-55-FGK" firstAttribute="top" secondItem="mhW-T8-olB" secondAttribute="bottom" id="l0F-Bi-cHe"/>
+                            <constraint firstItem="Ao1-eD-mPD" firstAttribute="top" secondItem="25z-55-FGK" secondAttribute="bottom" constant="5" id="n6d-gu-6Aa"/>
                             <constraint firstItem="ccc-e4-Rfr" firstAttribute="top" secondItem="QJ8-0N-0Rr" secondAttribute="bottom" id="nVU-R4-SRu"/>
                             <constraint firstItem="QJ8-0N-0Rr" firstAttribute="trailing" secondItem="fF9-b4-9ys" secondAttribute="trailing" id="pd1-k5-9f3"/>
                             <constraint firstItem="mhW-T8-olB" firstAttribute="leading" secondItem="fF9-b4-9ys" secondAttribute="leading" id="reB-fs-5ET"/>
-                            <constraint firstItem="QJ8-0N-0Rr" firstAttribute="top" secondItem="b0k-w3-gxN" secondAttribute="bottom" constant="10" id="sq4-KX-p5U"/>
-                            <constraint firstItem="b0k-w3-gxN" firstAttribute="leading" secondItem="fF9-b4-9ys" secondAttribute="leading" constant="10" id="tLr-PE-Ohh"/>
+                            <constraint firstItem="Ao1-eD-mPD" firstAttribute="trailing" secondItem="fF9-b4-9ys" secondAttribute="trailing" id="szY-5l-yS2"/>
                             <constraint firstItem="25z-55-FGK" firstAttribute="leading" secondItem="Crc-Io-RYb" secondAttribute="leading" id="x3R-pc-c98"/>
                             <constraint firstAttribute="trailing" secondItem="25z-55-FGK" secondAttribute="trailing" id="zz5-wt-gbJ"/>
                         </constraints>
@@ -740,7 +740,7 @@
                         <outlet property="allBookLabel" destination="d1w-bk-9Gb" id="ljn-h7-ahw"/>
                         <outlet property="headerView" destination="mhW-T8-olB" id="kRH-tg-s9h"/>
                         <outlet property="myTableView" destination="ccc-e4-Rfr" id="DTW-tr-AB4"/>
-                        <outlet property="searchField" destination="b0k-w3-gxN" id="6xU-LT-94d"/>
+                        <outlet property="searchBar" destination="Ao1-eD-mPD" id="VYI-uL-fqX"/>
                         <segue destination="OpJ-ya-oFp" kind="show" identifier="toScannerVC" id="o20-tE-XvH"/>
                         <segue destination="jzY-uJ-IGP" kind="show" identifier="toSingleBookVC" id="s2b-5X-x8V"/>
                     </connections>
@@ -1453,19 +1453,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed, 21 Jan 19" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JI-HE-Gas">
-                                                    <rect key="frame" x="125" y="13" width="235" height="12"/>
+                                                    <rect key="frame" x="125" y="13" width="235" height="14"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Light" family="Soin Sans Neue" pointSize="12"/>
                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Book Loves You" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHQ-jE-tDM">
-                                                    <rect key="frame" x="125" y="35" width="235" height="20"/>
+                                                    <rect key="frame" x="125" y="37" width="235" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="20"/>
                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have returned this book 311 days ago" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQi-B5-kvg">
-                                                    <rect key="frame" x="125" y="65" width="235" height="28"/>
+                                                    <rect key="frame" x="125" y="70.5" width="235" height="33"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.2057651579" green="0.65406084060000003" blue="0.45721101759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1478,10 +1478,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3P-b8-2B6" customClass="RoundView" customModule="LibraryX" customModuleProvider="target">
-                                                    <rect key="frame" x="125" y="103" width="100" height="26"/>
+                                                    <rect key="frame" x="125" y="113.5" width="100" height="26"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RETURNED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qes-9q-1aw">
-                                                            <rect key="frame" x="19.5" y="7.5" width="61.5" height="11"/>
+                                                            <rect key="frame" x="21" y="6.5" width="58.5" height="13"/>
                                                             <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="11"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1503,10 +1503,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yk-o2-QDf" customClass="RoundView" customModule="LibraryX" customModuleProvider="target">
-                                                    <rect key="frame" x="230" y="103" width="100" height="26"/>
+                                                    <rect key="frame" x="230" y="113.5" width="100" height="26"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YESTERDAY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRT-8c-vse">
-                                                            <rect key="frame" x="17" y="7.5" width="66.5" height="11"/>
+                                                            <rect key="frame" x="18.5" y="6.5" width="63" height="13"/>
                                                             <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="11"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1562,7 +1562,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Activities Yet. Start Borrowing Now! 📚" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgM-UC-cyF">
-                                <rect key="frame" x="0.0" y="321" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="321" width="375" height="65.5"/>
                                 <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="28"/>
                                 <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1630,9 +1630,9 @@
         <image name="placeholder-Copy-3" width="420" height="420"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AyV-BF-ewb"/>
-        <segue reference="wpf-Db-Y0c"/>
-        <segue reference="CDq-Dk-u14"/>
-        <segue reference="fyL-BG-KDd"/>
+        <segue reference="0Cg-1E-cxh"/>
+        <segue reference="m5V-m6-IPF"/>
+        <segue reference="o20-tE-XvH"/>
+        <segue reference="GjH-bW-fzr"/>
     </inferredMetricsTieBreakers>
 </document>

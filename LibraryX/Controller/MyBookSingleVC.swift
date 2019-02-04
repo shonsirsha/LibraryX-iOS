@@ -93,7 +93,7 @@ class MyBookSingleVC: UIViewController {
                             self.returnInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                             
                         }else if formatter.string(from: date) == "Yesterday"{
-                            self.returnInLabel.text = "You're late to return this book! (yesterday)"
+                            self.returnInLabel.text = "You're late to return this book (yesterday)! Return it soon!"
                             self.returnInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                         }
                     } else if day > 1 {
@@ -101,7 +101,11 @@ class MyBookSingleVC: UIViewController {
                         self.returnInLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
                     } else {
                         let newDay = day * -1
-                        self.returnInLabel.text = "You're late to return this book! (\(newDay) days ago)"
+                        let dateShouldReturn = NSDate(timeIntervalSince1970: self.borrowUntilDate)
+                        
+                        let dateShouldReturnString = dayTimePeriodFormatter.string(from: dateShouldReturn as Date)
+                        
+                        self.returnInLabel.text = "You're late to return this book (\(dateShouldReturnString), \(newDay) days ago)! Return it soon!"
                         self.returnInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                     }
                 }
@@ -133,7 +137,12 @@ class MyBookSingleVC: UIViewController {
                     //
                 } else {
                     let newDay = day * -1
-                    self.returnInLabel.text  = "You have returned this book \(newDay) days ago"
+                    let dateActualReturned = NSDate(timeIntervalSince1970: returnedActualReturnedDate)
+                    
+                    let dateActualReturnedString = dayTimePeriodFormatter.string(from: dateActualReturned as Date)
+                    
+                    self.returnInLabel.text  = "You have returned this book \(newDay) days ago (\(dateActualReturnedString))"
+                    
                     self.returnInLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
                 }
             }

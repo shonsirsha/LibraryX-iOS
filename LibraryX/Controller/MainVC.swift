@@ -10,14 +10,16 @@ import UIKit
 import Firebase
 var toMyAccVC = false
 
-class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate{
      var bookArr = [BookDetailForCell]()
+    var currentBookArr = [BookDetailForCell]()
   
     @IBOutlet weak var myTableView: UITableView!
-    @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var headerView: UIView!
-   
-
+    @IBOutlet weak var loadingLabel: UILabel!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var bookTotal = 0
     
     @IBOutlet weak var allBookLabel: UILabel!
@@ -26,10 +28,10 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
         myTableView.dataSource = self
         myTableView.delegate = self
-        
-        
-        
+        searchBar.delegate = self
+
         self.myTableView.tableFooterView = UIView()
+        self.searchBar.backgroundImage = UIImage()
       
     }
     
@@ -46,8 +48,9 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         
         DataService.instance.getAllBooks { (returnedEachBookObj) in
             self.bookArr = returnedEachBookObj
-            self.myTableView.reloadData()
+            self.currentBookArr = self.bookArr
             self.bookTotal = self.bookArr.count
+            self.myTableView.reloadData()
             self.allBookLabel.text = "All books (" + "\(self.bookTotal))"
         }
         
@@ -55,12 +58,12 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookArr.count
+        return currentBookArr.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = myTableView.dequeueReusableCell(withIdentifier: "mycell") as? MainCell else {return UITableViewCell()}
-        let eachBookObj = bookArr[indexPath.row]
+        let eachBookObj = currentBookArr[indexPath.row]
         var genresArr = [String]()
         
         genresArr.append(eachBookObj.genre1)
@@ -92,6 +95,23 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     @IBAction func toScanVC(_ sender: Any) {
         performSegue(withIdentifier: "toScannerVC", sender: self)
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            currentBookArr = bookArr
+            myTableView.reloadData()
+            allBookLabel.text = "All books (\(currentBookArr.count))"
+            return
+        }
+        currentBookArr = bookArr.filter({ (returnedBook) -> Bool in
+            guard let text = searchBar.text else {return false}
+            return returnedBook.bookTitle.lowercased().contains(text.lowercased())
+        })
+        myTableView.reloadData()
+        allBookLabel.text = "All books (\(currentBookArr.count))"
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let ixPath = myTableView.indexPathForSelectedRow{
             if segue.identifier == "toSingleBookVC"{
@@ -105,12 +125,18 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+
+    
+
+ 
+    
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toSingleBookVC", sender: self)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        searchField.resignFirstResponder()
     }
   
 }

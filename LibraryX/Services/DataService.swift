@@ -286,6 +286,16 @@ class DataService{
         }
     }
     
+    func getSearchedBooks(keyWord: String, handler: @escaping(_ eachBookObj: [BookDetailForCell])->()){
+        REF_BOOK.queryOrdered(byChild: "bookTitle").queryStarting(atValue: keyWord).queryEnding(atValue: "\(keyWord)\("uF7FF")").observe(DataEventType.value) { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            for book in snapshot{
+                print(book)
+            }
+            
+        }
+    }
+    
     func getAllBooks(handler: @escaping(_ eachBookObj: [BookDetailForCell])->()){ // browse book
         var allBooksArray = [BookDetailForCell]()
         var unwrappedGenre2 = ""
