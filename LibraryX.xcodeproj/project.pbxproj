@@ -48,6 +48,7 @@
 		B5891A7421F6D23C001248CB /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A7321F6D23C001248CB /* MainVC.swift */; };
 		B5891A7721F6D28F001248CB /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A7621F6D28F001248CB /* MainCell.swift */; };
 		B5891A7921F6DA70001248CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5891A7821F6DA70001248CB /* GoogleService-Info.plist */; };
+		B596D1452209E5EF00FCD15A /* MyTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596D1442209E5EF00FCD15A /* MyTabbarVC.swift */; };
 		B5CC5A782200A0EC005113AB /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC5A772200A0EC005113AB /* RoundView.swift */; };
 		B5D6233721FF6AF600993DB5 /* BookTitleForProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6233621FF6AF600993DB5 /* BookTitleForProfileCell.swift */; };
 		B5DF6A1821F7810C00C93D56 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A1721F7810C00C93D56 /* AuthVC.swift */; };
@@ -108,6 +109,7 @@
 		B5891A7321F6D23C001248CB /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		B5891A7621F6D28F001248CB /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		B5891A7821F6DA70001248CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B596D1442209E5EF00FCD15A /* MyTabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabbarVC.swift; sourceTree = "<group>"; };
 		B5CC5A772200A0EC005113AB /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		B5D6233621FF6AF600993DB5 /* BookTitleForProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTitleForProfileCell.swift; sourceTree = "<group>"; };
 		B5DF6A1721F7810C00C93D56 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				B55C3BA82200265200E111C1 /* MyBookSingleVC.swift */,
 				B585150B2202BEE40023DF1E /* ActivitiesVC.swift */,
 				B585150F220340580023DF1E /* ScanToLoginVC.swift */,
+				B596D1442209E5EF00FCD15A /* MyTabbarVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -311,7 +314,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "libraryX" */;
+			buildConfigurationList = B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "LibraryX" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -430,6 +433,7 @@
 				B5891A7421F6D23C001248CB /* MainVC.swift in Sources */,
 				B524D4FF21F778C400EA5AF7 /* AuthService.swift in Sources */,
 				B50AB12C21F8BC8B004B3B1A /* Handy.swift in Sources */,
+				B596D1452209E5EF00FCD15A /* MyTabbarVC.swift in Sources */,
 				B5891A7721F6D28F001248CB /* MainCell.swift in Sources */,
 				B524D4FD21F776AA00EA5AF7 /* LoginVC.swift in Sources */,
 				B5585D7D21FDEE9F0044F2AD /* SegueFromLeft.swift in Sources */,
@@ -632,7 +636,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "libraryX" */ = {
+		B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "LibraryX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5891A4621F6BAE2001248CB /* Debug */,

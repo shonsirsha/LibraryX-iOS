@@ -23,23 +23,35 @@ class SingleBookVC: UIViewController {
     var bookTitle = ""
     var authorName = ""
     var year = ""
+    var startDate: Double = 0
+    var currentlyBorrowing = false
     
     @IBOutlet weak var bookImgView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        DataService.instance.getABookStatus(imgTitleInMS: imgTitleinMs) { (returnedBookStatus) in
-            if returnedBookStatus == "avail"{
+       
+        DataService.instance.getABookStatus(imgTitleInMS: imgTitleinMs) { (returnedArr) in
+            if returnedArr[1] == "avail"{ // 1 is status, 0 is aisle place.
+                self.currentlyBorrowing = false
                 self.toScanVCbtn.isHidden = false
+                self.toScanVCbtn.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
+                self.toScanVCbtn.setTitle("Scan & Borrow!", for: UIControl.State.normal)
                 self.statusLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
-                self.statusLabel.text = "Available at aisle number: C2051"
+                self.statusLabel.text = "Available at aisle number: \(returnedArr[0])"
             }else{
                 DataService.instance.amIBorrowing(uid: (Auth.auth().currentUser?.uid)!, imgTitleInMS: self.imgTitleinMs, statusBorrowing: { (returnedStatus) in
                     if returnedStatus == "borrow"{
-                        self.toScanVCbtn.isHidden = true
-                        self.statusLabel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-                        self.statusLabel.text = "You are currently borrowing this book."
+                        DataService.instance.getLastBookDetailFromActivity(uid: (Auth.auth().currentUser?.uid)!, imgTitleInMS: self.imgTitleinMs, bookStart: { (returnedStartDate) in
+                            self.startDate = returnedStartDate
+                            self.currentlyBorrowing = true
+                            self.toScanVCbtn.backgroundColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
+                            self.toScanVCbtn.isHidden = false
+                            self.toScanVCbtn.setTitle("See Borrowing Details", for: UIControl.State.normal)
+                            self.statusLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
+                            self.statusLabel.text = "You are currently borrowing this book."
+                        })
+                       
                     }else{
                         self.toScanVCbtn.isHidden = true
                         self.statusLabel.textColor = #colorLiteral(red: 1, green: 0.148809104, blue: 0.2488994031, alpha: 1)
@@ -51,8 +63,9 @@ class SingleBookVC: UIViewController {
             DataService.instance.getGenresFromImgTitle(imgTitleInMS: self.imgTitleinMs) { (returnedGenresStr) in
                 self.genreLabel.text = "Genres: \(returnedGenresStr)"
             }
-
         }
+        
+       
         
         self.titleLabel.numberOfLines = 0
         self.titleLabel.lineBreakMode = .byWordWrapping
@@ -82,12 +95,31 @@ class SingleBookVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func actionBtn(_ sender: Any) {
+        if currentlyBorrowing == false{
+            performSegue(withIdentifier: "toScanVC", sender: self)
+        }else{
+            performSegue(withIdentifier: "toMySingleBookVC", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMySingleBookVC"{
+            if let myBookSingleVC = segue.destination as? MyBookSingleVC {
+                myBookSingleVC.imgTitleInMS = imgTitleinMs
+                myBookSingleVC.startBorrowDate = startDate
+                
+        }
+    }
+        
+    }
+    
     @IBAction func closeBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        if toMyAccVC == true{
+        if toMyAccVC == true || toScanVCReturn == true{
             dismiss(animated: true, completion: nil)
         }
     }

@@ -330,15 +330,54 @@ class DataService{
         }
     }
     
-    func getABookStatus(imgTitleInMS: Double, handler: @escaping(_ status: String)->()){
+    func getABookStatus(imgTitleInMS: Double, handler: @escaping(_ status: [String])->()){
         REF_BOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observe(DataEventType.value) { (snapshot) in
-            
+            var theBook = [String]()
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
            
             for book in snapshot{
                 let status = book.childSnapshot(forPath: "status").value as! String
+                let availAt = book.childSnapshot(forPath: "availAt").value as! String
                 print(status)
-                handler(status)
+                if status == "avail"{
+                    theBook.append(availAt)
+                    
+                }else{
+                    theBook.append("")
+
+                }
+                
+                theBook.append(status)
+                print(theBook)
+                handler(theBook)
+
+            }
+            
+        }
+        
+    }
+    
+    func getLastBookDetailFromActivity(uid: String, imgTitleInMS: Double, bookStart: @escaping(_ start: Double)->()){ //book start borrowing is diff for each books, it's being used as an ID here. Biggest borrowing value means the latest of that book with that imgTitleInMS.
+        var allStartBook = [Double]()
+        var theBook: Double = 0.0
+        REF_USER.child(uid).child("mybooks").queryOrdered(byChild: "bookImgTitleInMS").queryEqual(toValue: imgTitleInMS).observe(DataEventType.value) { (snapshot) in
+            
+            if snapshot.exists(){
+                guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+                
+                for book in snapshot{
+                    let start = book.childSnapshot(forPath: "start").value as! Double
+                    allStartBook.append(start)
+                }
+                
+                if allStartBook.count > 1{
+                    theBook = allStartBook.max()!
+                }else{
+                    theBook = allStartBook[0]
+                }
+                
+                bookStart(theBook)
+
             }
             
         }

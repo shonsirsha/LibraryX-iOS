@@ -69,7 +69,7 @@ class ActivitiesCell: UITableViewCell {
                 
             } else {
                 let newDay = day * -1
-                returnInXLabel.text = "You're late to return this book! ( \(newDay) days ago)."
+                returnInXLabel.text = "You're late to return this book! ( \(newDay) days ago)"
                 returnInXLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                 
             }

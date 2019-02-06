@@ -38,7 +38,7 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        if toMyAccVC == true{
+        if toMyAccVC == true || toScanVCReturn == true{
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let vc: UITabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
             vc.selectedIndex = 1

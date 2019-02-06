@@ -30,7 +30,6 @@ class AfterBarcodeVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
       //
         DataService.instance.scannedBookFromImgTitle(imgTitleinMS: imgTitleInMS, myBookTitle: { (returnedBookTitle) in
             let reference = STORAGE.child("bookPics/\(Int(self.imgTitleInMS))")
@@ -38,8 +37,9 @@ class AfterBarcodeVC: UIViewController {
             self.bookImgView.sd_setImage(with: reference, placeholderImage: placeholderImage)
         self.titleLabel.text = returnedBookTitle
         }) { (returnedMaxDays) in
-            DataService.instance.getABookStatus(imgTitleInMS: self.imgTitleInMS, handler: { (returnedStatus) in
-                if returnedStatus == "avail"{ // available for borrowment
+           
+            DataService.instance.getABookStatus(imgTitleInMS: self.imgTitleInMS, handler: { (returnedArr) in
+                if returnedArr[1] == "avail"{ // 1 is status, 0 is aisle
                     self.statusBook = "gonnaBorrow"
                     self.maxDays = returnedMaxDays
                     self.maxDaysLabel.text = "Maximum: \(returnedMaxDays) days"
@@ -49,7 +49,7 @@ class AfterBarcodeVC: UIViewController {
                     self.addBtn.isHidden = false
                     self.borrowingPeriodPlaceholder.text = "Borrowing period (days):"
                     self.borrowBtn.isHidden = false
-
+                    
                 }else{
                     DataService.instance.amIBorrowing(uid: (Auth.auth().currentUser?.uid)!, imgTitleInMS: self.imgTitleInMS, statusBorrowing: { (status) in
                         if status == "borrow"{
@@ -71,10 +71,11 @@ class AfterBarcodeVC: UIViewController {
                             self.maxDaysLabel.text = ""
                             self.daysLabel.text = ""
                         }
+                        
                     })
-                   
-
+                    
                 }
+
             })
             
         }
@@ -126,3 +127,4 @@ class AfterBarcodeVC: UIViewController {
     }
     
 }
+
