@@ -391,7 +391,9 @@ class DataService{
             for book in snapshot{
                 bookKey = book.key
             }
-            self.REF_BOOK.child(bookKey).updateChildValues(["start":start, "until":until, "status":"no"])
+            self.REF_BOOK.child(bookKey).updateChildValues(["start":start, "until":until, "status":"no", "borrowedBy":(Auth.auth().currentUser?.uid)!])
+            
+            self.REF_BOOK.child(bookKey).child("history").childByAutoId().updateChildValues(["start":start, "until":until, "borrowedBy":(Auth.auth().currentUser?.uid)!, "actualReturned": start, "bookImgTitleInMS": imgTitleInMS, "status": "borrowed"])
             self.REF_USER.child(uid).child("mybooks").childByAutoId().updateChildValues(["start":start, "until":until, "title":title ,"bookImgTitleInMS":imgTitleInMS, "status":"borrowing", "hasOpened": 0, "actualReturned": start])
         })
         
@@ -404,20 +406,31 @@ class DataService{
         REF_BOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
             var bookKey = ""
-            var myboookKey = ""
+            var myBookKey = ""
+            var myBookKey2 = ""
             for book in snapshot{
                 bookKey = book.key
             }
-            self.REF_BOOK.child(bookKey).updateChildValues(["start":0, "until":0, "status":"avail"])
+        self.REF_BOOK.child(bookKey).updateChildValues(["actualReturned":actualReturned,"status":"avail"])
             
-            self.REF_USER.child(uid).child("mybooks").queryOrdered(byChild: "bookImgTitleInMS").queryEqual(toValue: imgTitleInMS).observe(DataEventType.value, with: { (snapshot) in
+            self.REF_BOOK.child(bookKey).child("history").queryOrdered(byChild: "bookImgTitleInMS").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
                 guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
                 
-                for book2 in snapshot{
-                    myboookKey = book2.key
-                     self.REF_USER.child(uid).child("mybooks").child(myboookKey).updateChildValues(["status":"returned", "actualReturned": actualReturned])
+                for book in snapshot{
+                    myBookKey2 = book.key
+                    
                 }
+                self.REF_BOOK.child(bookKey).child("history").child(myBookKey2).updateChildValues(["status": "returned", "actualReturned": actualReturned])
+            })
+            
+            self.REF_USER.child(uid).child("mybooks").queryOrdered(byChild: "bookImgTitleInMS").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
                 
+                guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+                
+                for book in snapshot{
+                    myBookKey = book.key
+                    self.REF_USER.child(uid).child("mybooks").child(myBookKey).updateChildValues(["status":"returned", "actualReturned": actualReturned])
+                }
             })
            
         })
