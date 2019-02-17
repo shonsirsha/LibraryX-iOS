@@ -54,22 +54,36 @@ class ActivitiesCell: UITableViewCell {
                 if formatter.string(from: date) == "Tomorrow"{
                     returnInXLabel.text = "Return this book by tomorrow"
                     returnInXLabel.textColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+                    statusPill.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+                    daysAgoPill.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
                     
                 }else if formatter.string(from: date) == "Today"{
                     returnInXLabel.text = "Return this book by today"
                     returnInXLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                     
                 }else if formatter.string(from: date) == "Yesterday"{
-                    returnInXLabel.text = "You're late to return this book! (yesterday)"
+                    DataService.instance.updateLateStatus(start: start)
+                    returnInXLabel.text = "NEEDS ATTENTION: You're LATE to return this book! (yesterday)"
+                    statusPill.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+                    daysAgoPill.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                     returnInXLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                 }
             } else if day > 1 {
                 returnInXLabel.text = "Return this book in \(day) days"
-                returnInXLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
+                if day <= 3{
+                    returnInXLabel.textColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+                    statusPill.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+                    daysAgoPill.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+                }else{
+                    returnInXLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
+                }
                 
             } else {
+                DataService.instance.updateLateStatus(start: start)
                 let newDay = day * -1
-                returnInXLabel.text = "You're late to return this book! ( \(newDay) days ago)"
+                returnInXLabel.text = "NEEDS ATTENTION: You're LATE to return this book! ( \(newDay) days ago)"
+                statusPill.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+                daysAgoPill.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                 returnInXLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                 
             }

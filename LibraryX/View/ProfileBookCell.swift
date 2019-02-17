@@ -44,29 +44,44 @@ class ProfileBookCell: UITableViewCell {
                 if formatter.string(from: date) == "Tomorrow"{
                     returningInLabel.text = "Return this book by tomorrow"
                     returningInLabel.textColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+                    borrowingPillView.backgroundColor = #colorLiteral(red: 0.953255713, green: 0.6880678535, blue: 0.1318447292, alpha: 1)
+                    daysAgoPillView.backgroundColor = #colorLiteral(red: 0.953255713, green: 0.6880678535, blue: 0.1318447292, alpha: 1)
                     returningInLabel.setSizeFont(sizeFont: 15)
 
                 }else if formatter.string(from: date) == "Today"{
                     returningInLabel.text = "Return this book by today"
                     returningInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+                    borrowingPillView.backgroundColor = #colorLiteral(red: 0.9992764592, green: 0.1491982341, blue: 0.001906163059, alpha: 1)
+                    daysAgoPillView.backgroundColor = #colorLiteral(red: 0.9992764592, green: 0.1491982341, blue: 0.001906163059, alpha: 1)
                     returningInLabel.setSizeFont(sizeFont: 15)
 
                 }else if formatter.string(from: date) == "Yesterday"{
-                    returningInLabel.text = "You're late to return this book! (yesterday)"
+                    //late by yesterday (1 day)
+                    DataService.instance.updateLateStatus(start: start)
+                    returningInLabel.text = "NEEDS ATTENTION!"
+                    borrowingPillView.backgroundColor = #colorLiteral(red: 0.9992764592, green: 0.1491982341, blue: 0.001906163059, alpha: 1)
+                    daysAgoPillView.backgroundColor = #colorLiteral(red: 0.9992764592, green: 0.1491982341, blue: 0.001906163059, alpha: 1)
                     returningInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-                    returningInLabel.setSizeFont(sizeFont: 15)
+                    returningInLabel.setSizeFont(sizeFont: 20)
                 }
             } else if day > 1 {
                 returningInLabel.text = "Return this book in \(day) days"
-                returningInLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
+                if day <= 3{
+                    returningInLabel.textColor = #colorLiteral(red: 0.953255713, green: 0.6880678535, blue: 0.1318447292, alpha: 1)
+                    borrowingPillView.backgroundColor = #colorLiteral(red: 0.953255713, green: 0.6880678535, blue: 0.1318447292, alpha: 1)
+                    daysAgoPillView.backgroundColor = #colorLiteral(red: 0.953255713, green: 0.6880678535, blue: 0.1318447292, alpha: 1)
+                }else{
+                    returningInLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
+                }
                 returningInLabel.setSizeFont(sizeFont: 15)
 
-            } else {
-                let newDay = day * -1
-                returningInLabel.text = "You're late to return this book! ( \(newDay) days ago)."
+            }else{
+                DataService.instance.updateLateStatus(start: start)
+                returningInLabel.text = "NEEDS ATTENTION!"
+                borrowingPillView.backgroundColor = #colorLiteral(red: 0.9992764592, green: 0.1491982341, blue: 0.001906163059, alpha: 1)
+                daysAgoPillView.backgroundColor = #colorLiteral(red: 0.9992764592, green: 0.1491982341, blue: 0.001906163059, alpha: 1)
                 returningInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-                returningInLabel.setSizeFont(sizeFont: 15)
-
+                returningInLabel.setSizeFont(sizeFont: 20)
             }
             
             let calendar2 = Calendar.current

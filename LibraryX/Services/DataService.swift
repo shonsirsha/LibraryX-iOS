@@ -66,6 +66,16 @@ class DataService{
         }
     }
     
+    func checkIfUserDeleted(uid: String, myPassword: @escaping(_ pw: String)->()){
+        REF_USER.queryOrdered(byChild: "uid").queryEqual(toValue: uid).observe(DataEventType.value) { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else{return}
+            for user in snapshot{
+                let pw = user.childSnapshot(forPath: "password").value as! String
+                myPassword(pw)
+            }
+        }
+    }
+    
     func getGenresFromImgTitle(imgTitleInMS: Double, myGenresInStr: @escaping(_ genres: String)->()){
         var allGenres = [String]()
         var unwrappedGenre2 = ""
@@ -98,24 +108,30 @@ class DataService{
         }
     }
     
-    func scannedBookFromImgTitle(imgTitleinMS: Double, myBookTitle: @escaping(_ bookTitle: String)->(), maximumBorrow: @escaping(_ max: Int)->()){ //qrcode is image title in ms
-      
+    func scannedBookFromImgTitle(imgTitleinMS: Double, bookStatusAndTitleHandler: @escaping(_ bookStatusAndTitleHandler: [String])->(), maximumBorrow: @escaping(_ max: Int)->()){ //qrcode is image title in ms
+      var bookStatusAndTitle = [String]()
+        
         REF_BOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleinMS).observe(DataEventType.value) { (snapshot) in
             if snapshot.exists(){
                 guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
-                
+                print("kodk")
                 for book in snapshot{
-                    
+                   
+                    let status = book.childSnapshot(forPath: "status").value as! String
                     let bookTitle = book.childSnapshot(forPath: "bookTitle").value as! String
-                    
                     let max = book.childSnapshot(forPath: "max").value as! Int
                     
                     
-                    myBookTitle(bookTitle)
+                    bookStatusAndTitle.append(status)
+                    bookStatusAndTitle.append(bookTitle)
+                    bookStatusAndTitleHandler(bookStatusAndTitle)
                     maximumBorrow(max)
                 }
             }else{
-                myBookTitle("")
+                print("Kodok2")
+                bookStatusAndTitle.append("")
+                bookStatusAndTitle.append("")
+                bookStatusAndTitleHandler(bookStatusAndTitle)
                 maximumBorrow(0)
             }
             
@@ -175,8 +191,9 @@ class DataService{
     func get10RecentActivities(uid: String, handler: @escaping(_ eachBookObj: [BookTitleForProfileCell])->()){
         REF_USER.child(uid).child("mybooks").queryOrdered(byChild: "actualReturned").queryLimited(toFirst: 10).observe(DataEventType.value) { (snapshot) in
             var bookTitlesArr = [BookTitleForProfileCell]()
-
+            var needsAttentionBookArr = [BookTitleForProfileCell]()
             if snapshot.exists(){
+      
                 guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
                 
                 for book in snapshot{
@@ -187,16 +204,21 @@ class DataService{
                     let hasOpened = book.childSnapshot(forPath: "hasOpened").value as! Int
                     let status = book.childSnapshot(forPath: "status").value as! String
                     let actualReturned = book.childSnapshot(forPath: "actualReturned").value as! Double
+                    let late = book.childSnapshot(forPath: "late").value as! String
                     print(book)
                     let bookTitleObj = BookTitleForProfileCell(bookTitle: bookTitle, imgTitleInMS: imgTitleInMS, start: startDate, until: untilDate, opened: hasOpened, status: status, actualReturned: actualReturned)
                    
-                    
-                    bookTitlesArr.append(bookTitleObj)
+                    if late == "no"{
+                        bookTitlesArr.append(bookTitleObj)
+                    }else{
+                        needsAttentionBookArr.append(bookTitleObj)
+                    }
                 }
                 
-                
+                bookTitlesArr.append(contentsOf:needsAttentionBookArr)
                 handler(bookTitlesArr.reversed())
                 bookTitlesArr = [BookTitleForProfileCell]()
+                needsAttentionBookArr = [BookTitleForProfileCell]()
                 
             }else{ // no book borrowed yet
             }
@@ -205,8 +227,8 @@ class DataService{
     }
     
     func getUnamePwForScannedLogin(scannedUid: String, email: @escaping(_ email: String)->(), password: @escaping(_ password: String)->()){
-        REF_USER.queryOrdered(byChild: "uid").queryEqual(toValue: scannedUid).observe(DataEventType.value) { (snapshot) in
-             if snapshot.exists(){
+        REF_USER.queryOrdered(byChild: "uid").queryEqual(toValue: scannedUid).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            if snapshot.exists(){
                 guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
                 
                 for user in snapshot{
@@ -215,18 +237,19 @@ class DataService{
                     email(returnedEmail)
                     password(returnedPassword)
                 }
-             }else{
+            }else{
                 email("")
                 password("")
             }
-    }
+        })
+        
         
     }
     
     func getAllActivities(uid: String, handler: @escaping(_ eachBookObj: [BookTitleForProfileCell])->()){ // for ActivitesCell
         REF_USER.child(uid).child("mybooks").queryOrdered(byChild: "actualReturned").observe(DataEventType.value) { (snapshot) in
             var bookTitlesArr = [BookTitleForProfileCell]()
-            
+            var needsAttentionBookArr = [BookTitleForProfileCell]()
             if snapshot.exists(){
                 guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
                 
@@ -238,13 +261,17 @@ class DataService{
                     let hasOpened = book.childSnapshot(forPath: "hasOpened").value as! Int
                     let status = book.childSnapshot(forPath: "status").value as! String
                     let actualReturned = book.childSnapshot(forPath: "actualReturned").value as! Double
+                    let late = book.childSnapshot(forPath: "late").value as! String
                     let bookTitleObj = BookTitleForProfileCell(bookTitle: bookTitle, imgTitleInMS: imgTitleInMS, start: startDate, until: untilDate, opened: hasOpened, status: status, actualReturned: actualReturned)
                     
-                    
-                    bookTitlesArr.append(bookTitleObj)
+                    if late == "no"{
+                        bookTitlesArr.append(bookTitleObj)
+                    }else{
+                        needsAttentionBookArr.append(bookTitleObj)
+                    }
                 }
                 
-                
+                bookTitlesArr.append(contentsOf: needsAttentionBookArr)
                 handler(bookTitlesArr.reversed())
                 bookTitlesArr = [BookTitleForProfileCell]()
                 
@@ -304,24 +331,28 @@ class DataService{
         REF_BOOK.queryOrdered(byChild: "genre1").observe(DataEventType.value) { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
             for book in snapshot{
-                let bookTitle = book.childSnapshot(forPath: "bookTitle").value as! String
-                let authorName = book.childSnapshot(forPath: "authorName").value as! String
-                let genre1 = book.childSnapshot(forPath: "genre1").value as! String
-                if let genre2 = book.childSnapshot(forPath: "genre2").value as? String {
-                    unwrappedGenre2 = genre2
+                let bookStatus = book.childSnapshot(forPath: "status").value as! String
+                if bookStatus != "del"{
+                    let bookTitle = book.childSnapshot(forPath: "bookTitle").value as! String
+                    let authorName = book.childSnapshot(forPath: "authorName").value as! String
+                    let genre1 = book.childSnapshot(forPath: "genre1").value as! String
+                    if let genre2 = book.childSnapshot(forPath: "genre2").value as? String {
+                        unwrappedGenre2 = genre2
+                    }
+                    if let genre3 = book.childSnapshot(forPath: "genre3").value as? String {
+                        unwrappedGenre3 = genre3
+                    }
+                    if let year = book.childSnapshot(forPath: "year").value as? String {
+                        unwrappedYear = year
+                    }
+                    let imgTitle = book.childSnapshot(forPath: "image").value as! Double
+                    
+                    let book = BookDetailForCell(bookTitle: bookTitle, authorName: authorName, genre1: genre1, genre2: unwrappedGenre2, genre3: unwrappedGenre3, year: unwrappedYear, imgTitle: imgTitle)
+                    
+                    
+                    allBooksArray.append(book)
                 }
-                if let genre3 = book.childSnapshot(forPath: "genre3").value as? String {
-                    unwrappedGenre3 = genre3
-                }
-                if let year = book.childSnapshot(forPath: "year").value as? String {
-                    unwrappedYear = year
-                }
-                let imgTitle = book.childSnapshot(forPath: "image").value as! Double
                 
-                let book = BookDetailForCell(bookTitle: bookTitle, authorName: authorName, genre1: genre1, genre2: unwrappedGenre2, genre3: unwrappedGenre3, year: unwrappedYear, imgTitle: imgTitle)
-                
-                
-                allBooksArray.append(book)
             }
             
             handler(allBooksArray)
@@ -391,10 +422,18 @@ class DataService{
             for book in snapshot{
                 bookKey = book.key
             }
-            self.REF_BOOK.child(bookKey).updateChildValues(["start":start, "until":until, "status":"no", "borrowedBy":(Auth.auth().currentUser?.uid)!])
+            self.REF_USER.queryOrdered(byChild: "uid").queryEqual(toValue: (Auth.auth().currentUser?.uid)!).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+                guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+                var fullName = ""
+                for user in snapshot{
+                    fullName = user.childSnapshot(forPath: "fullName").value as! String
+                }
+                self.REF_BOOK.child(bookKey).updateChildValues(["start":start, "until":until, "status":"no", "borrowedBy":(Auth.auth().currentUser?.uid)!])
+                
+                self.REF_BOOK.child(bookKey).child("history").childByAutoId().updateChildValues(["start":start, "until":until, "borrowedBy":(Auth.auth().currentUser?.uid)!, "actualReturned": start, "bookImgTitleInMS": imgTitleInMS, "status": "borrowed", "fullname":fullName])
+                self.REF_USER.child(uid).child("mybooks").childByAutoId().updateChildValues(["start":start, "until":until, "title":title ,"bookImgTitleInMS":imgTitleInMS, "status":"borrowing", "hasOpened": 0, "actualReturned": start, "late": "no"])
+            })
             
-            self.REF_BOOK.child(bookKey).child("history").childByAutoId().updateChildValues(["start":start, "until":until, "borrowedBy":(Auth.auth().currentUser?.uid)!, "actualReturned": start, "bookImgTitleInMS": imgTitleInMS, "status": "borrowed"])
-            self.REF_USER.child(uid).child("mybooks").childByAutoId().updateChildValues(["start":start, "until":until, "title":title ,"bookImgTitleInMS":imgTitleInMS, "status":"borrowing", "hasOpened": 0, "actualReturned": start])
         })
         
         
@@ -429,7 +468,7 @@ class DataService{
                 
                 for book in snapshot{
                     myBookKey = book.key
-                    self.REF_USER.child(uid).child("mybooks").child(myBookKey).updateChildValues(["status":"returned", "actualReturned": actualReturned])
+                    self.REF_USER.child(uid).child("mybooks").child(myBookKey).updateChildValues(["status":"returned", "actualReturned": actualReturned, "late": "no"])
                 }
             })
            
@@ -437,6 +476,20 @@ class DataService{
         
         
         
+    }
+    
+    func updateLateStatus(start: Double){
+        var myBookKey = ""
+
+        self.REF_USER.child((Auth.auth().currentUser?.uid)!).child("mybooks").queryOrdered(byChild: "start").queryEqual(toValue: start).observeSingleEvent(of: DataEventType.value) { (snapshot) in
+            
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            
+            for book in snapshot{
+                myBookKey = book.key
+                self.REF_USER.child((Auth.auth().currentUser?.uid)!).child("mybooks").child(myBookKey).updateChildValues(["late": "yes"])
+            }
+        }
     }
     
     

@@ -31,11 +31,11 @@ class AfterBarcodeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       //
-        DataService.instance.scannedBookFromImgTitle(imgTitleinMS: imgTitleInMS, myBookTitle: { (returnedBookTitle) in
+        DataService.instance.scannedBookFromImgTitle(imgTitleinMS: imgTitleInMS, bookStatusAndTitleHandler: { (returnedBookStatusAndTitleArr) in
             let reference = STORAGE.child("bookPics/\(Int(self.imgTitleInMS))")
             let placeholderImage = UIImage(named: "placeholder-Copy-3")
             self.bookImgView.sd_setImage(with: reference, placeholderImage: placeholderImage)
-        self.titleLabel.text = returnedBookTitle
+        self.titleLabel.text = returnedBookStatusAndTitleArr[1]
         }) { (returnedMaxDays) in
            
             DataService.instance.getABookStatus(imgTitleInMS: self.imgTitleInMS, handler: { (returnedArr) in

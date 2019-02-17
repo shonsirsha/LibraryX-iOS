@@ -132,7 +132,7 @@ class ScanToLoginVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                          self.dismiss(animated: true, completion: nil)
                     }else{ // error in logging in
                         self.statusLabel.text = "Scan the QR Code on your Student ID Card to Sign In"
-                        let alert = UIAlertController(title: "Error", message: "Sorry! There was an error when signing you in.", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "Invalid QR Code", message: "QR Code scanned is invalid", preferredStyle: .alert)
                         
                         alert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { (action:UIAlertAction) in
                             self.captureSession.startRunning()

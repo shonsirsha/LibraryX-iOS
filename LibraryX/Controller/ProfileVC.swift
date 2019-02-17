@@ -41,29 +41,47 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             toScanVCReturn = false
             performSegue(withIdentifier: "toScannerVC2", sender: self)
         }
-        DataService.instance.getFullName(uid: (Auth.auth().currentUser?.uid)!) { (returnedFullName) in
-            self.fullNameLabel.text = returnedFullName
-        }
-        DataService.instance.getEmail(uid: (Auth.auth().currentUser?.uid)!) { (returnedEmail) in
-            self.emailLabel.text = returnedEmail
-        }
         
-        
-        DataService.instance.everBorrow(uid: (Auth.auth().currentUser?.uid)!) { (ever) in
-            if ever == true{
-                self.myTableView.isHidden = false
-                self.noActLabel.isHidden = true
-            DataService.instance.get10RecentActivities(uid: (Auth.auth().currentUser?.uid)!) { (returnedBookTitle) in
-                    self.bookArr = returnedBookTitle
-                    self.myTableView.reloadData()
-                }
-            }else{
+        if Auth.auth().currentUser == nil{
             
-                self.myTableView.isHidden = true
-                self.noActLabel.isHidden = false
-                print("never borrowed anyth")
+        }else{
+            DataService.instance.checkIfUserDeleted(uid: (Auth.auth().currentUser?.uid)!) { (returnedPw) in
+                if returnedPw == "non"{
+                    do{
+                        try Auth.auth().signOut()
+                        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "ScanToLoginVC") as? ScanToLoginVC
+                        self.present(loginVC!, animated: true, completion: nil)
+                    }catch{
+                        print(error)
+                    }
+                }
             }
+            DataService.instance.getFullName(uid: (Auth.auth().currentUser?.uid)!) { (returnedFullName) in
+                self.fullNameLabel.text = returnedFullName
+            }
+            DataService.instance.getEmail(uid: (Auth.auth().currentUser?.uid)!) { (returnedEmail) in
+                self.emailLabel.text = returnedEmail
+            }
+            
+            
+            DataService.instance.everBorrow(uid: (Auth.auth().currentUser?.uid)!) { (ever) in
+                if ever == true{
+                    self.myTableView.isHidden = false
+                    self.noActLabel.isHidden = true
+                    DataService.instance.get10RecentActivities(uid: (Auth.auth().currentUser?.uid)!) { (returnedBookTitle) in
+                        self.bookArr = returnedBookTitle
+                        self.myTableView.reloadData()
+                    }
+                }else{
+                    self.myTableView.isHidden = true
+                    self.noActLabel.isHidden = false
+                    print("never borrowed anyth")
+                }
+            }
+            
         }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

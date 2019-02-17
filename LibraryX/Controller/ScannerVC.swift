@@ -110,16 +110,17 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     func found(code: String) {
         if let returnedCode2 = Double(code) {
-            DataService.instance.scannedBookFromImgTitle(imgTitleinMS: returnedCode2, myBookTitle: { (returnedStr) in // if str is returnedStr is empty ("") then it's a fake qrcode but its double (not found on db)
-                
-                if returnedStr != ""{
+            print("AAAA")
+            print(returnedCode2)
+            print("ASD")
+            print(code)
+            DataService.instance.scannedBookFromImgTitle(imgTitleinMS: returnedCode2, bookStatusAndTitleHandler: { (returnedBookStatusAndTitle) in
+                if returnedBookStatusAndTitle[0] == "avail" || returnedBookStatusAndTitle[0] == "no"{ //0 is status, 1 is title
                     self.returnedCode = returnedCode2
                     print(self.returnedCode)
-                   
                     self.performSegue(withIdentifier: "toAfterBarcodeVC", sender: self)
-                    
-                    
                 }else{
+                    
                     let alert = UIAlertController(title: "Invalid QR Code", message: "QR Code scanned is invalid.", preferredStyle: .alert)
                     
                     alert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { (action:UIAlertAction) in
@@ -130,9 +131,6 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                     self.present(alert, animated: true, completion: nil)
                     return
                 }
-                
-                
-                
             }) { (num) in
                 return
             }

@@ -45,6 +45,22 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
             self.present(vc, animated: false, completion: nil)
         }
         
+        if Auth.auth().currentUser == nil{
+            
+        }else{
+            DataService.instance.checkIfUserDeleted(uid: (Auth.auth().currentUser?.uid)!) { (returnedPw) in
+                if returnedPw == "non"{
+                    do{
+                        try Auth.auth().signOut()
+                        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "ScanToLoginVC") as? ScanToLoginVC
+                        self.present(loginVC!, animated: true, completion: nil)
+                    }catch{
+                        print(error)
+                    }
+                }
+            }
+        }
+        
         
         DataService.instance.getAllBooks { (returnedEachBookObj) in
             self.bookArr = returnedEachBookObj
@@ -116,10 +132,10 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
         if let ixPath = myTableView.indexPathForSelectedRow{
             if segue.identifier == "toSingleBookVC"{
                 if let singleBookVC = segue.destination as? SingleBookVC {
-                    singleBookVC.imgTitleinMs = bookArr[ixPath.row].imgTitle
-                    singleBookVC.bookTitle = bookArr[ixPath.row].bookTitle
-                    singleBookVC.year = bookArr[ixPath.row].year
-                    singleBookVC.authorName = bookArr[ixPath.row].authorName
+                    singleBookVC.imgTitleinMs = currentBookArr[ixPath.row].imgTitle
+                    singleBookVC.bookTitle = currentBookArr[ixPath.row].bookTitle
+                    singleBookVC.year = currentBookArr[ixPath.row].year
+                    singleBookVC.authorName = currentBookArr[ixPath.row].authorName
                 }
             }
         }
