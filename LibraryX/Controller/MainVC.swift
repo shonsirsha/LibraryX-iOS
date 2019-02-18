@@ -119,10 +119,15 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
             allBookLabel.text = "All books (\(currentBookArr.count))"
             return
         }
+        
         currentBookArr = bookArr.filter({ (returnedBook) -> Bool in
             guard let text = searchBar.text else {return false}
             return returnedBook.bookTitle.lowercased().contains(text.lowercased())
         })
+    
+        
+        
+       
         myTableView.reloadData()
         allBookLabel.text = "All books (\(currentBookArr.count))"
     }

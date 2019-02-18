@@ -14,7 +14,7 @@ import UIKit
 class ScanToLoginVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var statusLabel: UILabel!
     
-    @IBOutlet weak var boxVevTop: UIVisualEffectView!
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var gotoDiffMethodBtn: UIButton!
     @IBOutlet weak var boxVev: UIVisualEffectView!
     var captureSession: AVCaptureSession!
@@ -27,7 +27,11 @@ class ScanToLoginVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         view.backgroundColor = UIColor.black
         captureSession = AVCaptureSession()
         
-        guard let videoCaptureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) else { return }
+        guard let videoCaptureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for:
+            AVMediaType.video, position: .front) else { return }
+        
+       
+        
         let videoInput: AVCaptureDeviceInput
         
         do {
@@ -61,14 +65,11 @@ class ScanToLoginVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         view.layer.addSublayer(previewLayer)
         
         captureSession.startRunning()
-        
+        logo.layer.zPosition = 100
         boxVev.layer.zPosition = 100
         boxVev.layer.cornerRadius = 11.25
         boxVev.clipsToBounds = true
-        boxVevTop.layer.zPosition = 100
-        boxVevTop.layer.cornerRadius = 11.25
-        boxVevTop.clipsToBounds = true
-        gotoDiffMethodBtn.layer.zPosition = 100
+                gotoDiffMethodBtn.layer.zPosition = 100
     }
     
     override func viewDidAppear(_ animated: Bool) {

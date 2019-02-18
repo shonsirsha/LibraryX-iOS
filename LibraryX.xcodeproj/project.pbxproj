@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B503967B2219A35900E7E8B5 /* ReportBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503967A2219A35900E7E8B5 /* ReportBookVC.swift */; };
 		B508324421FA9E0E0056B730 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508324321FA9E0E0056B730 /* GradientView.swift */; };
 		B508324621FB50600056B730 /* BookDetailForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508324521FB50600056B730 /* BookDetailForCell.swift */; };
 		B50AB12C21F8BC8B004B3B1A /* Handy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50AB12B21F8BC8B004B3B1A /* Handy.swift */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		3A152F20246A7932F837B861 /* Pods_LibraryX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibraryX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B503967A2219A35900E7E8B5 /* ReportBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBookVC.swift; sourceTree = "<group>"; };
 		B508324321FA9E0E0056B730 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B508324521FB50600056B730 /* BookDetailForCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailForCell.swift; sourceTree = "<group>"; };
 		B50AB12B21F8BC8B004B3B1A /* Handy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handy.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				B585150B2202BEE40023DF1E /* ActivitiesVC.swift */,
 				B585150F220340580023DF1E /* ScanToLoginVC.swift */,
 				B596D1442209E5EF00FCD15A /* MyTabbarVC.swift */,
+				B503967A2219A35900E7E8B5 /* ReportBookVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -314,7 +317,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "LibraryX" */;
+			buildConfigurationList = B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "libraryX" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -430,6 +433,7 @@
 				B508324421FA9E0E0056B730 /* GradientView.swift in Sources */,
 				B54C60D821F9E850000B51EF /* ScannerVC.swift in Sources */,
 				B508324621FB50600056B730 /* BookDetailForCell.swift in Sources */,
+				B503967B2219A35900E7E8B5 /* ReportBookVC.swift in Sources */,
 				B5891A7421F6D23C001248CB /* MainVC.swift in Sources */,
 				B524D4FF21F778C400EA5AF7 /* AuthService.swift in Sources */,
 				B50AB12C21F8BC8B004B3B1A /* Handy.swift in Sources */,
@@ -636,7 +640,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "LibraryX" */ = {
+		B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "libraryX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5891A4621F6BAE2001248CB /* Debug */,

@@ -328,7 +328,7 @@ class DataService{
         var unwrappedGenre2 = ""
         var unwrappedGenre3 = ""
         var unwrappedYear = ""
-        REF_BOOK.queryOrdered(byChild: "genre1").observe(DataEventType.value) { (snapshot) in
+        REF_BOOK.queryOrdered(byChild: "image").observe(DataEventType.value) { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
             for book in snapshot{
                 let bookStatus = book.childSnapshot(forPath: "status").value as! String
@@ -355,7 +355,7 @@ class DataService{
                 
             }
             
-            handler(allBooksArray)
+            handler(allBooksArray.reversed())
             allBooksArray = [BookDetailForCell]()
             
         }
@@ -491,6 +491,19 @@ class DataService{
             }
         }
     }
+    
+    func sendReport(uid: String, reportTime: Double, report: String, fullName: String, imgTitleInMS: Double){
+        REF_BOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            var bookKey = ""
+            for book in snapshot{
+                bookKey = book.key
+            }
+            self.REF_BOOK.child(bookKey).child("reports").childByAutoId().updateChildValues(["bookImgTitleInMS":imgTitleInMS,"reportTime": reportTime, "report": report, "reportedBy": uid, "fullName":fullName])
+            
+        })
+    }
+    
     
     
     

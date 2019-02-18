@@ -23,7 +23,9 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         view.backgroundColor = UIColor.black
         captureSession = AVCaptureSession()
         
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+         guard let videoCaptureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) else { return }
+        
+        
         let videoInput: AVCaptureDeviceInput
         
         do {
@@ -158,7 +160,6 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             if segue.identifier == "toAfterBarcodeVC"{
                 if let afterBarcodeVC = segue.destination as? AfterBarcodeVC {
                     afterBarcodeVC.imgTitleInMS = returnedCode
-                    afterBarcodeVC.prevVC = self
                 }
             }
         }

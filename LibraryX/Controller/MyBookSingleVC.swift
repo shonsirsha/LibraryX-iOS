@@ -26,11 +26,13 @@ class MyBookSingleVC: UIViewController {
     @IBOutlet weak var returnInLabel: UILabel!
     @IBOutlet weak var totalDaysLabel: UILabel!
     @IBOutlet weak var availAtLabel: UILabel!
+    @IBOutlet weak var reportBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         actionBtn.isHidden = true
-        
+        reportBtn.isHidden = true
+
         availAtLabel.isHidden = true
         let reference = STORAGE.child("bookPics/\(Int(imgTitleInMS))")
         
@@ -47,7 +49,9 @@ class MyBookSingleVC: UIViewController {
                 self.actionBtn.isHidden = false
                 self.actionBtn.setTitle("Scan & Return Now", for: UIControl.State.normal)
                 self.actionBtn.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
+                self.reportBtn.isHidden = false
             }else if self.status == "returned"{
+                self.reportBtn.isHidden = true
                 DataService.instance.getABookStatus(imgTitleInMS: self.imgTitleInMS, handler: { (returnedArr) in
                     if returnedArr[1] == "avail"{ // 1 is status, 0 is avail at aisle X
                         self.actionBtn.isHidden = false
@@ -165,7 +169,16 @@ class MyBookSingleVC: UIViewController {
         toScanVCReturn = true
         dismiss(animated: true, completion: nil)
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toReportBookVC"{
+            if let reportBookVC = segue.destination as? ReportBookVC {
+                reportBookVC.imgTitleInMS = imgTitleInMS
+            }
+        }
+    }
+    @IBAction func reportBtn(_ sender: Any) {
+        performSegue(withIdentifier: "toReportBookVC", sender: self)
+    }
     
     
 }

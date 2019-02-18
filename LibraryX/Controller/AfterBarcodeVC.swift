@@ -16,7 +16,6 @@ class AfterBarcodeVC: UIViewController {
     let oneDayInEpoch: Int = 86400
     @IBOutlet weak var maxDaysLabel: UILabel!
     @IBOutlet weak var borrowingPeriodPlaceholder: UILabel!
-    var prevVC: ScannerVC!
    var statusBook = ""
     
     @IBOutlet weak var borrowBtn: UIButton!
