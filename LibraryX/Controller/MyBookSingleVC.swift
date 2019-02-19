@@ -46,7 +46,11 @@ class MyBookSingleVC: UIViewController {
         DataService.instance.myBookDetail(uid: (Auth.auth().currentUser?.uid)!, startDate: startBorrowDate, status: { (returnedStatus) in
             self.status = returnedStatus
             if self.status == "borrowing"{
-                self.actionBtn.isHidden = false
+                #if Client
+                    self.actionBtn.isHidden = true
+                #else
+                    self.actionBtn.isHidden = false
+                #endif
                 self.actionBtn.setTitle("Scan & Return Now", for: UIControl.State.normal)
                 self.actionBtn.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
                 self.reportBtn.isHidden = false
@@ -54,7 +58,11 @@ class MyBookSingleVC: UIViewController {
                 self.reportBtn.isHidden = true
                 DataService.instance.getABookStatus(imgTitleInMS: self.imgTitleInMS, handler: { (returnedArr) in
                     if returnedArr[1] == "avail"{ // 1 is status, 0 is avail at aisle X
-                        self.actionBtn.isHidden = false
+                        #if Client
+                            self.actionBtn.isHidden = true
+                        #else
+                            self.actionBtn.isHidden = false
+                        #endif
                         self.actionBtn.setTitle("Scan & Borrow again", for: UIControl.State.normal)
                         self.actionBtn.backgroundColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
                         self.availAtLabel.isHidden = false

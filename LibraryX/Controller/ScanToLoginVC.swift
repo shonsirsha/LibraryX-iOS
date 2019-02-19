@@ -9,7 +9,7 @@
 
 import AVFoundation
 import UIKit
-
+import Firebase
 
 class ScanToLoginVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var statusLabel: UILabel!
@@ -74,6 +74,10 @@ class ScanToLoginVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         if toMyAccVC == true{
+            dismiss(animated: true, completion: nil)
+        }
+        
+        if Auth.auth().currentUser != nil{
             dismiss(animated: true, completion: nil)
         }
     }

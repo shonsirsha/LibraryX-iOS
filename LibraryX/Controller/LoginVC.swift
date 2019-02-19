@@ -12,9 +12,9 @@ import Firebase
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var emailValulu: UITextField!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +33,10 @@ class LoginVC: UIViewController {
     }
    
     @IBAction func loginBtn(_ sender: Any) {
-        emailField.resignFirstResponder()
+        emailValulu.resignFirstResponder()
         passwordField.resignFirstResponder()
         statusLabel.text = "Signing in..."
-        AuthService.instance.loginUser(email: emailField.text!, password: passwordField.text!) { (success, loginErr) in
+        AuthService.instance.loginUser(email: emailValulu.text!, password: passwordField.text!) { (success, loginErr) in
             if success{
                 self.dismiss(animated: true, completion: nil)
             }else{
@@ -52,7 +52,7 @@ class LoginVC: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        emailField.resignFirstResponder()
+        emailValulu.resignFirstResponder()
         passwordField.resignFirstResponder()
     }
     

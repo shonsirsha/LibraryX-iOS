@@ -20,11 +20,18 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var toScannerVCBtn: UIButton!
     var bookTotal = 0
     
     @IBOutlet weak var allBookLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        #if Client
+            toScannerVCBtn.isHidden = true
+        #else
+            toScannerVCBtn.isHidden = false
+        #endif
 
         myTableView.dataSource = self
         myTableView.delegate = self

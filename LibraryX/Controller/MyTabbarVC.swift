@@ -13,6 +13,12 @@ class MyTabbarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selectedIndex = 0
+        
+        #if Client
+        
+        #else
+            viewControllers?.remove(at: 2)
+        #endif
     }
 
     

@@ -11,12 +11,70 @@
 		B508324421FA9E0E0056B730 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508324321FA9E0E0056B730 /* GradientView.swift */; };
 		B508324621FB50600056B730 /* BookDetailForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508324521FB50600056B730 /* BookDetailForCell.swift */; };
 		B50AB12C21F8BC8B004B3B1A /* Handy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50AB12B21F8BC8B004B3B1A /* Handy.swift */; };
+		B511C593221C3771005DDCA5 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52604D021F8ACCD00BC9BB5 /* ProfileVC.swift */; };
+		B511C594221C3771005DDCA5 /* MyBookSingleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C3BA82200265200E111C1 /* MyBookSingleVC.swift */; };
+		B511C595221C3771005DDCA5 /* FloatyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A1F21F781F000C93D56 /* FloatyManager.swift */; };
+		B511C596221C3771005DDCA5 /* FloatyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A1C21F781EE00C93D56 /* FloatyWindow.swift */; };
+		B511C597221C3771005DDCA5 /* SingleBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ED100721FB748D008C59C9 /* SingleBookVC.swift */; };
+		B511C598221C3771005DDCA5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B524D50021F7795400EA5AF7 /* DataService.swift */; };
+		B511C599221C3771005DDCA5 /* FloatyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A2021F781F100C93D56 /* FloatyDelegate.swift */; };
+		B511C59A221C3771005DDCA5 /* ActivitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585150B2202BEE40023DF1E /* ActivitiesVC.swift */; };
+		B511C59B221C3771005DDCA5 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A1721F7810C00C93D56 /* AuthVC.swift */; };
+		B511C59C221C3771005DDCA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A3921F6BADD001248CB /* AppDelegate.swift */; };
+		B511C59D221C3771005DDCA5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508324321FA9E0E0056B730 /* GradientView.swift */; };
+		B511C59E221C3771005DDCA5 /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54C60D721F9E850000B51EF /* ScannerVC.swift */; };
+		B511C59F221C3771005DDCA5 /* BookDetailForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508324521FB50600056B730 /* BookDetailForCell.swift */; };
+		B511C5A0221C3771005DDCA5 /* ReportBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503967A2219A35900E7E8B5 /* ReportBookVC.swift */; };
+		B511C5A1221C3771005DDCA5 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A7321F6D23C001248CB /* MainVC.swift */; };
+		B511C5A2221C3771005DDCA5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B524D4FE21F778C400EA5AF7 /* AuthService.swift */; };
+		B511C5A3221C3771005DDCA5 /* Handy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50AB12B21F8BC8B004B3B1A /* Handy.swift */; };
+		B511C5A4221C3771005DDCA5 /* MyTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596D1442209E5EF00FCD15A /* MyTabbarVC.swift */; };
+		B511C5A5221C3771005DDCA5 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A7621F6D28F001248CB /* MainCell.swift */; };
+		B511C5A6221C3771005DDCA5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B524D4FC21F776AA00EA5AF7 /* LoginVC.swift */; };
+		B511C5A7221C3771005DDCA5 /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5585D7C21FDEE9F0044F2AD /* SegueFromLeft.swift */; };
+		B511C5A8221C3771005DDCA5 /* Floaty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A1E21F781F000C93D56 /* Floaty.swift */; };
+		B511C5A9221C3771005DDCA5 /* ActivitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585150D2202C0B20023DF1E /* ActivitiesCell.swift */; };
+		B511C5AA221C3771005DDCA5 /* FloatyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A1B21F781ED00C93D56 /* FloatyItem.swift */; };
+		B511C5AB221C3771005DDCA5 /* AfterBarcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531F12A21FCCE9D00687782 /* AfterBarcodeVC.swift */; };
+		B511C5AC221C3771005DDCA5 /* DynamicLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B512EC6C21FCE7D90042084E /* DynamicLabel.swift */; };
+		B511C5AD221C3771005DDCA5 /* ScanToLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585150F220340580023DF1E /* ScanToLoginVC.swift */; };
+		B511C5AE221C3771005DDCA5 /* BookTitleForProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6233621FF6AF600993DB5 /* BookTitleForProfileCell.swift */; };
+		B511C5AF221C3771005DDCA5 /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5585D7E21FDEF9A0044F2AD /* SegueFromRight.swift */; };
+		B511C5B0221C3771005DDCA5 /* ProfileBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585802921FF72410046068E /* ProfileBookCell.swift */; };
+		B511C5B1221C3771005DDCA5 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC5A772200A0EC005113AB /* RoundView.swift */; };
+		B511C5B2221C3771005DDCA5 /* FloatyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A2621F7842C00C93D56 /* FloatyViewController.swift */; };
+		B511C5B4221C3771005DDCA5 /* Pods_LibraryX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A152F20246A7932F837B861 /* Pods_LibraryX.framework */; };
+		B511C5B6221C3771005DDCA5 /* Stawix - SoinSansNeue-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A4C21F6C251001248CB /* Stawix - SoinSansNeue-Heavy.otf */; };
+		B511C5B7221C3771005DDCA5 /* Stawix - SoinSansNeue-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5421F6C252001248CB /* Stawix - SoinSansNeue-MediumItalic.otf */; };
+		B511C5B8221C3771005DDCA5 /* Stawix - SoinSansNeue-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5621F6C252001248CB /* Stawix - SoinSansNeue-Roman.otf */; };
+		B511C5B9221C3771005DDCA5 /* Stawix - SoinSansNeue-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5B21F6C253001248CB /* Stawix - SoinSansNeue-Light.otf */; };
+		B511C5BA221C3771005DDCA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EF141D21F78F4A00A02D33 /* Assets.xcassets */; };
+		B511C5BB221C3771005DDCA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5891A3D21F6BADD001248CB /* Main.storyboard */; };
+		B511C5BC221C3771005DDCA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5891A4221F6BAE2001248CB /* LaunchScreen.storyboard */; };
+		B511C5BD221C3771005DDCA5 /* Stawix - SoinSansNeue-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5A21F6C253001248CB /* Stawix - SoinSansNeue-ExtraLight.otf */; };
+		B511C5BE221C3771005DDCA5 /* Stawix - SoinSansNeue-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5521F6C252001248CB /* Stawix - SoinSansNeue-HeavyItalic.otf */; };
+		B511C5BF221C3771005DDCA5 /* Stawix - SoinSansNeue-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A4E21F6C251001248CB /* Stawix - SoinSansNeue-BlackItalic.otf */; };
+		B511C5C0221C3771005DDCA5 /* Stawix - SoinSansNeue-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5021F6C252001248CB /* Stawix - SoinSansNeue-Bold.otf */; };
+		B511C5C1221C3771005DDCA5 /* Stawix - SoinSansNeue-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5221F6C252001248CB /* Stawix - SoinSansNeue-Hairline.otf */; };
+		B511C5C2221C3771005DDCA5 /* Stawix - SoinSansNeue-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5821F6C253001248CB /* Stawix - SoinSansNeue-ExtraLightItalic.otf */; };
+		B511C5C3221C3771005DDCA5 /* Stawix - SoinSansNeue-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5721F6C252001248CB /* Stawix - SoinSansNeue-BoldItalic.otf */; };
+		B511C5C4221C3771005DDCA5 /* Stawix - SoinSansNeue-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5321F6C252001248CB /* Stawix - SoinSansNeue-Medium.otf */; };
+		B511C5C5221C3771005DDCA5 /* Stawix - SoinSansNeue-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5921F6C253001248CB /* Stawix - SoinSansNeue-Thin.otf */; };
+		B511C5C6221C3771005DDCA5 /* Stawix - SoinSansNeue-HairlineItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A4F21F6C251001248CB /* Stawix - SoinSansNeue-HairlineItalic.otf */; };
+		B511C5C7221C3771005DDCA5 /* Stawix - SoinSansNeue-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5121F6C252001248CB /* Stawix - SoinSansNeue-ThinItalic.otf */; };
+		B511C5C8221C3771005DDCA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5891A7821F6DA70001248CB /* GoogleService-Info.plist */; };
+		B511C5C9221C3771005DDCA5 /* Stawix - SoinSansNeue-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5C21F6C253001248CB /* Stawix - SoinSansNeue-Black.otf */; };
+		B511C5CA221C3771005DDCA5 /* Stawix - SoinSansNeue-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A4D21F6C251001248CB /* Stawix - SoinSansNeue-Italic.otf */; };
+		B511C5CB221C3771005DDCA5 /* Stawix - SoinSansNeue-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5D21F6C253001248CB /* Stawix - SoinSansNeue-LightItalic.otf */; };
+		B511C5D3221C43AB005DDCA5 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511C5D2221C43AB005DDCA5 /* MoreVC.swift */; };
+		B511C5D4221C43B2005DDCA5 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B511C5D2221C43AB005DDCA5 /* MoreVC.swift */; };
 		B512EC6D21FCE7D90042084E /* DynamicLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B512EC6C21FCE7D90042084E /* DynamicLabel.swift */; };
 		B524D4FD21F776AA00EA5AF7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B524D4FC21F776AA00EA5AF7 /* LoginVC.swift */; };
 		B524D4FF21F778C400EA5AF7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B524D4FE21F778C400EA5AF7 /* AuthService.swift */; };
 		B524D50121F7795400EA5AF7 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B524D50021F7795400EA5AF7 /* DataService.swift */; };
 		B52604D121F8ACCD00BC9BB5 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52604D021F8ACCD00BC9BB5 /* ProfileVC.swift */; };
 		B531F12B21FCCE9D00687782 /* AfterBarcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531F12A21FCCE9D00687782 /* AfterBarcodeVC.swift */; };
+		B54A56A1221BDB7700A902D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5891A3D21F6BADD001248CB /* Main.storyboard */; };
 		B54C60D821F9E850000B51EF /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54C60D721F9E850000B51EF /* ScannerVC.swift */; };
 		B5585D7D21FDEE9F0044F2AD /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5585D7C21FDEE9F0044F2AD /* SegueFromLeft.swift */; };
 		B5585D7F21FDEF9A0044F2AD /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5585D7E21FDEF9A0044F2AD /* SegueFromRight.swift */; };
@@ -26,7 +84,6 @@
 		B5851510220340580023DF1E /* ScanToLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585150F220340580023DF1E /* ScanToLoginVC.swift */; };
 		B585802A21FF72410046068E /* ProfileBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B585802921FF72410046068E /* ProfileBookCell.swift */; };
 		B5891A3A21F6BADD001248CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A3921F6BADD001248CB /* AppDelegate.swift */; };
-		B5891A3F21F6BADD001248CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5891A3D21F6BADD001248CB /* Main.storyboard */; };
 		B5891A4421F6BAE2001248CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5891A4221F6BAE2001248CB /* LaunchScreen.storyboard */; };
 		B5891A5E21F6C253001248CB /* Stawix - SoinSansNeue-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A4C21F6C251001248CB /* Stawix - SoinSansNeue-Heavy.otf */; };
 		B5891A5F21F6C253001248CB /* Stawix - SoinSansNeue-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A4D21F6C251001248CB /* Stawix - SoinSansNeue-Italic.otf */; };
@@ -53,7 +110,6 @@
 		B5CC5A782200A0EC005113AB /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC5A772200A0EC005113AB /* RoundView.swift */; };
 		B5D6233721FF6AF600993DB5 /* BookTitleForProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6233621FF6AF600993DB5 /* BookTitleForProfileCell.swift */; };
 		B5DF6A1821F7810C00C93D56 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A1721F7810C00C93D56 /* AuthVC.swift */; };
-		B5DF6A1A21F781AD00C93D56 /* Floaty in Resources */ = {isa = PBXBuildFile; fileRef = B5DF6A1921F781AD00C93D56 /* Floaty */; };
 		B5DF6A2121F781F100C93D56 /* FloatyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A1B21F781ED00C93D56 /* FloatyItem.swift */; };
 		B5DF6A2221F781F100C93D56 /* FloatyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A1C21F781EE00C93D56 /* FloatyWindow.swift */; };
 		B5DF6A2321F781F100C93D56 /* Floaty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A1E21F781F000C93D56 /* Floaty.swift */; };
@@ -71,6 +127,9 @@
 		B508324321FA9E0E0056B730 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B508324521FB50600056B730 /* BookDetailForCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailForCell.swift; sourceTree = "<group>"; };
 		B50AB12B21F8BC8B004B3B1A /* Handy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handy.swift; sourceTree = "<group>"; };
+		B511C5D0221C3771005DDCA5 /* LibraryX-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LibraryX-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B511C5D1221C3771005DDCA5 /* LibraryX-Client-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LibraryX-Client-Info.plist"; path = "/Users/seansaoirse/Desktop/programmin/CanteenX/CanteenX/LibraryX-Client-Info.plist"; sourceTree = "<absolute>"; };
+		B511C5D2221C43AB005DDCA5 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		B512EC6C21FCE7D90042084E /* DynamicLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLabel.swift; sourceTree = "<group>"; };
 		B524D4FC21F776AA00EA5AF7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B524D4FE21F778C400EA5AF7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -115,7 +174,6 @@
 		B5CC5A772200A0EC005113AB /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		B5D6233621FF6AF600993DB5 /* BookTitleForProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTitleForProfileCell.swift; sourceTree = "<group>"; };
 		B5DF6A1721F7810C00C93D56 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
-		B5DF6A1921F781AD00C93D56 /* Floaty */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Floaty; sourceTree = "<group>"; };
 		B5DF6A1B21F781ED00C93D56 /* FloatyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatyItem.swift; sourceTree = "<group>"; };
 		B5DF6A1C21F781EE00C93D56 /* FloatyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatyWindow.swift; sourceTree = "<group>"; };
 		B5DF6A1D21F781EF00C93D56 /* Floaty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Floaty.h; sourceTree = "<group>"; };
@@ -130,6 +188,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B511C5B3221C3771005DDCA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B511C5B4221C3771005DDCA5 /* Pods_LibraryX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5891A3321F6BADD001248CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,13 +214,16 @@
 				B5891A3721F6BADD001248CB /* Products */,
 				B881808EDB9ABB3F82967ABB /* Pods */,
 				CDCB6B635C08128645A726CC /* Frameworks */,
+				B511C5D1221C3771005DDCA5 /* LibraryX-Client-Info.plist */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		B5891A3721F6BADD001248CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				B5891A3621F6BADD001248CB /* LibraryX.app */,
+				B511C5D0221C3771005DDCA5 /* LibraryX-Client.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,7 +231,6 @@
 		B5891A3821F6BADD001248CB /* LibraryX */ = {
 			isa = PBXGroup;
 			children = (
-				B5DF6A1921F781AD00C93D56 /* Floaty */,
 				B5891A7521F6D258001248CB /* Services */,
 				B5EF141D21F78F4A00A02D33 /* Assets.xcassets */,
 				B5891A7221F6D1FB001248CB /* Model */,
@@ -218,6 +286,7 @@
 				B585150F220340580023DF1E /* ScanToLoginVC.swift */,
 				B596D1442209E5EF00FCD15A /* MyTabbarVC.swift */,
 				B503967A2219A35900E7E8B5 /* ReportBookVC.swift */,
+				B511C5D2221C43AB005DDCA5 /* MoreVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +352,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B511C590221C3771005DDCA5 /* LibraryX-Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B511C5CD221C3771005DDCA5 /* Build configuration list for PBXNativeTarget "LibraryX-Client" */;
+			buildPhases = (
+				B511C591221C3771005DDCA5 /* [CP] Check Pods Manifest.lock */,
+				B511C592221C3771005DDCA5 /* Sources */,
+				B511C5B3221C3771005DDCA5 /* Frameworks */,
+				B511C5B5221C3771005DDCA5 /* Resources */,
+				B511C5CC221C3771005DDCA5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LibraryX-Client";
+			productName = CanteenX;
+			productReference = B511C5D0221C3771005DDCA5 /* LibraryX-Client.app */;
+			productType = "com.apple.product-type.application";
+		};
 		B5891A3521F6BADD001248CB /* LibraryX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5891A4821F6BAE2001248CB /* Build configuration list for PBXNativeTarget "LibraryX" */;
@@ -331,11 +419,41 @@
 			projectRoot = "";
 			targets = (
 				B5891A3521F6BADD001248CB /* LibraryX */,
+				B511C590221C3771005DDCA5 /* LibraryX-Client */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B511C5B5221C3771005DDCA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B511C5B6221C3771005DDCA5 /* Stawix - SoinSansNeue-Heavy.otf in Resources */,
+				B511C5B7221C3771005DDCA5 /* Stawix - SoinSansNeue-MediumItalic.otf in Resources */,
+				B511C5B8221C3771005DDCA5 /* Stawix - SoinSansNeue-Roman.otf in Resources */,
+				B511C5B9221C3771005DDCA5 /* Stawix - SoinSansNeue-Light.otf in Resources */,
+				B511C5BA221C3771005DDCA5 /* Assets.xcassets in Resources */,
+				B511C5BB221C3771005DDCA5 /* Main.storyboard in Resources */,
+				B511C5BC221C3771005DDCA5 /* LaunchScreen.storyboard in Resources */,
+				B511C5BD221C3771005DDCA5 /* Stawix - SoinSansNeue-ExtraLight.otf in Resources */,
+				B511C5BE221C3771005DDCA5 /* Stawix - SoinSansNeue-HeavyItalic.otf in Resources */,
+				B511C5BF221C3771005DDCA5 /* Stawix - SoinSansNeue-BlackItalic.otf in Resources */,
+				B511C5C0221C3771005DDCA5 /* Stawix - SoinSansNeue-Bold.otf in Resources */,
+				B511C5C1221C3771005DDCA5 /* Stawix - SoinSansNeue-Hairline.otf in Resources */,
+				B511C5C2221C3771005DDCA5 /* Stawix - SoinSansNeue-ExtraLightItalic.otf in Resources */,
+				B511C5C3221C3771005DDCA5 /* Stawix - SoinSansNeue-BoldItalic.otf in Resources */,
+				B511C5C4221C3771005DDCA5 /* Stawix - SoinSansNeue-Medium.otf in Resources */,
+				B511C5C5221C3771005DDCA5 /* Stawix - SoinSansNeue-Thin.otf in Resources */,
+				B511C5C6221C3771005DDCA5 /* Stawix - SoinSansNeue-HairlineItalic.otf in Resources */,
+				B511C5C7221C3771005DDCA5 /* Stawix - SoinSansNeue-ThinItalic.otf in Resources */,
+				B511C5C8221C3771005DDCA5 /* GoogleService-Info.plist in Resources */,
+				B511C5C9221C3771005DDCA5 /* Stawix - SoinSansNeue-Black.otf in Resources */,
+				B511C5CA221C3771005DDCA5 /* Stawix - SoinSansNeue-Italic.otf in Resources */,
+				B511C5CB221C3771005DDCA5 /* Stawix - SoinSansNeue-LightItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5891A3421F6BADD001248CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +463,7 @@
 				B5891A6821F6C253001248CB /* Stawix - SoinSansNeue-Roman.otf in Resources */,
 				B5891A6D21F6C253001248CB /* Stawix - SoinSansNeue-Light.otf in Resources */,
 				B5EF141E21F78F4C00A02D33 /* Assets.xcassets in Resources */,
+				B54A56A1221BDB7700A902D8 /* Main.storyboard in Resources */,
 				B5891A4421F6BAE2001248CB /* LaunchScreen.storyboard in Resources */,
 				B5891A6C21F6C253001248CB /* Stawix - SoinSansNeue-ExtraLight.otf in Resources */,
 				B5891A6721F6C253001248CB /* Stawix - SoinSansNeue-HeavyItalic.otf in Resources */,
@@ -357,10 +476,8 @@
 				B5891A6B21F6C253001248CB /* Stawix - SoinSansNeue-Thin.otf in Resources */,
 				B5891A6121F6C253001248CB /* Stawix - SoinSansNeue-HairlineItalic.otf in Resources */,
 				B5891A6321F6C253001248CB /* Stawix - SoinSansNeue-ThinItalic.otf in Resources */,
-				B5DF6A1A21F781AD00C93D56 /* Floaty in Resources */,
 				B5891A7921F6DA70001248CB /* GoogleService-Info.plist in Resources */,
 				B5891A6E21F6C253001248CB /* Stawix - SoinSansNeue-Black.otf in Resources */,
-				B5891A3F21F6BADD001248CB /* Main.storyboard in Resources */,
 				B5891A5F21F6C253001248CB /* Stawix - SoinSansNeue-Italic.otf in Resources */,
 				B5891A6F21F6C253001248CB /* Stawix - SoinSansNeue-LightItalic.otf in Resources */,
 			);
@@ -370,6 +487,50 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		A22E83E2F310E0C1CC9C6043 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LibraryX/Pods-LibraryX-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LibraryX/Pods-LibraryX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B511C591221C3771005DDCA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LibraryX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B511C5CC221C3771005DDCA5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -416,6 +577,46 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B511C592221C3771005DDCA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B511C593221C3771005DDCA5 /* ProfileVC.swift in Sources */,
+				B511C594221C3771005DDCA5 /* MyBookSingleVC.swift in Sources */,
+				B511C595221C3771005DDCA5 /* FloatyManager.swift in Sources */,
+				B511C596221C3771005DDCA5 /* FloatyWindow.swift in Sources */,
+				B511C597221C3771005DDCA5 /* SingleBookVC.swift in Sources */,
+				B511C598221C3771005DDCA5 /* DataService.swift in Sources */,
+				B511C599221C3771005DDCA5 /* FloatyDelegate.swift in Sources */,
+				B511C59A221C3771005DDCA5 /* ActivitiesVC.swift in Sources */,
+				B511C59B221C3771005DDCA5 /* AuthVC.swift in Sources */,
+				B511C59C221C3771005DDCA5 /* AppDelegate.swift in Sources */,
+				B511C59D221C3771005DDCA5 /* GradientView.swift in Sources */,
+				B511C59E221C3771005DDCA5 /* ScannerVC.swift in Sources */,
+				B511C59F221C3771005DDCA5 /* BookDetailForCell.swift in Sources */,
+				B511C5A0221C3771005DDCA5 /* ReportBookVC.swift in Sources */,
+				B511C5A1221C3771005DDCA5 /* MainVC.swift in Sources */,
+				B511C5A2221C3771005DDCA5 /* AuthService.swift in Sources */,
+				B511C5A3221C3771005DDCA5 /* Handy.swift in Sources */,
+				B511C5A4221C3771005DDCA5 /* MyTabbarVC.swift in Sources */,
+				B511C5A5221C3771005DDCA5 /* MainCell.swift in Sources */,
+				B511C5A6221C3771005DDCA5 /* LoginVC.swift in Sources */,
+				B511C5A7221C3771005DDCA5 /* SegueFromLeft.swift in Sources */,
+				B511C5A8221C3771005DDCA5 /* Floaty.swift in Sources */,
+				B511C5A9221C3771005DDCA5 /* ActivitiesCell.swift in Sources */,
+				B511C5AA221C3771005DDCA5 /* FloatyItem.swift in Sources */,
+				B511C5AB221C3771005DDCA5 /* AfterBarcodeVC.swift in Sources */,
+				B511C5D4221C43B2005DDCA5 /* MoreVC.swift in Sources */,
+				B511C5AC221C3771005DDCA5 /* DynamicLabel.swift in Sources */,
+				B511C5AD221C3771005DDCA5 /* ScanToLoginVC.swift in Sources */,
+				B511C5AE221C3771005DDCA5 /* BookTitleForProfileCell.swift in Sources */,
+				B511C5AF221C3771005DDCA5 /* SegueFromRight.swift in Sources */,
+				B511C5B0221C3771005DDCA5 /* ProfileBookCell.swift in Sources */,
+				B511C5B1221C3771005DDCA5 /* RoundView.swift in Sources */,
+				B511C5B2221C3771005DDCA5 /* FloatyViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5891A3221F6BADD001248CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -445,6 +646,7 @@
 				B585150E2202C0B20023DF1E /* ActivitiesCell.swift in Sources */,
 				B5DF6A2121F781F100C93D56 /* FloatyItem.swift in Sources */,
 				B531F12B21FCCE9D00687782 /* AfterBarcodeVC.swift in Sources */,
+				B511C5D3221C43AB005DDCA5 /* MoreVC.swift in Sources */,
 				B512EC6D21FCE7D90042084E /* DynamicLabel.swift in Sources */,
 				B5851510220340580023DF1E /* ScanToLoginVC.swift in Sources */,
 				B5D6233721FF6AF600993DB5 /* BookTitleForProfileCell.swift in Sources */,
@@ -477,6 +679,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B511C5CE221C3771005DDCA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD22785AA03792282B568CBA /* Pods-LibraryX.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q33X652UWU;
+				INFOPLIST_FILE = "$(SRCROOT)/LibraryX-Client-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-D Client";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seansaoirse.LibraryX-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B511C5CF221C3771005DDCA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFBC8CA6E703EFFDE232C887 /* Pods-LibraryX.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q33X652UWU;
+				INFOPLIST_FILE = "$(SRCROOT)/LibraryX-Client-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-D Client";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seansaoirse.LibraryX-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B5891A4621F6BAE2001248CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -640,6 +888,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B511C5CD221C3771005DDCA5 /* Build configuration list for PBXNativeTarget "LibraryX-Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B511C5CE221C3771005DDCA5 /* Debug */,
+				B511C5CF221C3771005DDCA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "libraryX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

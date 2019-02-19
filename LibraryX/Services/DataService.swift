@@ -17,6 +17,7 @@ class DataService{
     private var _REF_BASE = DB_BASE
     private var _REF_USER = DB_BASE.child("users")
     private var _REF_BOOK = DB_BASE.child("books")
+    private var _REF_WIFI = DB_BASE.child("wifiscanner")
     private var _REF_STORAGE = STORAGE
     
     
@@ -30,6 +31,10 @@ class DataService{
     
     var REF_BOOK:DatabaseReference{
         return _REF_BOOK
+    }
+    
+    var REF_WIFI:DatabaseReference{
+        return _REF_WIFI
     }
     
     var REF_STORAGE: StorageReference{
@@ -502,6 +507,19 @@ class DataService{
             self.REF_BOOK.child(bookKey).child("reports").childByAutoId().updateChildValues(["bookImgTitleInMS":imgTitleInMS,"reportTime": reportTime, "report": report, "reportedBy": uid, "fullName":fullName])
             
         })
+    }
+    
+    func getWifiUser(peopleAndTime: @escaping(_ arr: [Int])->()){
+        REF_WIFI.observe(DataEventType.value) { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            var myArr = [Int]()
+            for wifidetail in snapshot{
+                var detail = wifidetail.value as! Int
+                myArr.append(detail)
+            }
+            
+            peopleAndTime(myArr)
+        }
     }
     
     

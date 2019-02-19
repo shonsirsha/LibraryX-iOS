@@ -104,7 +104,7 @@
         <!--LoginVC-->
         <scene sceneID="2kX-IJ-hpW">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="wvT-BD-PuX" customClass="LoginVC" customModule="LibraryX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="wvT-BD-PuX" customClass="LoginVC" customModule="LibraryX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="59b-k5-7Az">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,7 +202,7 @@
                         <viewLayoutGuide key="safeArea" id="Xhk-fG-A9L"/>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="BeA-yr-ZwS" id="J4c-f6-Cfe"/>
+                        <outlet property="emailValulu" destination="BeA-yr-ZwS" id="t4d-vv-bt2"/>
                         <outlet property="loginBtn" destination="Xn0-Dx-cVY" id="esG-ww-uZI"/>
                         <outlet property="passwordField" destination="dL6-HA-W7H" id="es2-uP-Rei"/>
                         <outlet property="statusLabel" destination="wJO-Ya-WNW" id="Mtn-sZ-k72"/>
@@ -211,6 +211,138 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bc8-0g-urO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-820" y="542.87856071964018"/>
+        </scene>
+        <!--MoreVC-->
+        <scene sceneID="sZr-6d-Dir">
+            <objects>
+                <viewController id="sYd-tS-bJX" customClass="MoreVC" customModule="LibraryX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hJO-ke-ZrR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txT-qX-nen">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Realtime Library Situation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKG-EI-Nhd">
+                                        <rect key="frame" x="5" y="40" width="365" height="22"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VKG-EI-Nhd" secondAttribute="bottom" constant="8" id="DY3-5E-2ob"/>
+                                    <constraint firstAttribute="height" constant="70" id="Guv-Z1-XsR"/>
+                                    <constraint firstItem="VKG-EI-Nhd" firstAttribute="leading" secondItem="txT-qX-nen" secondAttribute="leading" constant="5" id="TwD-Xy-Cvq"/>
+                                    <constraint firstAttribute="trailing" secondItem="VKG-EI-Nhd" secondAttribute="trailing" constant="5" id="W50-Wq-AQI"/>
+                                    <constraint firstItem="VKG-EI-Nhd" firstAttribute="top" secondItem="txT-qX-nen" secondAttribute="top" constant="40" id="lhD-4M-m5K"/>
+                                    <constraint firstAttribute="width" constant="375" id="wyi-8V-Laa"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivU-Pc-sNd">
+                                <rect key="frame" x="0.0" y="70" width="375" height="0.5"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="E7d-go-YPv"/>
+                                    <constraint firstAttribute="height" constant="0.29999999999999999" id="vCm-wb-7Hn"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="153 people" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiQ-Gt-f96">
+                                <rect key="frame" x="15" y="242.5" width="345" height="33"/>
+                                <fontDescription key="fontDescription" name="SoinSansNeue-Light" family="Soin Sans Neue" pointSize="33"/>
+                                <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are currently" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lv6-ya-KnP">
+                                <rect key="frame" x="15" y="206.5" width="345" height="26"/>
+                                <fontDescription key="fontDescription" name="SoinSansNeue-Medium" family="Soin Sans Neue" pointSize="26"/>
+                                <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="using the library right now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSs-Qb-tBD">
+                                <rect key="frame" x="15" y="285.5" width="345" height="26"/>
+                                <fontDescription key="fontDescription" name="SoinSansNeue-Light" family="Soin Sans Neue" pointSize="26"/>
+                                <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The library is currently" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugd-jp-7HY">
+                                <rect key="frame" x="15" y="105.5" width="345" height="26"/>
+                                <fontDescription key="fontDescription" name="SoinSansNeue-Medium" family="Soin Sans Neue" pointSize="26"/>
+                                <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last updated: Today, 14:32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbe-2s-iqZ">
+                                <rect key="frame" x="15" y="378" width="345" height="18"/>
+                                <fontDescription key="fontDescription" name="SoinSansNeue-Medium" family="Soin Sans Neue" pointSize="18"/>
+                                <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This data is updated every ±15 seconds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8t-4l-UfT">
+                                <rect key="frame" x="15" y="411" width="345" height="17"/>
+                                <fontDescription key="fontDescription" name="SoinSansNeue-Light" family="Soin Sans Neue" pointSize="17"/>
+                                <color key="textColor" red="0.054901960780000002" green="0.054901960780000002" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="moderately crowded" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhz-DD-wYh">
+                                <rect key="frame" x="15" y="141.5" width="345" height="30"/>
+                                <fontDescription key="fontDescription" name="SoinSansNeue-Light" family="Soin Sans Neue" pointSize="30"/>
+                                <color key="textColor" red="0.95792354060913709" green="0.55096807067742959" blue="0.11768047834240282" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="rcH-XK-0qN">
+                                <rect key="frame" x="31" y="448" width="313" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="313" id="Gis-w8-Xri"/>
+                                    <constraint firstAttribute="height" constant="150" id="j2g-qP-nuK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="txT-qX-nen" firstAttribute="top" secondItem="hJO-ke-ZrR" secondAttribute="top" id="1I7-dj-p1a"/>
+                            <constraint firstItem="tSs-Qb-tBD" firstAttribute="leading" secondItem="QGq-gk-3Bu" secondAttribute="leading" constant="15" id="1m8-Fl-Xj2"/>
+                            <constraint firstItem="QGq-gk-3Bu" firstAttribute="trailing" secondItem="k8t-4l-UfT" secondAttribute="trailing" constant="15" id="7pN-z5-IUd"/>
+                            <constraint firstItem="Mhz-DD-wYh" firstAttribute="leading" secondItem="QGq-gk-3Bu" secondAttribute="leading" constant="15" id="BRO-mS-DHR"/>
+                            <constraint firstItem="SiQ-Gt-f96" firstAttribute="leading" secondItem="QGq-gk-3Bu" secondAttribute="leading" constant="15" id="CQd-s0-gyB"/>
+                            <constraint firstItem="txT-qX-nen" firstAttribute="trailing" secondItem="QGq-gk-3Bu" secondAttribute="trailing" id="CtT-Ej-P5n"/>
+                            <constraint firstItem="QGq-gk-3Bu" firstAttribute="bottom" secondItem="rcH-XK-0qN" secondAttribute="bottom" constant="20" id="Ees-zh-zZ5"/>
+                            <constraint firstItem="QGq-gk-3Bu" firstAttribute="trailing" secondItem="SiQ-Gt-f96" secondAttribute="trailing" constant="15" id="Ghl-ZF-T7T"/>
+                            <constraint firstItem="QGq-gk-3Bu" firstAttribute="trailing" secondItem="ugd-jp-7HY" secondAttribute="trailing" constant="15" id="HbP-Mv-tIk"/>
+                            <constraint firstItem="QGq-gk-3Bu" firstAttribute="trailing" secondItem="Mhz-DD-wYh" secondAttribute="trailing" constant="15" id="Hk9-Jb-tjv"/>
+                            <constraint firstItem="k8t-4l-UfT" firstAttribute="leading" secondItem="QGq-gk-3Bu" secondAttribute="leading" constant="15" id="J0C-tk-gTK"/>
+                            <constraint firstItem="k8t-4l-UfT" firstAttribute="top" secondItem="Mbe-2s-iqZ" secondAttribute="bottom" constant="15" id="JPx-bk-mFH"/>
+                            <constraint firstItem="QGq-gk-3Bu" firstAttribute="trailing" secondItem="Lv6-ya-KnP" secondAttribute="trailing" constant="15" id="Mdb-DM-oE1"/>
+                            <constraint firstItem="ugd-jp-7HY" firstAttribute="top" secondItem="ivU-Pc-sNd" secondAttribute="bottom" constant="35" id="NNx-1n-GmE"/>
+                            <constraint firstItem="rcH-XK-0qN" firstAttribute="top" secondItem="k8t-4l-UfT" secondAttribute="bottom" constant="20" id="Ogp-Iv-Ymu"/>
+                            <constraint firstItem="tSs-Qb-tBD" firstAttribute="top" secondItem="SiQ-Gt-f96" secondAttribute="bottom" constant="10" id="QSu-rU-1ix"/>
+                            <constraint firstItem="ivU-Pc-sNd" firstAttribute="top" secondItem="txT-qX-nen" secondAttribute="bottom" id="QXb-1N-9lm"/>
+                            <constraint firstAttribute="trailing" secondItem="ivU-Pc-sNd" secondAttribute="trailing" id="TmX-cB-6LO"/>
+                            <constraint firstItem="Mhz-DD-wYh" firstAttribute="top" secondItem="ugd-jp-7HY" secondAttribute="bottom" constant="10" id="WDJ-Pz-o3w"/>
+                            <constraint firstItem="QGq-gk-3Bu" firstAttribute="trailing" secondItem="Mbe-2s-iqZ" secondAttribute="trailing" constant="15" id="aaN-z7-l6x"/>
+                            <constraint firstItem="txT-qX-nen" firstAttribute="leading" secondItem="QGq-gk-3Bu" secondAttribute="leading" id="ac5-QM-hED"/>
+                            <constraint firstItem="Lv6-ya-KnP" firstAttribute="leading" secondItem="QGq-gk-3Bu" secondAttribute="leading" constant="15" id="ccY-Vi-fSs"/>
+                            <constraint firstItem="QGq-gk-3Bu" firstAttribute="trailing" secondItem="rcH-XK-0qN" secondAttribute="trailing" constant="31" id="f0m-se-NoM"/>
+                            <constraint firstItem="Mbe-2s-iqZ" firstAttribute="leading" secondItem="QGq-gk-3Bu" secondAttribute="leading" constant="15" id="h2n-vC-rSB"/>
+                            <constraint firstItem="ugd-jp-7HY" firstAttribute="leading" secondItem="QGq-gk-3Bu" secondAttribute="leading" constant="15" id="pr8-iF-mt3"/>
+                            <constraint firstItem="ivU-Pc-sNd" firstAttribute="leading" secondItem="hJO-ke-ZrR" secondAttribute="leading" id="rJb-mW-Zhc"/>
+                            <constraint firstItem="Lv6-ya-KnP" firstAttribute="top" secondItem="Mhz-DD-wYh" secondAttribute="bottom" constant="35" id="syD-pd-tdT"/>
+                            <constraint firstItem="QGq-gk-3Bu" firstAttribute="trailing" secondItem="tSs-Qb-tBD" secondAttribute="trailing" constant="15" id="tku-Fm-EC7"/>
+                            <constraint firstItem="rcH-XK-0qN" firstAttribute="leading" secondItem="QGq-gk-3Bu" secondAttribute="leading" constant="31" id="tme-AQ-bY6"/>
+                            <constraint firstItem="SiQ-Gt-f96" firstAttribute="top" secondItem="Lv6-ya-KnP" secondAttribute="bottom" constant="10" id="xTt-wf-mNw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QGq-gk-3Bu"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="hVQ-E5-Q7I"/>
+                    <connections>
+                        <outlet property="levelLabel" destination="Mhz-DD-wYh" id="oNA-J5-jms"/>
+                        <outlet property="numOfPeople" destination="SiQ-Gt-f96" id="s5m-6R-Bxl"/>
+                        <outlet property="timeLabel" destination="Mbe-2s-iqZ" id="W6Y-GH-brB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tyb-wE-Sae" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113" y="1334"/>
         </scene>
         <!--My Account-->
         <scene sceneID="iTf-ya-alY">
@@ -262,7 +394,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fw-uN-MGo">
-                                <rect key="frame" x="0.0" y="70.5" width="375" height="596.5"/>
+                                <rect key="frame" x="0.0" y="70.5" width="375" height="547.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VJ-64-s76">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="596.5"/>
@@ -354,7 +486,7 @@
                                                                     <rect key="frame" x="20" y="83" width="100" height="26"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BORROWED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs3-xW-1kr">
-                                                                            <rect key="frame" x="15.5" y="7.5" width="69" height="11"/>
+                                                                            <rect key="frame" x="15.5" y="7.5" width="69.5" height="11"/>
                                                                             <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="11"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -578,25 +710,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Book Loves You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugp-Om-e6s">
-                                                    <rect key="frame" x="120" y="13" width="279" height="21"/>
+                                                    <rect key="frame" x="120" y="13" width="240" height="21"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="21"/>
                                                     <color key="textColor" red="0.27536088197969544" green="0.27536088197969544" blue="0.27536088197969544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year released: 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yb-lA-8Y6">
-                                                    <rect key="frame" x="120" y="70" width="294" height="16"/>
+                                                    <rect key="frame" x="120" y="70" width="255" height="16"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: Felix Arvid Ulf Kjellberg" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRk-SL-4jc">
-                                                    <rect key="frame" x="120" y="44" width="279" height="16"/>
+                                                    <rect key="frame" x="120" y="44" width="240" height="16"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres: Horror" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ac-JP-x5x">
-                                                    <rect key="frame" x="120" y="97" width="294" height="14"/>
+                                                    <rect key="frame" x="120" y="97" width="255" height="14"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-LightItalic" family="Soin Sans Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -701,13 +833,14 @@
                         <outlet property="headerView" destination="mhW-T8-olB" id="kRH-tg-s9h"/>
                         <outlet property="myTableView" destination="ccc-e4-Rfr" id="DTW-tr-AB4"/>
                         <outlet property="searchBar" destination="Ao1-eD-mPD" id="VYI-uL-fqX"/>
+                        <outlet property="toScannerVCBtn" destination="1LG-eH-Eru" id="bTW-rv-Z1H"/>
                         <segue destination="OpJ-ya-oFp" kind="show" identifier="toScannerVC" id="o20-tE-XvH"/>
                         <segue destination="jzY-uJ-IGP" kind="show" identifier="toSingleBookVC" id="s2b-5X-x8V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cQ-31-aXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677.60000000000002" y="425.93703148425789"/>
+            <point key="canvasLocation" x="677.60000000000002" y="440.32983508245883"/>
         </scene>
         <!--Single BookVC-->
         <scene sceneID="9fK-nP-uWT">
@@ -1379,7 +1512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgh-ac-2ik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="1942"/>
+            <point key="canvasLocation" x="678" y="1969"/>
         </scene>
         <!--Report BookVC-->
         <scene sceneID="Ods-2X-XJa">
@@ -1486,7 +1619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K48-fe-bT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1597.5999999999999" y="1950.6746626686659"/>
+            <point key="canvasLocation" x="1369" y="1969"/>
         </scene>
         <!--ActivitiesVC-->
         <scene sceneID="QR3-eh-P45">
@@ -1548,19 +1681,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed, 21 Jan 19" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JI-HE-Gas">
-                                                    <rect key="frame" x="125" y="13" width="274" height="12"/>
+                                                    <rect key="frame" x="125" y="13" width="235" height="12"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Light" family="Soin Sans Neue" pointSize="12"/>
                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Book Loves You" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHQ-jE-tDM">
-                                                    <rect key="frame" x="125" y="35" width="274" height="20"/>
+                                                    <rect key="frame" x="125" y="35" width="235" height="20"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="20"/>
                                                     <color key="textColor" red="0.27536088199999997" green="0.27536088199999997" blue="0.27536088199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have returned this book 311 days ago" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQi-B5-kvg">
-                                                    <rect key="frame" x="125" y="65" width="274" height="14"/>
+                                                    <rect key="frame" x="125" y="65" width="235" height="28"/>
                                                     <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.2057651579" green="0.65406084060000003" blue="0.45721101759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1573,10 +1706,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3P-b8-2B6" customClass="RoundView" customModule="LibraryX" customModuleProvider="target">
-                                                    <rect key="frame" x="125" y="89" width="100" height="26"/>
+                                                    <rect key="frame" x="125" y="103" width="100" height="26"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RETURNED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qes-9q-1aw">
-                                                            <rect key="frame" x="19.5" y="7.5" width="61" height="11"/>
+                                                            <rect key="frame" x="19.5" y="7.5" width="61.5" height="11"/>
                                                             <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="11"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1598,10 +1731,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yk-o2-QDf" customClass="RoundView" customModule="LibraryX" customModuleProvider="target">
-                                                    <rect key="frame" x="230" y="89" width="100" height="26"/>
+                                                    <rect key="frame" x="230" y="103" width="100" height="26"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YESTERDAY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRT-8c-vse">
-                                                            <rect key="frame" x="16.5" y="7.5" width="67" height="11"/>
+                                                            <rect key="frame" x="17" y="7.5" width="66.5" height="11"/>
                                                             <fontDescription key="fontDescription" name="SoinSansNeue-Bold" family="Soin Sans Neue" pointSize="11"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1706,6 +1839,7 @@
                     <connections>
                         <segue destination="WF2-Ws-CXO" kind="relationship" relationship="viewControllers" id="b6V-X7-0f6"/>
                         <segue destination="iqJ-0R-hHc" kind="relationship" relationship="viewControllers" id="fyL-BG-KDd"/>
+                        <segue destination="sYd-tS-bJX" kind="relationship" relationship="viewControllers" id="cF8-FG-qh7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WlU-ta-jGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1730,6 +1864,6 @@
         <segue reference="AyV-BF-ewb"/>
         <segue reference="wpf-Db-Y0c"/>
         <segue reference="CDq-Dk-u14"/>
-        <segue reference="GjH-bW-fzr"/>
+        <segue reference="fyL-BG-KDd"/>
     </inferredMetricsTieBreakers>
 </document>

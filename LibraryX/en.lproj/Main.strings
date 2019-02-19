@@ -1,0 +1,168 @@
+
+/* Class = "UILabel"; text = "Until:"; ObjectID = "0zp-NY-0AB"; */
+"0zp-NY-0AB.text" = "Until:";
+
+/* Class = "UILabel"; text = "Available at aisle: "; ObjectID = "1JJ-p9-1Dh"; */
+"1JJ-p9-1Dh.text" = "Available at aisle: ";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "1vg-2q-gEm"; */
+"1vg-2q-gEm.text" = "Loading...";
+
+/* Class = "UILabel"; text = "Wed, 21 Jan 19"; ObjectID = "3JI-HE-Gas"; */
+"3JI-HE-Gas.text" = "Wed, 21 Jan 19";
+
+/* Class = "UILabel"; text = "Return in 133 days"; ObjectID = "5pt-y8-Cq2"; */
+"5pt-y8-Cq2.text" = "Return in 133 days";
+
+/* Class = "UILabel"; text = "Year released: 2015"; ObjectID = "5yb-lA-8Y6"; */
+"5yb-lA-8Y6.text" = "Year released: 2015";
+
+/* Class = "UILabel"; text = "Genres: Horror"; ObjectID = "9Ac-JP-x5x"; */
+"9Ac-JP-x5x.text" = "Genres: Horror";
+
+/* Class = "UILabel"; text = "Book Overview"; ObjectID = "9m4-od-2bc"; */
+"9m4-od-2bc.text" = "Book Overview";
+
+/* Class = "UISearchBar"; placeholder = "Search..."; ObjectID = "Ao1-eD-mPD"; */
+"Ao1-eD-mPD.placeholder" = "Search...";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "B8p-rf-MBo"; */
+"B8p-rf-MBo.text" = "0";
+
+/* Class = "UITextField"; placeholder = "Email Address"; ObjectID = "BeA-yr-ZwS"; */
+"BeA-yr-ZwS.placeholder" = "Email Address";
+
+/* Class = "UILabel"; text = "Report Book"; ObjectID = "CcR-8M-29S"; */
+"CcR-8M-29S.text" = "Report Book";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "ErV-q2-vY2"; */
+"ErV-q2-vY2.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "Borrowing period (days):"; ObjectID = "HHx-Ih-VQM"; */
+"HHx-Ih-VQM.text" = "Borrowing period (days):";
+
+/* Class = "UITabBarItem"; title = "Books"; ObjectID = "Iru-L7-OaD"; */
+"Iru-L7-OaD.title" = "Books";
+
+/* Class = "UILabel"; text = "By: Felix Arvid Ulf Kjellberg"; ObjectID = "JRk-SL-4jc"; */
+"JRk-SL-4jc.text" = "By: Felix Arvid Ulf Kjellberg";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "K5N-t5-hgR"; */
+"K5N-t5-hgR.text" = "Loading...";
+
+/* Class = "UILabel"; text = "Type in report below (e.g: \"I lost this book.\", \"Page 12 & 13 are missing.\", etc)."; ObjectID = "KeU-Vm-Mw5"; */
+"KeU-Vm-Mw5.text" = "Type in report below (e.g: \"I lost this book.\", \"Page 12 & 13 are missing.\", etc).";
+
+/* Class = "UILabel"; text = "Browse All Books"; ObjectID = "LfZ-TJ-Dhq"; */
+"LfZ-TJ-Dhq.text" = "Browse All Books";
+
+/* Class = "UILabel"; text = "999 DAYS"; ObjectID = "MJ0-lr-m2w"; */
+"MJ0-lr-m2w.text" = "999 DAYS";
+
+/* Class = "UILabel"; text = "No Activities Yet. Start Borrowing Now! 📚"; ObjectID = "MgM-UC-cyF"; */
+"MgM-UC-cyF.text" = "No Activities Yet. Start Borrowing Now! 📚";
+
+/* Class = "UIButton"; normalTitle = "See All Activities"; ObjectID = "PyP-NH-Mc6"; */
+"PyP-NH-Mc6.normalTitle" = "See All Activities";
+
+/* Class = "UILabel"; text = "RETURNED"; ObjectID = "Qes-9q-1aw"; */
+"Qes-9q-1aw.text" = "RETURNED";
+
+/* Class = "UILabel"; text = "Genres: Loading..."; ObjectID = "RlY-gz-Aph"; */
+"RlY-gz-Aph.text" = "Genres: Loading...";
+
+/* Class = "UIButton"; normalTitle = "Return Now!"; ObjectID = "RmA-EB-uNU"; */
+"RmA-EB-uNU.normalTitle" = "Return Now!";
+
+/* Class = "UIButton"; normalTitle = "Sign In With QR Code Scan"; ObjectID = "Tq0-dt-CbS"; */
+"Tq0-dt-CbS.normalTitle" = "Sign In With QR Code Scan";
+
+/* Class = "UILabel"; text = "This Book Loves You"; ObjectID = "Ugp-Om-e6s"; */
+"Ugp-Om-e6s.text" = "This Book Loves You";
+
+/* Class = "UILabel"; text = "You planned to borrow this book for:"; ObjectID = "VoJ-p7-N2a"; */
+"VoJ-p7-N2a.text" = "You planned to borrow this book for:";
+
+/* Class = "UIButton"; normalTitle = "Sign In With Email & Password"; ObjectID = "X64-o9-MJ8"; */
+"X64-o9-MJ8.normalTitle" = "Sign In With Email & Password";
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "Xn0-Dx-cVY"; */
+"Xn0-Dx-cVY.normalTitle" = "Sign In";
+
+/* Class = "UILabel"; text = "BORROWED"; ObjectID = "Xs3-xW-1kr"; */
+"Xs3-xW-1kr.text" = "BORROWED";
+
+/* Class = "UILabel"; text = "Available at aisle number: C2051"; ObjectID = "YDQ-ka-B66"; */
+"YDQ-ka-B66.text" = "Available at aisle number: C2051";
+
+/* Class = "UILabel"; text = "130 DAYS AGO"; ObjectID = "ZiO-sh-TRD"; */
+"ZiO-sh-TRD.text" = "130 DAYS AGO";
+
+/* Class = "UIButton"; normalTitle = "Scan & Borrow!"; ObjectID = "bA3-Bb-W0g"; */
+"bA3-Bb-W0g.normalTitle" = "Scan & Borrow!";
+
+/* Class = "UILabel"; text = "All books"; ObjectID = "d1w-bk-9Gb"; */
+"d1w-bk-9Gb.text" = "All books";
+
+/* Class = "UILabel"; text = "This Book Loves You"; ObjectID = "dCq-QA-KlS"; */
+"dCq-QA-KlS.text" = "This Book Loves You";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "dL6-HA-W7H"; */
+"dL6-HA-W7H.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "No Activities Yet. Start Borrowing Now! 📚"; ObjectID = "dRR-3H-3CS"; */
+"dRR-3H-3CS.text" = "No Activities Yet. Start Borrowing Now! 📚";
+
+/* Class = "UILabel"; text = "Book Details"; ObjectID = "dhp-dh-Plj"; */
+"dhp-dh-Plj.text" = "Book Details";
+
+/* Class = "UILabel"; text = "Year Released: 2015"; ObjectID = "g8q-IF-DoB"; */
+"g8q-IF-DoB.text" = "Year Released: 2015";
+
+/* Class = "UILabel"; text = "You have returned this book 311 days ago"; ObjectID = "gQi-B5-kvg"; */
+"gQi-B5-kvg.text" = "You have returned this book 311 days ago";
+
+/* Class = "UILabel"; text = "Activities"; ObjectID = "hpF-nx-wNR"; */
+"hpF-nx-wNR.text" = "Activities";
+
+/* Class = "UITabBarItem"; title = "My Account"; ObjectID = "k4B-IE-LJk"; */
+"k4B-IE-LJk.title" = "My Account";
+
+/* Class = "UIButton"; normalTitle = "Edit Profile"; ObjectID = "lMd-Jq-Rl9"; */
+"lMd-Jq-Rl9.normalTitle" = "Edit Profile";
+
+/* Class = "UILabel"; text = "Recent Activities"; ObjectID = "lgj-ME-z74"; */
+"lgj-ME-z74.text" = "Recent Activities";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "oNT-uc-Ho5"; */
+"oNT-uc-Ho5.normalTitle" = "-";
+
+/* Class = "UILabel"; text = "Starting from:"; ObjectID = "p5r-o1-mhz"; */
+"p5r-o1-mhz.text" = "Starting from:";
+
+/* Class = "UILabel"; text = "My Account"; ObjectID = "pAt-TJ-6Z0"; */
+"pAt-TJ-6Z0.text" = "My Account";
+
+/* Class = "UIButton"; normalTitle = "Borrow"; ObjectID = "pKP-rv-5ev"; */
+"pKP-rv-5ev.normalTitle" = "Borrow";
+
+/* Class = "UILabel"; text = "Scanned Book"; ObjectID = "puE-kc-a5l"; */
+"puE-kc-a5l.text" = "Scanned Book";
+
+/* Class = "UILabel"; text = "Return this book in 133 days"; ObjectID = "uyP-Qj-4tb"; */
+"uyP-Qj-4tb.text" = "Return this book in 133 days";
+
+/* Class = "UILabel"; text = "Maximum: 0 days"; ObjectID = "vlD-aD-uF9"; */
+"vlD-aD-uF9.text" = "Maximum: 0 days";
+
+/* Class = "UILabel"; text = "To borrow or return a book, scan the QR Code on its back cover"; ObjectID = "wVA-mB-opO"; */
+"wVA-mB-opO.text" = "To borrow or return a book, scan the QR Code on its back cover";
+
+/* Class = "UILabel"; text = "This Book Loves You"; ObjectID = "yHQ-jE-tDM"; */
+"yHQ-jE-tDM.text" = "This Book Loves You";
+
+/* Class = "UILabel"; text = "YESTERDAY"; ObjectID = "yRT-8c-vse"; */
+"yRT-8c-vse.text" = "YESTERDAY";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "zXr-a0-XWH"; */
+"zXr-a0-XWH.text" = "Loading...";
