@@ -449,12 +449,14 @@ class DataService{
         
         REF_BOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            print("AAA!!!")
             var bookKey = ""
             var myBookKey = ""
             var myBookKey2 = ""
             for book in snapshot{
                 bookKey = book.key
             }
+            print(bookKey)
         self.REF_BOOK.child(bookKey).updateChildValues(["actualReturned":actualReturned,"status":"avail"])
             
             self.REF_BOOK.child(bookKey).child("history").queryOrdered(byChild: "bookImgTitleInMS").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
@@ -473,8 +475,10 @@ class DataService{
                 
                 for book in snapshot{
                     myBookKey = book.key
-                    self.REF_USER.child(uid).child("mybooks").child(myBookKey).updateChildValues(["status":"returned", "actualReturned": actualReturned, "late": "no"])
                 }
+                
+                self.REF_USER.child(uid).child("mybooks").child(myBookKey).updateChildValues(["status":"returned", "actualReturned": actualReturned, "late": "no"])
+
             })
            
         })

@@ -58,8 +58,11 @@ class ActivitiesCell: UITableViewCell {
                     daysAgoPill.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
                     
                 }else if formatter.string(from: date) == "Today"{
+                    DataService.instance.updateLateStatus(start: start)
                     returnInXLabel.text = "Return this book by today"
                     returnInXLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+                    statusPill.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+                    daysAgoPill.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                     
                 }else if formatter.string(from: date) == "Yesterday"{
                     DataService.instance.updateLateStatus(start: start)

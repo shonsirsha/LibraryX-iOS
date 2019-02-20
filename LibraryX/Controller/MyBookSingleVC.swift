@@ -18,6 +18,7 @@ class MyBookSingleVC: UIViewController {
     var borrowUntilDate: Double = 0
     var actualReturnedDate: Double = 0
     var status = ""
+    var client = false
     @IBOutlet weak var bookImgView: UIImageView!
     @IBOutlet weak var dateBorrowLabel: UILabel!
     @IBOutlet weak var dateReturnLabel: UILabel!
@@ -46,25 +47,32 @@ class MyBookSingleVC: UIViewController {
         DataService.instance.myBookDetail(uid: (Auth.auth().currentUser?.uid)!, startDate: startBorrowDate, status: { (returnedStatus) in
             self.status = returnedStatus
             if self.status == "borrowing"{
+                self.actionBtn.isHidden = false
                 #if Client
-                    self.actionBtn.isHidden = true
+                self.client = true
+                self.actionBtn.setTitle("How to return this book?", for: UIControl.State.normal)
+                self.actionBtn.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
                 #else
-                    self.actionBtn.isHidden = false
-                #endif
                 self.actionBtn.setTitle("Scan & Return Now", for: UIControl.State.normal)
                 self.actionBtn.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
+                #endif
+                
+                
                 self.reportBtn.isHidden = false
             }else if self.status == "returned"{
                 self.reportBtn.isHidden = true
                 DataService.instance.getABookStatus(imgTitleInMS: self.imgTitleInMS, handler: { (returnedArr) in
                     if returnedArr[1] == "avail"{ // 1 is status, 0 is avail at aisle X
+                        self.actionBtn.isHidden = false
                         #if Client
-                            self.actionBtn.isHidden = true
+                        self.client = true
+                        self.actionBtn.setTitle("How to borrow this book again?", for: UIControl.State.normal)
+                        self.actionBtn.backgroundColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
                         #else
-                            self.actionBtn.isHidden = false
-                        #endif
                         self.actionBtn.setTitle("Scan & Borrow again", for: UIControl.State.normal)
                         self.actionBtn.backgroundColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
+                        #endif
+                       
                         self.availAtLabel.isHidden = false
                         self.availAtLabel.text = "Available at aisle: \(returnedArr[0])"
                     }else{
@@ -174,8 +182,20 @@ class MyBookSingleVC: UIViewController {
     
     
     @IBAction func returnBtn(_ sender: Any) {
-        toScanVCReturn = true
-        dismiss(animated: true, completion: nil)
+        if client == true{
+            let alert = UIAlertController(title: "Borrow or return a book", message: "To borrow or return a book, use the interactive tablets available in the library.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action:UIAlertAction) in
+                
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+
+        }else{
+            toScanVCReturn = true
+            dismiss(animated: true, completion: nil)
+        }
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toReportBookVC"{

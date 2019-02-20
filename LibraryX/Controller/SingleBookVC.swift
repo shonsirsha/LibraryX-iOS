@@ -34,13 +34,15 @@ class SingleBookVC: UIViewController {
         DataService.instance.getABookStatus(imgTitleInMS: imgTitleinMs) { (returnedArr) in
             if returnedArr[1] == "avail"{ // 1 is status, 0 is aisle place.
                 self.currentlyBorrowing = false
+               
+                self.toScanVCbtn.isHidden = false
                 #if Client
-                    self.toScanVCbtn.isHidden = true
+                    self.toScanVCbtn.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
+                    self.toScanVCbtn.setTitle("How to borrow this book?", for: UIControl.State.normal)
                 #else
-                    self.toScanVCbtn.isHidden = false
+                    self.toScanVCbtn.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
+                    self.toScanVCbtn.setTitle("Scan & Borrow!", for: UIControl.State.normal)
                 #endif
-                self.toScanVCbtn.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
-                self.toScanVCbtn.setTitle("Scan & Borrow!", for: UIControl.State.normal)
                 self.statusLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
                 self.statusLabel.text = "Available at aisle number: \(returnedArr[0])"
             }else{
@@ -50,13 +52,10 @@ class SingleBookVC: UIViewController {
                             self.startDate = returnedStartDate
                             self.currentlyBorrowing = true
                             self.toScanVCbtn.backgroundColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
-                            #if Client
-                                self.toScanVCbtn.isHidden = true
-                            #else
-                                self.toScanVCbtn.isHidden = false
-                            #endif
+                            self.toScanVCbtn.isHidden = false
                             self.toScanVCbtn.setTitle("See Borrowing Details", for: UIControl.State.normal)
                             self.statusLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
+                            
                             self.statusLabel.text = "You are currently borrowing this book."
                         })
                        
@@ -105,7 +104,18 @@ class SingleBookVC: UIViewController {
     
     @IBAction func actionBtn(_ sender: Any) {
         if currentlyBorrowing == false{
-            performSegue(withIdentifier: "toScanVC", sender: self)
+            #if Client
+            let alert = UIAlertController(title: "Borrow a book", message: "To borrow a book, use the interactive tablets available in the library.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action:UIAlertAction) in
+                
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+
+            #else
+                performSegue(withIdentifier: "toScanVC", sender: self)
+            #endif
         }else{
             performSegue(withIdentifier: "toMySingleBookVC", sender: self)
         }

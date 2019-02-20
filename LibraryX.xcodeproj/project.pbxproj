@@ -48,7 +48,6 @@
 		B511C5B7221C3771005DDCA5 /* Stawix - SoinSansNeue-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5421F6C252001248CB /* Stawix - SoinSansNeue-MediumItalic.otf */; };
 		B511C5B8221C3771005DDCA5 /* Stawix - SoinSansNeue-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5621F6C252001248CB /* Stawix - SoinSansNeue-Roman.otf */; };
 		B511C5B9221C3771005DDCA5 /* Stawix - SoinSansNeue-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5B21F6C253001248CB /* Stawix - SoinSansNeue-Light.otf */; };
-		B511C5BA221C3771005DDCA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EF141D21F78F4A00A02D33 /* Assets.xcassets */; };
 		B511C5BB221C3771005DDCA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5891A3D21F6BADD001248CB /* Main.storyboard */; };
 		B511C5BC221C3771005DDCA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5891A4221F6BAE2001248CB /* LaunchScreen.storyboard */; };
 		B511C5BD221C3771005DDCA5 /* Stawix - SoinSansNeue-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5891A5A21F6C253001248CB /* Stawix - SoinSansNeue-ExtraLight.otf */; };
@@ -106,6 +105,7 @@
 		B5891A7421F6D23C001248CB /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A7321F6D23C001248CB /* MainVC.swift */; };
 		B5891A7721F6D28F001248CB /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5891A7621F6D28F001248CB /* MainCell.swift */; };
 		B5891A7921F6DA70001248CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5891A7821F6DA70001248CB /* GoogleService-Info.plist */; };
+		B58ADB58221CEFC600B97AA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EF141D21F78F4A00A02D33 /* Assets.xcassets */; };
 		B596D1452209E5EF00FCD15A /* MyTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596D1442209E5EF00FCD15A /* MyTabbarVC.swift */; };
 		B5CC5A782200A0EC005113AB /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC5A772200A0EC005113AB /* RoundView.swift */; };
 		B5D6233721FF6AF600993DB5 /* BookTitleForProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6233621FF6AF600993DB5 /* BookTitleForProfileCell.swift */; };
@@ -405,7 +405,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "libraryX" */;
+			buildConfigurationList = B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "LibraryX" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -431,9 +431,9 @@
 			files = (
 				B511C5B6221C3771005DDCA5 /* Stawix - SoinSansNeue-Heavy.otf in Resources */,
 				B511C5B7221C3771005DDCA5 /* Stawix - SoinSansNeue-MediumItalic.otf in Resources */,
+				B58ADB58221CEFC600B97AA2 /* Assets.xcassets in Resources */,
 				B511C5B8221C3771005DDCA5 /* Stawix - SoinSansNeue-Roman.otf in Resources */,
 				B511C5B9221C3771005DDCA5 /* Stawix - SoinSansNeue-Light.otf in Resources */,
-				B511C5BA221C3771005DDCA5 /* Assets.xcassets in Resources */,
 				B511C5BB221C3771005DDCA5 /* Main.storyboard in Resources */,
 				B511C5BC221C3771005DDCA5 /* LaunchScreen.storyboard in Resources */,
 				B511C5BD221C3771005DDCA5 /* Stawix - SoinSansNeue-ExtraLight.otf in Resources */,
@@ -688,7 +688,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q33X652UWU;
 				INFOPLIST_FILE = "$(SRCROOT)/LibraryX-Client-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -711,7 +711,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q33X652UWU;
 				INFOPLIST_FILE = "$(SRCROOT)/LibraryX-Client-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -776,7 +776,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -831,7 +831,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -845,12 +845,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD22785AA03792282B568CBA /* Pods-LibraryX.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q33X652UWU;
 				INFOPLIST_FILE = "$(SRCROOT)/LibraryX/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -867,12 +867,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CFBC8CA6E703EFFDE232C887 /* Pods-LibraryX.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q33X652UWU;
 				INFOPLIST_FILE = "$(SRCROOT)/LibraryX/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -897,7 +897,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "libraryX" */ = {
+		B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "LibraryX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5891A4621F6BAE2001248CB /* Debug */,

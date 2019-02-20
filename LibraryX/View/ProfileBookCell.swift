@@ -49,6 +49,7 @@ class ProfileBookCell: UITableViewCell {
                     returningInLabel.setSizeFont(sizeFont: 15)
 
                 }else if formatter.string(from: date) == "Today"{
+                    DataService.instance.updateLateStatus(start: start)
                     returningInLabel.text = "Return this book by today"
                     returningInLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
                     borrowingPillView.backgroundColor = #colorLiteral(red: 0.9992764592, green: 0.1491982341, blue: 0.001906163059, alpha: 1)

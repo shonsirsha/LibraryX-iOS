@@ -19,7 +19,6 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var topBlock: UIView!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var editProfileBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         noActLabel.isHidden = true
@@ -27,7 +26,6 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
         myTableView.delegate = self
         self.myTableView.tableFooterView = UIView()
         
-        editProfileBtn.layer.cornerRadius = 8
         fullNameLabel.text = "Loading..."
         emailLabel.text = "Loading..."
        topBlock.layer.cornerRadius = topBlock.frame.height * 1/10
