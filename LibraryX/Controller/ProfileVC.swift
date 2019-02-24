@@ -20,7 +20,9 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         noActLabel.isHidden = true
         myTableView.dataSource = self
         myTableView.delegate = self
@@ -33,7 +35,28 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        toMyAccVC = false
+        if toMyAccVC == true{
+            toMyAccVC = false
+            print(toMyAccVC)
+            let alert = UIAlertController(title: "Thank you! 😉📚", message: "Don't forget to sign out from your account!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action:UIAlertAction) in
+                print("No")
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Sign me out now", style: .default, handler: { (action:UIAlertAction) in
+                do{
+                    try Auth.auth().signOut()
+                    let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "ScanToLoginVC") as? ScanToLoginVC
+                    self.present(loginVC!, animated: true, completion: nil)
+                }catch{
+                    print(error)
+                }        }))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            
+        }
         
         if toScanVCReturn == true{
             toScanVCReturn = false

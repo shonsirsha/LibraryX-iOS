@@ -11,6 +11,7 @@ import Firebase
 var toMyAccVC = false
 
 class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate{
+    
      var bookArr = [BookDetailForCell]()
     var currentBookArr = [BookDetailForCell]()
   
@@ -26,6 +27,8 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
     @IBOutlet weak var allBookLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+     
         
         #if Client
             toScannerVCBtn.isHidden = true

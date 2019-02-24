@@ -75,7 +75,7 @@ class MoreVC: UIViewController {
                     let realDate = self.myArr[1]
                     let date = NSDate(timeIntervalSince1970: TimeInterval(realDate))
                     let dayTimePeriodFormatter = DateFormatter()
-                    dayTimePeriodFormatter.dateFormat = "hh:mm:ss a"
+                    dayTimePeriodFormatter.dateFormat = "HH:mm:ss"
                     let dateString = dayTimePeriodFormatter.string(from: date as Date)
                     
                     self.timeLabel.text = "Last updated: Today at \(dateString)"

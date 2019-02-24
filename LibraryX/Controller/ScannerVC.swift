@@ -111,6 +111,7 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     
     func found(code: String) {
+        print(code)
         if let returnedCode2 = Double(code) {
             print("AAAA")
             print(returnedCode2)
@@ -138,6 +139,7 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             }
            
         } else { // not a double valued qrcode
+            print(code)
             let alert = UIAlertController(title: "Invalid QR Code", message: "QR Code scanned is invalid.", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { (action:UIAlertAction) in
