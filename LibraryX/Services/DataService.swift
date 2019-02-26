@@ -17,6 +17,7 @@ class DataService{
     private var _REF_BASE = DB_BASE
     private var _REF_USER = DB_BASE.child("users")
     private var _REF_BOOK = DB_BASE.child("books")
+    private var _REF_EBOOK = DB_BASE.child("ebooks")
     private var _REF_WIFI = DB_BASE.child("wifiscanner")
     private var _REF_STORAGE = STORAGE
     
@@ -31,6 +32,10 @@ class DataService{
     
     var REF_BOOK:DatabaseReference{
         return _REF_BOOK
+    }
+    
+    var REF_EBOOK: DatabaseReference{
+        return _REF_EBOOK
     }
     
     var REF_WIFI:DatabaseReference{
@@ -110,6 +115,48 @@ class DataService{
             
             myGenresInStr(stringGenres)
             
+        }
+    }
+    
+    func getEbookGenres(imgTitleInMS: Double, myGenresInStr: @escaping(_ genres: String)->()){
+        var allGenres = [String]()
+        var unwrappedGenre2 = ""
+        var unwrappedGenre3 = ""
+        REF_EBOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observe(DataEventType.value) { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            for book in snapshot{
+                
+                let genre1 = book.childSnapshot(forPath: "genre1").value as! String
+                
+                if let genre2 = book.childSnapshot(forPath: "genre2").value as? String {
+                    unwrappedGenre2 = genre2
+                }
+                if let genre3 = book.childSnapshot(forPath: "genre3").value as? String {
+                    unwrappedGenre3 = genre3
+                }
+                allGenres.append(genre1)
+                allGenres.append(unwrappedGenre2)
+                allGenres.append(unwrappedGenre3)
+                
+            }
+            
+            allGenres = allGenres.filter{!$0.isEmpty}
+            
+            
+            let stringGenres = allGenres.joined(separator: ", ")
+            
+            myGenresInStr(stringGenres)
+            
+        }
+    }
+    
+    func getEbookURL(imgTitleInMS: Double, url: @escaping(_ url: String)->()){
+        REF_EBOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observe(DataEventType.value) { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            for ebook in snapshot{
+                let ebookUrl = ebook.childSnapshot(forPath: "eBookURL").value as! String
+                url(ebookUrl)
+            }
         }
     }
     
@@ -363,6 +410,40 @@ class DataService{
             handler(allBooksArray.reversed())
             allBooksArray = [BookDetailForCell]()
             
+        }
+    }
+    
+    func getAllEbooks(handler: @escaping(_ eachEbookObj: [EbookDetailCell])->()){
+        var allEbooksArray = [EbookDetailCell]()
+        var unwrappedGenre2 = ""
+        var unwrappedGenre3 = ""
+        var unwrappedYear = ""
+        
+        REF_EBOOK.queryOrdered(byChild: "image").observe(DataEventType.value) { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            for ebook in snapshot{
+                let bookTitle = ebook.childSnapshot(forPath: "bookTitle").value as! String
+                let authorName = ebook.childSnapshot(forPath: "authorName").value as! String
+                let genre1 = ebook.childSnapshot(forPath: "genre1").value as! String
+                if let genre2 = ebook.childSnapshot(forPath: "genre2").value as? String {
+                    unwrappedGenre2 = genre2
+                }
+                if let genre3 = ebook.childSnapshot(forPath: "genre3").value as? String {
+                    unwrappedGenre3 = genre3
+                }
+                if let year = ebook.childSnapshot(forPath: "year").value as? String {
+                    unwrappedYear = year
+                }
+                let imgTitle = ebook.childSnapshot(forPath: "image").value as! Double
+                let ebookURL = ebook.childSnapshot(forPath: "eBookURL").value as! String
+                print("ASU!")
+                print(imgTitle)
+                let ebook = EbookDetailCell(bookTitle: bookTitle, authorName: authorName, genre1: genre1, genre2: unwrappedGenre2, genre3: unwrappedGenre3, year: unwrappedYear, imgTitle: imgTitle, ebookURL: ebookURL)
+                allEbooksArray.append(ebook)
+            }
+            
+            handler(allEbooksArray.reversed())
+            allEbooksArray = [EbookDetailCell]()
         }
     }
     

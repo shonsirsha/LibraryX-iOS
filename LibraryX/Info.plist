@@ -6,6 +6,8 @@
 	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSHumanReadableCopyright</key>
+	<string></string>
 	<key>CFBundleDisplayName</key>
 	<string>LibraryX</string>
 	<key>CFBundleExecutable</key>

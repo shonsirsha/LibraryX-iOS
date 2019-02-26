@@ -14,6 +14,8 @@ class MoreVC: UIViewController {
     var level:Double = 0
     var myArr = [Int]()
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var statusLabel1: UILabel!
+    @IBOutlet weak var statusLabel2: UILabel!
     @IBOutlet weak var numOfPeople: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     override func viewDidLoad() {
@@ -40,18 +42,28 @@ class MoreVC: UIViewController {
             print(self.myArr[0])
             self.level = Double((Double(self.myArr[0]) / self.capacity)*100)
             if self.level <= 30{
+                self.statusLabel1.isHidden = true
+                self.statusLabel2.isHidden = true
                 self.levelLabel.text = "not crowded"
                 self.levelLabel.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             }else if self.level <= 40 && self.level > 30{
+                self.statusLabel1.isHidden = true
+                self.statusLabel2.isHidden = true
                 self.levelLabel.text = "slightly crowded"
                 self.levelLabel.textColor = #colorLiteral(red: 0.9579235406, green: 0.5509680707, blue: 0.1176804783, alpha: 1)
             }else if self.level <= 50 && self.level > 40{
+                self.statusLabel1.isHidden = true
+                self.statusLabel2.isHidden = true
                 self.levelLabel.text = "moderately crowded"
                 self.levelLabel.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
             }else if self.level <= 80 && self.level > 50{
+                self.statusLabel1.isHidden = false
+                self.statusLabel2.isHidden = false
                 self.levelLabel.text = "crowded"
                 self.levelLabel.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
             }else if self.level > 80{
+                self.statusLabel1.isHidden = false
+                self.statusLabel2.isHidden = false
                 self.levelLabel.text = "very crowded"
                 self.levelLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
             }

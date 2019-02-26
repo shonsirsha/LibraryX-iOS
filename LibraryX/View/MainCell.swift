@@ -15,9 +15,8 @@ class MainCell: UITableViewCell {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var authorNameLabel: UILabel!
-    @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var bookImgview: UIImageView!
-    
+    @IBOutlet weak var bookTitleLabel: UILabel!
     func configCell(bookTitle: String, authorName: String, genre: String, year: String, imgTitleInMS: Double){
         
         let reference = STORAGE.child("bookPics/\(Int(imgTitleInMS))")
