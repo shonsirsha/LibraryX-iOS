@@ -51,7 +51,7 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
         if toMyAccVC == true || toScanVCReturn == true{
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let vc: UITabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
-            vc.selectedIndex = 1
+            vc.selectedIndex = 2
             self.present(vc, animated: false, completion: nil)
         }
         

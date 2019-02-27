@@ -16,7 +16,6 @@ class EbookDetailCell{
     private var _genre3: String
     private var _year: String
     private var _imgTitle: Double
-    private var _ebookURL: String
     
     var bookTitle: String{
         return _bookTitle
@@ -47,11 +46,9 @@ class EbookDetailCell{
         return _imgTitle
     }
     
-    var ebookURL: String{
-        return _ebookURL
-    }
+ 
     
-    init(bookTitle: String, authorName: String, genre1: String, genre2: String, genre3: String, year: String, imgTitle: Double, ebookURL: String){
+    init(bookTitle: String, authorName: String, genre1: String, genre2: String, genre3: String, year: String, imgTitle: Double){
         self._bookTitle = bookTitle
         self._authorName = authorName
         self._genre1 = genre1
@@ -59,6 +56,5 @@ class EbookDetailCell{
         self._genre3 = genre3
         self._year = year
         self._imgTitle = imgTitle
-        self._ebookURL = ebookURL
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SingleEbookVC: UIViewController {
     var bookTitle = ""
@@ -14,6 +15,7 @@ class SingleEbookVC: UIViewController {
     var authorName = ""
     var imgTitleInMS: Double = 0
     
+    @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -28,6 +30,16 @@ class SingleEbookVC: UIViewController {
             DataService.instance.getEbookGenres(imgTitleInMS: imgTitleInMS) { (returnedGenres) in
                 self.genresLabel.text = "Genres: \(returnedGenres)"
             }
+            DataService.instance.checkIfBookSaved(uid: (Auth.auth().currentUser?.uid)!, imgTitleInMS: imgTitleInMS) { (returnedStatus) in
+                if returnedStatus == "saved"{
+                    self.saveBtn.setImage(UIImage(named: "icons8-bookmark-filled-100"),for: .normal)
+                }else{
+                    self.saveBtn.setImage(UIImage(named: "icons8-bookmark-100"),for: .normal)
+                }
+            }
+            
+            saveBtn.isHidden = false
+
             
             let reference = STORAGE.child("bookPics/\(Int(imgTitleInMS))")
             
@@ -38,8 +50,14 @@ class SingleEbookVC: UIViewController {
             authorLabel.text = "Author: \(authorName)"
             yearLabel.text = "Year Released: \(yearReleased)"
             readBtn.isHidden = false
+            
         }
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,6 +67,19 @@ class SingleEbookVC: UIViewController {
               ebookReaderVC.bookTitle = bookTitle
                 ebookReaderVC.imgTitleInMS = imgTitleInMS
             }
+        }
+    }
+    
+    @IBAction func saveBook(_ sender: Any) {
+        DataService.instance.saveEbook(uid: (Auth.auth().currentUser?.uid)!, imgTitleInMS: imgTitleInMS, time: NSDate().timeIntervalSince1970, authorName: authorName, bookTitle: bookTitle, year: yearReleased ) { (returnedStatus) in
+            if returnedStatus == "removed"{
+                self.saveBtn.setImage(UIImage(named: "icons8-bookmark-100"),for: .normal)
+                print("unsaved")
+            }else if returnedStatus == "added"{
+                self.saveBtn.setImage(UIImage(named: "icons8-bookmark-filled-100"),for: .normal)
+                print("saved")
+            }
+            
         }
     }
     
