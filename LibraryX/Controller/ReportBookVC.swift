@@ -60,7 +60,7 @@ class ReportBookVC: UIViewController {
             }else{
                 let alert = UIAlertController(title: "Error", message: "Connection error. Please try again.", preferredStyle: .alert)
                 
-                alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action:UIAlertAction) in
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action:UIAlertAction) in
                     print("OK")
                 }))
                 self.present(alert, animated: true, completion: nil)

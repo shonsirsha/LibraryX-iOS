@@ -14,6 +14,7 @@ class EbookReaderVC: UIViewController,WKNavigationDelegate{
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var Activity: UIActivityIndicatorView!
+    @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class EbookReaderVC: UIViewController,WKNavigationDelegate{
                 let myUrl: URL! = URL(string: returnedURL)
                 self.webView.load(URLRequest(url: myUrl))
             }
+            saveBtn.isHidden = false
             titleLabel.text = bookTitle
         }
         
@@ -52,7 +54,18 @@ class EbookReaderVC: UIViewController,WKNavigationDelegate{
 
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toReportEbookVC"{
+            if let reportEbookVC = segue.destination as? ReportEbookVC {
+                reportEbookVC.imgTitleInMS = imgTitleInMS
+            }
+        }
+    }
+    
    
+    @IBAction func reportBtn(_ sender: Any) {
+        performSegue(withIdentifier: "toReportEbookVC", sender: self)
+    }
     
     @IBAction func closeBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)

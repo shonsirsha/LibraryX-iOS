@@ -130,6 +130,8 @@
 		B5DF6A2721F7842D00C93D56 /* FloatyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF6A2621F7842C00C93D56 /* FloatyViewController.swift */; };
 		B5ED100821FB748D008C59C9 /* SingleBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ED100721FB748D008C59C9 /* SingleBookVC.swift */; };
 		B5EF141E21F78F4C00A02D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EF141D21F78F4A00A02D33 /* Assets.xcassets */; };
+		B5FD8E6B2227906400CEA444 /* ReportEbookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD8E6A2227906400CEA444 /* ReportEbookVC.swift */; };
+		B5FD8E6C2227906400CEA444 /* ReportEbookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD8E6A2227906400CEA444 /* ReportEbookVC.swift */; };
 		D07DBF3E388B0C7A0B96D0B6 /* Pods_LibraryX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A152F20246A7932F837B861 /* Pods_LibraryX.framework */; };
 /* End PBXBuildFile section */
 
@@ -201,6 +203,7 @@
 		B5DF6A2621F7842C00C93D56 /* FloatyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatyViewController.swift; path = "../../../../../../Downloads/Floaty-master/Floaty/FloatyViewController.swift"; sourceTree = "<group>"; };
 		B5ED100721FB748D008C59C9 /* SingleBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleBookVC.swift; sourceTree = "<group>"; };
 		B5EF141D21F78F4A00A02D33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5FD8E6A2227906400CEA444 /* ReportEbookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportEbookVC.swift; sourceTree = "<group>"; };
 		BD22785AA03792282B568CBA /* Pods-LibraryX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibraryX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LibraryX/Pods-LibraryX.debug.xcconfig"; sourceTree = "<group>"; };
 		CFBC8CA6E703EFFDE232C887 /* Pods-LibraryX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibraryX.release.xcconfig"; path = "Pods/Target Support Files/Pods-LibraryX/Pods-LibraryX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,6 +312,7 @@
 				B5C66430222575FE0061F1D8 /* SingleEbookVC.swift */,
 				B54878D322257E0C004D1F98 /* EbookReaderVC.swift */,
 				B53E65532226DD7100A96F41 /* SavedEbookVC.swift */,
+				B5FD8E6A2227906400CEA444 /* ReportEbookVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -429,7 +433,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "LibraryX" */;
+			buildConfigurationList = B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "libraryX" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -616,6 +620,7 @@
 				B511C598221C3771005DDCA5 /* DataService.swift in Sources */,
 				B5C66432222575FE0061F1D8 /* SingleEbookVC.swift in Sources */,
 				B511C599221C3771005DDCA5 /* FloatyDelegate.swift in Sources */,
+				B5FD8E6C2227906400CEA444 /* ReportEbookVC.swift in Sources */,
 				B511C59A221C3771005DDCA5 /* ActivitiesVC.swift in Sources */,
 				B511C59B221C3771005DDCA5 /* AuthVC.swift in Sources */,
 				B511C59C221C3771005DDCA5 /* AppDelegate.swift in Sources */,
@@ -662,6 +667,7 @@
 				B524D50121F7795400EA5AF7 /* DataService.swift in Sources */,
 				B5C66431222575FE0061F1D8 /* SingleEbookVC.swift in Sources */,
 				B5DF6A2521F781F100C93D56 /* FloatyDelegate.swift in Sources */,
+				B5FD8E6B2227906400CEA444 /* ReportEbookVC.swift in Sources */,
 				B585150C2202BEE40023DF1E /* ActivitiesVC.swift in Sources */,
 				B5DF6A1821F7810C00C93D56 /* AuthVC.swift in Sources */,
 				B5891A3A21F6BADD001248CB /* AppDelegate.swift in Sources */,
@@ -933,7 +939,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "LibraryX" */ = {
+		B5891A3121F6BADD001248CB /* Build configuration list for PBXProject "libraryX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5891A4621F6BAE2001248CB /* Debug */,

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class EbookVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     var eBookArr = [EbookDetailCell]()
     var currentBookArr = [EbookDetailCell]()
@@ -33,6 +33,22 @@ class EbookVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISe
             self.currentBookArr = self.eBookArr
             self.allEbooksLabel.text = "All eBooks (\(self.eBookArr.count))"
             self.tableView.reloadData()
+        }
+        
+        if Auth.auth().currentUser == nil{
+            
+        }else{
+            DataService.instance.checkIfUserDeleted(uid: (Auth.auth().currentUser?.uid)!) { (returnedPw) in
+                if returnedPw == "non"{
+                    do{
+                        try Auth.auth().signOut()
+                        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "ScanToLoginVC") as? ScanToLoginVC
+                        self.present(loginVC!, animated: true, completion: nil)
+                    }catch{
+                        print(error)
+                    }
+                }
+            }
         }
     }
     

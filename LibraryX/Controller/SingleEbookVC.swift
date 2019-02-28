@@ -27,6 +27,17 @@ class SingleEbookVC: UIViewController {
         super.viewDidLoad()
     
         if imgTitleInMS != 0{
+            DataService.instance.getEbookStatus(imgTitleInMS: imgTitleInMS) { (returnedStatus) in
+                if returnedStatus == "avail"{
+                    self.saveBtn.isHidden = false
+                    self.readBtn.isHidden = false
+
+                }else{
+                    self.saveBtn.isHidden = true
+                    self.readBtn.isHidden = true
+
+                }
+            }
             DataService.instance.getEbookGenres(imgTitleInMS: imgTitleInMS) { (returnedGenres) in
                 self.genresLabel.text = "Genres: \(returnedGenres)"
             }
@@ -38,7 +49,6 @@ class SingleEbookVC: UIViewController {
                 }
             }
             
-            saveBtn.isHidden = false
 
             
             let reference = STORAGE.child("bookPics/\(Int(imgTitleInMS))")
@@ -49,7 +59,6 @@ class SingleEbookVC: UIViewController {
             titleLabel.text = bookTitle
             authorLabel.text = "Author: \(authorName)"
             yearLabel.text = "Year Released: \(yearReleased)"
-            readBtn.isHidden = false
             
         }
 

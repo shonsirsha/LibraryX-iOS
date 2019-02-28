@@ -187,7 +187,19 @@ class DataService{
             
         }
     }
-    
+    func getEbookStatus(imgTitleInMS: Double, handler: @escaping(_ handler: String)->()){
+        REF_EBOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observe(DataEventType.value) { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            for book in snapshot{
+                let status = book.childSnapshot(forPath: "status").value as! String
+                if status == "avail"{
+                    handler("avail")
+                }else{
+                    handler("del")
+                }
+            }
+        }
+    }
     func saveEbook(uid: String, imgTitleInMS: Double, time: Double, authorName: String, bookTitle: String, year: String,handler: @escaping(_ handler: String)->()){
         REF_USER.child(uid).child("savedEbooks").queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value) { (snapshot) in
             if snapshot.exists(){
@@ -199,7 +211,7 @@ class DataService{
                 self.REF_USER.child(uid).child("savedEbooks").child(ebookKey).removeValue()
                 handler("removed")
             }else{
-                self.REF_USER.child(uid).child("savedEbooks").childByAutoId().updateChildValues(["time": time, "image":imgTitleInMS, "authorName":authorName, "bookTitle":bookTitle, "year": year])
+                self.REF_USER.child(uid).child("savedEbooks").childByAutoId().updateChildValues(["time": time, "image":imgTitleInMS, "authorName":authorName, "bookTitle":bookTitle, "year": year, "status": "avail"])
                 handler("added")
             }
         }
@@ -207,12 +219,12 @@ class DataService{
     
     func getSavedEbooks(uid: String, handler: @escaping(_ handler: [EbookDetailCell])->()){
         var allEbooksArray = [EbookDetailCell]()
-       
-        var unwrappedYear = ""
-        
-        REF_USER.child(uid).child("savedEbooks").queryOrdered(byChild: "time").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+               var unwrappedYear = ""
+        REF_USER.child(uid).child("savedEbooks").queryOrdered(byChild: "time").observe(DataEventType.value, with: { (snapshot) in
                     guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
                     for ebookCompleteDetail in snapshot{
+                        let status = ebookCompleteDetail.childSnapshot(forPath: "status").value as! String
+                        if status != "del"{
                         let bookTitle = ebookCompleteDetail.childSnapshot(forPath: "bookTitle").value as! String
                         let authorName = ebookCompleteDetail.childSnapshot(forPath: "authorName").value as! String
                         
@@ -220,10 +232,9 @@ class DataService{
                             unwrappedYear = year
                         }
                         let imgTitle = ebookCompleteDetail.childSnapshot(forPath: "image").value as! Double
-                        print("ASU!")
-                        print(imgTitle)
                         let ebook = EbookDetailCell(bookTitle: bookTitle, authorName: authorName, genre1: "", genre2: "", genre3: "", year: unwrappedYear, imgTitle: imgTitle)
                         allEbooksArray.append(ebook)
+                    }
                     }
                     handler(allEbooksArray.reversed())
                     allEbooksArray = [EbookDetailCell]()
@@ -458,6 +469,8 @@ class DataService{
         REF_EBOOK.queryOrdered(byChild: "image").observe(DataEventType.value) { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
             for ebook in snapshot{
+                let bookStatus = ebook.childSnapshot(forPath: "status").value as! String
+                if bookStatus != "del"{
                 let bookTitle = ebook.childSnapshot(forPath: "bookTitle").value as! String
                 let authorName = ebook.childSnapshot(forPath: "authorName").value as! String
                 let genre1 = ebook.childSnapshot(forPath: "genre1").value as! String
@@ -475,6 +488,7 @@ class DataService{
                 print(imgTitle)
                 let ebook = EbookDetailCell(bookTitle: bookTitle, authorName: authorName, genre1: genre1, genre2: unwrappedGenre2, genre3: unwrappedGenre3, year: unwrappedYear, imgTitle: imgTitle)
                 allEbooksArray.append(ebook)
+                }
             }
             
             handler(allEbooksArray.reversed())
@@ -625,6 +639,18 @@ class DataService{
                 bookKey = book.key
             }
             self.REF_BOOK.child(bookKey).child("reports").childByAutoId().updateChildValues(["bookImgTitleInMS":imgTitleInMS,"reportTime": reportTime, "report": report, "reportedBy": uid, "fullName":fullName])
+            
+        })
+    }
+    
+    func sendEbookReport(uid: String, reportTime: Double, report: String, fullName: String, imgTitleInMS: Double){
+        REF_EBOOK.queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
+            var bookKey = ""
+            for book in snapshot{
+                bookKey = book.key
+            }
+            self.REF_EBOOK.child(bookKey).child("reports").childByAutoId().updateChildValues(["bookImgTitleInMS":imgTitleInMS,"reportTime": reportTime, "report": report, "reportedBy": uid, "fullName":fullName])
             
         })
     }
