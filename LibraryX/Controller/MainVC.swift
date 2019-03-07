@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+var currentFilter = ""
 var toMyAccVC = false
 
 class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate{
@@ -15,6 +16,7 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
      var bookArr = [BookDetailForCell]()
     var currentBookArr = [BookDetailForCell]()
   
+    @IBOutlet weak var sortedByLabel: UILabel!
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var loadingLabel: UILabel!
@@ -28,7 +30,10 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     
+        searchBar.placeholder = "Search.."
+        if currentFilter == ""{
+            currentFilter = "time"
+        }
         
         #if Client
             toScannerVCBtn.isHidden = true
@@ -45,9 +50,90 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
       
     }
     
+    @IBAction func filterBtn(_ sender: Any) {
+        guard let viewRect = sender as? UIView else{
+            return
+        }
+        let alert = UIAlertController(title: "Book Sort", message: "Sort books by", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Newest addition", style: .default) { _ in
+            currentFilter = "time"
+            self.sortedByLabel.text = "- Sorted by newest addition"
+            DataService.instance.getAllBooks(sortedBy: currentFilter) { (returnedEachBookObj) in
+                self.bookArr = returnedEachBookObj
+                self.currentBookArr = self.bookArr
+                self.bookTotal = self.bookArr.count
+                self.myTableView.reloadData()
+                self.allBookLabel.text = "All books (" + "\(self.bookTotal))"
+            }
+        })
+        alert.addAction(UIAlertAction(title: "Title (A-Z)", style: .default) { _ in
+            currentFilter = "title"
+            self.sortedByLabel.text = "- Sorted by title"
+            DataService.instance.getAllBooks(sortedBy: currentFilter) { (returnedEachBookObj) in
+                self.bookArr = returnedEachBookObj
+                self.currentBookArr = self.bookArr
+                self.bookTotal = self.bookArr.count
+                self.myTableView.reloadData()
+                self.allBookLabel.text = "All books (" + "\(self.bookTotal))"
+            }
+                    })
+        
+        alert.addAction(UIAlertAction(title: "Author's name (A-Z)", style: .default) { _ in
+            currentFilter = "author"
+            self.sortedByLabel.text = "- Sorted by author's name"
+            DataService.instance.getAllBooks(sortedBy: currentFilter) { (returnedEachBookObj) in
+                self.bookArr = returnedEachBookObj
+                self.currentBookArr = self.bookArr
+                self.bookTotal = self.bookArr.count
+                self.myTableView.reloadData()
+                self.allBookLabel.text = "All books (" + "\(self.bookTotal))"
+            }
+        })
+        
+        alert.addAction(UIAlertAction(title: "Year released", style: .default) { _ in
+            currentFilter = "year"
+            self.sortedByLabel.text = "- Sorted by year released"
+            DataService.instance.getAllBooks(sortedBy: currentFilter) { (returnedEachBookObj) in
+                self.bookArr = returnedEachBookObj
+                self.currentBookArr = self.bookArr
+                self.bookTotal = self.bookArr.count
+                self.myTableView.reloadData()
+                self.allBookLabel.text = "All books (" + "\(self.bookTotal))"
+            }
+        })
+        
+        alert.addAction(UIAlertAction(title: "Genre(s) (A-Z)", style: .default) { _ in
+            currentFilter = "genre"
+            self.sortedByLabel.text = "- Sorted by genre(s)"
+            DataService.instance.getAllBooks(sortedBy: currentFilter) { (returnedEachBookObj) in
+                self.bookArr = returnedEachBookObj
+                self.currentBookArr = self.bookArr
+                self.bookTotal = self.bookArr.count
+                self.myTableView.reloadData()
+                self.allBookLabel.text = "All books (" + "\(self.bookTotal))"
+            }
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            
+        })
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if let presenter = alert.popoverPresentationController {
+                presenter.sourceView = viewRect;
+                presenter.sourceRect = viewRect.bounds;
+            }
+            
+            
+            present(alert, animated: true, completion: nil)
+        }else{
+            present(alert, animated: true)
+            
+        }
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
+       
         if toMyAccVC == true || toScanVCReturn == true{
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let vc: UITabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
@@ -72,7 +158,7 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
         }
         
         
-        DataService.instance.getAllBooks { (returnedEachBookObj) in
+        DataService.instance.getAllBooks(sortedBy: currentFilter) { (returnedEachBookObj) in
             self.bookArr = returnedEachBookObj
             self.currentBookArr = self.bookArr
             self.bookTotal = self.bookArr.count
@@ -81,6 +167,8 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
         }
         
     }
+    
+   
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -129,17 +217,20 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource,UISear
             allBookLabel.text = "All books (\(currentBookArr.count))"
             return
         }
-        
-        currentBookArr = bookArr.filter({ (returnedBook) -> Bool in
-            guard let text = searchBar.text else {return false}
-            return returnedBook.bookTitle.lowercased().contains(text.lowercased())
-        })
-    
-        
-        
-       
-        myTableView.reloadData()
-        allBookLabel.text = "All books (\(currentBookArr.count))"
+
+            currentBookArr = bookArr.filter({ (returnedBook) -> Bool in
+                guard let text = searchBar.text else {return false}
+                var arr = ""
+                
+                arr += "\(returnedBook.bookTitle) \(returnedBook.authorName) \(returnedBook.year) \(returnedBook.genre1) \(returnedBook.genre2) \(returnedBook.genre3)"
+                
+                return arr.lowercased().contains(text.lowercased())
+                
+            })
+            
+            myTableView.reloadData()
+            allBookLabel.text = "All books (\(currentBookArr.count))"
+
     }
     
     

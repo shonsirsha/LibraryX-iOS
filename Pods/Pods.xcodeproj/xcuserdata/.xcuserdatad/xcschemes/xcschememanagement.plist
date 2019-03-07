@@ -39,7 +39,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-LibraryX.xcscheme</key>
+		<key>NewPopMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-LibraryX-Client.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

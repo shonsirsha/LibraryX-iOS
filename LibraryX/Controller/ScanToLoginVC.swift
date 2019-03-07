@@ -97,6 +97,28 @@ class ScanToLoginVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
     }
     
+    func playSound(sound: String) {
+        guard let url = Bundle.main.url(forResource: sound, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            
+            /* iOS 10 and earlier require the following line:
+             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -131,11 +153,13 @@ class ScanToLoginVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             pw = returnedPassword
             print(returnedPassword)
             if email != "" && pw != ""{
-                
+                self.playSound(sound: "scansound")
+
                 AuthService.instance.loginUser(email: email, password: pw, loginComplete: { (success, err) in
                     if success {
                          self.dismiss(animated: true, completion: nil)
                     }else{ // error in logging in
+                        self.playSound(sound: "fail")
                         self.statusLabel.text = "Scan the QR Code on your Student ID Card to Sign In"
                         let alert = UIAlertController(title: "Invalid QR Code", message: "QR Code scanned is invalid", preferredStyle: .alert)
                         
@@ -149,6 +173,7 @@ class ScanToLoginVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                     }
                 })
             }else{ // false uid
+                self.playSound(sound: "fail")
                 self.statusLabel.text = "Scan the QR Code on your Student ID Card to Sign In"
                 let alert = UIAlertController(title: "Invalid QR Code", message: "QR Code scanned is invalid.", preferredStyle: .alert)
                 

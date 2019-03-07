@@ -1,0 +1,6 @@
+framework module Pods_LibraryX_Client {
+  umbrella header "Pods-LibraryX-Client-umbrella.h"
+
+  export *
+  module * { export * }
+}

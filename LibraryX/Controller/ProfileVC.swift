@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+
+
 var toScanVCReturn = false
 class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 

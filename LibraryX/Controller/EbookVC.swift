@@ -8,15 +8,17 @@
 
 import UIKit
 import Firebase
+var currentEFilter = ""
+
 class EbookVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     var eBookArr = [EbookDetailCell]()
     var currentBookArr = [EbookDetailCell]()
-
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var allEbooksLabel: UILabel!
     var allEbookCount = 0
     
+    @IBOutlet weak var sortedLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -24,16 +26,23 @@ class EbookVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISe
         searchBar.delegate = self
         self.tableView.tableFooterView = UIView()
         self.searchBar.backgroundImage = UIImage()
+        
+        if currentEFilter == ""{
+            currentEFilter = "time"
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        DataService.instance.getAllEbooks { (returnedEbooks) in
-            self.eBookArr = returnedEbooks
-            self.currentBookArr = self.eBookArr
-            self.allEbooksLabel.text = "All eBooks (\(self.eBookArr.count))"
-            self.tableView.reloadData()
-        }
+        
+            DataService.instance.getAllEbooks(sortedBy: currentEFilter) { (returnedEbooks) in
+                self.eBookArr = returnedEbooks
+                self.currentBookArr = self.eBookArr
+                self.allEbooksLabel.text = "All eBooks (\(self.eBookArr.count))"
+                self.tableView.reloadData()
+            }
+       
+       
         
         if Auth.auth().currentUser == nil{
             
@@ -52,8 +61,95 @@ class EbookVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISe
         }
     }
     
+    @IBAction func filterBtn(_ sender: Any) {
+        guard let viewRect = sender as? UIView else {
+            return
+        }
+        
+        let alert = UIAlertController(title: "eBook Sort", message: "Sort eBooks by", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Newest addition", style: .default) { _ in
+            currentEFilter = "time"
+            DataService.instance.getAllEbooks(sortedBy: currentEFilter) { (returnedEbooks) in
+                self.eBookArr = returnedEbooks
+                self.currentBookArr = self.eBookArr
+                self.allEbooksLabel.text = "All eBooks (\(self.eBookArr.count))"
+                self.tableView.reloadData()
+            }
+            self.sortedLabel.text = "- Sorted by newest addition"
+            
+        })
+        alert.addAction(UIAlertAction(title: "Title (A-Z)", style: .default) { _ in
+            currentEFilter = "title"
+            DataService.instance.getAllEbooks(sortedBy: currentEFilter) { (returnedEbooks) in
+                self.eBookArr = returnedEbooks
+                self.currentBookArr = self.eBookArr
+                self.allEbooksLabel.text = "All eBooks (\(self.eBookArr.count))"
+                self.tableView.reloadData()
+            }
+            self.sortedLabel.text = "- Sorted by title"
+          
+        })
+        
+        alert.addAction(UIAlertAction(title: "Author's name (A-Z)", style: .default) { _ in
+            currentEFilter = "author"
+            DataService.instance.getAllEbooks(sortedBy: currentEFilter) { (returnedEbooks) in
+                self.eBookArr = returnedEbooks
+                self.currentBookArr = self.eBookArr
+                self.allEbooksLabel.text = "All eBooks (\(self.eBookArr.count))"
+                self.tableView.reloadData()
+            }
+            self.sortedLabel.text = "- Sorted by author's name"
+            
+        })
+        
+        alert.addAction(UIAlertAction(title: "Year released", style: .default) { _ in
+            currentEFilter = "year"
+            DataService.instance.getAllEbooks(sortedBy: currentEFilter) { (returnedEbooks) in
+                self.eBookArr = returnedEbooks
+                self.currentBookArr = self.eBookArr
+                self.allEbooksLabel.text = "All eBooks (\(self.eBookArr.count))"
+                self.tableView.reloadData()
+            }
+            self.sortedLabel.text = "- Sorted by year released"
+           
+        })
+        
+        alert.addAction(UIAlertAction(title: "Genre(s) (A-Z)", style: .default) { _ in
+            currentEFilter = "genre"
+            DataService.instance.getAllEbooks(sortedBy: currentEFilter) { (returnedEbooks) in
+                self.eBookArr = returnedEbooks
+                self.currentBookArr = self.eBookArr
+                self.allEbooksLabel.text = "All eBooks (\(self.eBookArr.count))"
+                self.tableView.reloadData()
+            }
+            self.sortedLabel.text = "- Sorted by genre(s)"
+            
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            
+        })
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if let presenter = alert.popoverPresentationController {
+                presenter.sourceView = viewRect;
+                presenter.sourceRect = viewRect.bounds;
+            }
+            
+            
+            present(alert, animated: true, completion: nil)
+        }else{
+            present(alert, animated: true)
+
+        }
+        
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentBookArr.count
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchBar.resignFirstResponder()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -112,7 +208,10 @@ class EbookVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISe
         
         currentBookArr = eBookArr.filter({ (returnedBook) -> Bool in
             guard let text = searchBar.text else {return false}
-            return returnedBook.bookTitle.lowercased().contains(text.lowercased())
+            var arr = ""
+            
+            arr += "\(returnedBook.authorName) \(returnedBook.authorName) \(returnedBook.year) \(returnedBook.genre1) \(returnedBook.genre2) \(returnedBook.genre3)"
+            return arr.lowercased().contains(text.lowercased())
         })
         tableView.reloadData()
         allEbooksLabel.text = "All books (\(currentBookArr.count))"

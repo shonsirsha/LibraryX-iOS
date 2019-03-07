@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 
 class LoginVC: UIViewController {
@@ -38,9 +39,10 @@ class LoginVC: UIViewController {
         statusLabel.text = "Signing in..."
         AuthService.instance.loginUser(email: emailValulu.text!, password: passwordField.text!) { (success, loginErr) in
             if success{
+                self.playSound(sound: "scansound")
                 self.dismiss(animated: true, completion: nil)
             }else{
-                
+                self.playSound(sound: "fail")
                 self.statusLabel.text = "Invalid sign in credentials. Please try again."
             }
         }
@@ -49,6 +51,28 @@ class LoginVC: UIViewController {
 
     @IBAction func signInWithDiffMethod(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func playSound(sound: String) {
+        guard let url = Bundle.main.url(forResource: sound, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            
+            /* iOS 10 and earlier require the following line:
+             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

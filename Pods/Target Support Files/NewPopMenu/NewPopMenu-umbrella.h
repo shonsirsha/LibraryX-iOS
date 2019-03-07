@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "PopMenu.h"
 
-FOUNDATION_EXPORT double Pods_LibraryXVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_LibraryXVersionString[];
+FOUNDATION_EXPORT double PopMenuVersionNumber;
+FOUNDATION_EXPORT const unsigned char PopMenuVersionString[];
 

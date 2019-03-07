@@ -9,6 +9,7 @@
 import AVFoundation
 import UIKit
 
+var player: AVAudioPlayer?
 
 class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var boxVev: UIVisualEffectView!
@@ -109,6 +110,28 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     
+    func playSound(sound: String) {
+        guard let url = Bundle.main.url(forResource: sound, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            
+            /* iOS 10 and earlier require the following line:
+             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
     
     func found(code: String) {
         print(code)
@@ -121,9 +144,10 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 if returnedBookStatusAndTitle[0] == "avail" || returnedBookStatusAndTitle[0] == "no"{ //0 is status, 1 is title
                     self.returnedCode = returnedCode2
                     print(self.returnedCode)
+                    self.playSound(sound: "scansound")
                     self.performSegue(withIdentifier: "toAfterBarcodeVC", sender: self)
                 }else{
-                    
+                    self.playSound(sound: "fail")
                     let alert = UIAlertController(title: "Invalid QR Code", message: "QR Code scanned is invalid.", preferredStyle: .alert)
                     
                     alert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { (action:UIAlertAction) in
@@ -139,6 +163,7 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             }
            
         } else { // not a double valued qrcode
+            playSound(sound: "fail")
             print(code)
             let alert = UIAlertController(title: "Invalid QR Code", message: "QR Code scanned is invalid.", preferredStyle: .alert)
             

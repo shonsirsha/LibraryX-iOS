@@ -25,6 +25,8 @@ class SingleEbookVC: UIViewController {
     @IBOutlet weak var readBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     
         if imgTitleInMS != 0{
             DataService.instance.getEbookStatus(imgTitleInMS: imgTitleInMS) { (returnedStatus) in
@@ -43,6 +45,7 @@ class SingleEbookVC: UIViewController {
             }
             DataService.instance.checkIfBookSaved(uid: (Auth.auth().currentUser?.uid)!, imgTitleInMS: imgTitleInMS) { (returnedStatus) in
                 if returnedStatus == "saved"{
+                    print("ASASAASASAAS")
                     self.saveBtn.setImage(UIImage(named: "icons8-bookmark-filled-100"),for: .normal)
                 }else{
                     self.saveBtn.setImage(UIImage(named: "icons8-bookmark-100"),for: .normal)
@@ -66,7 +69,6 @@ class SingleEbookVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

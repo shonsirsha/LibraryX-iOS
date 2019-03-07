@@ -252,7 +252,7 @@ class DataService{
     }
 
     func checkIfBookSaved(uid: String, imgTitleInMS: Double, handler: @escaping(_ handler: String)->()){
-        REF_USER.child(uid).child("savedEbooks").queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observeSingleEvent(of: DataEventType.value) { (snapshot) in
+        REF_USER.child(uid).child("savedEbooks").queryOrdered(byChild: "image").queryEqual(toValue: imgTitleInMS).observe(DataEventType.value) { (snapshot) in
             if snapshot.exists(){
                 handler("saved")
             }else{
@@ -371,6 +371,7 @@ class DataService{
                 }
                 
                 bookTitlesArr.append(contentsOf: needsAttentionBookArr)
+                
                 handler(bookTitlesArr.reversed())
                 bookTitlesArr = [BookTitleForProfileCell]()
                 
@@ -422,12 +423,25 @@ class DataService{
         }
     }
     
-    func getAllBooks(handler: @escaping(_ eachBookObj: [BookDetailForCell])->()){ // browse book
+    func getAllBooks(sortedBy: String, handler: @escaping(_ eachBookObj: [BookDetailForCell])->()){ // browse book
         var allBooksArray = [BookDetailForCell]()
         var unwrappedGenre2 = ""
         var unwrappedGenre3 = ""
         var unwrappedYear = ""
-        REF_BOOK.queryOrdered(byChild: "image").observe(DataEventType.value) { (snapshot) in
+        var sort = ""
+        if sortedBy == "time"{
+            sort = "image"
+        }else if sortedBy == "title"{
+            sort = "bookTitle"
+        }else if sortedBy == "author"{
+            sort = "authorName"
+        }else if sortedBy == "year"{
+            sort = "year"
+        }else if sortedBy == "genre"{
+            sort = "genre1"
+        }
+        
+        REF_BOOK.queryOrdered(byChild: sort).observe(DataEventType.value) { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
             for book in snapshot{
                 let bookStatus = book.childSnapshot(forPath: "status").value as! String
@@ -453,20 +467,37 @@ class DataService{
                 }
                 
             }
-            
-            handler(allBooksArray.reversed())
+            if sortedBy == "title" || sortedBy == "author" || sortedBy == "genre" {
+                handler(allBooksArray)
+            }else{
+                handler(allBooksArray.reversed())
+
+            }
             allBooksArray = [BookDetailForCell]()
             
         }
     }
     
-    func getAllEbooks(handler: @escaping(_ eachEbookObj: [EbookDetailCell])->()){
+    func getAllEbooks(sortedBy: String, handler: @escaping(_ eachEbookObj: [EbookDetailCell])->()){
         var allEbooksArray = [EbookDetailCell]()
         var unwrappedGenre2 = ""
         var unwrappedGenre3 = ""
         var unwrappedYear = ""
+        var sort = ""
         
-        REF_EBOOK.queryOrdered(byChild: "image").observe(DataEventType.value) { (snapshot) in
+        if sortedBy == "time"{
+            sort = "image"
+        }else if sortedBy == "title"{
+            sort = "bookTitle"
+        }else if sortedBy == "author"{
+            sort = "authorName"
+        }else if sortedBy == "year"{
+            sort = "year"
+        }else if sortedBy == "genre"{
+            sort = "genre1"
+        }
+        
+        REF_EBOOK.queryOrdered(byChild: sort).observe(DataEventType.value) { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return}
             for ebook in snapshot{
                 let bookStatus = ebook.childSnapshot(forPath: "status").value as! String
@@ -490,8 +521,12 @@ class DataService{
                 allEbooksArray.append(ebook)
                 }
             }
-            
-            handler(allEbooksArray.reversed())
+            if sortedBy == "title" || sortedBy == "author" || sortedBy == "genre" {
+                handler(allEbooksArray)
+            }else{
+                handler(allEbooksArray.reversed())
+
+            }
             allEbooksArray = [EbookDetailCell]()
         }
     }
