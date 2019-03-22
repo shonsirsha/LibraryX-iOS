@@ -39,10 +39,10 @@ class LoginVC: UIViewController {
         statusLabel.text = "Signing in..."
         AuthService.instance.loginUser(email: emailValulu.text!, password: passwordField.text!) { (success, loginErr) in
             if success{
-                self.playSound(sound: "scansound")
+                //self.playSound(sound: "scansound")
                 self.dismiss(animated: true, completion: nil)
             }else{
-                self.playSound(sound: "fail")
+                //self.playSound(sound: "fail")
                 self.statusLabel.text = "Invalid sign in credentials. Please try again."
             }
         }

@@ -114,6 +114,7 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         guard let url = Bundle.main.url(forResource: sound, withExtension: "wav") else { return }
         
         do {
+            print("AWAWAWAWAAW")
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
@@ -144,10 +145,10 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 if returnedBookStatusAndTitle[0] == "avail" || returnedBookStatusAndTitle[0] == "no"{ //0 is status, 1 is title
                     self.returnedCode = returnedCode2
                     print(self.returnedCode)
-                    self.playSound(sound: "scansound")
+                    //self.playSound(sound: "scansound")
                     self.performSegue(withIdentifier: "toAfterBarcodeVC", sender: self)
                 }else{
-                    self.playSound(sound: "fail")
+                    //self.playSound(sound: "fail")
                     let alert = UIAlertController(title: "Invalid QR Code", message: "QR Code scanned is invalid.", preferredStyle: .alert)
                     
                     alert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { (action:UIAlertAction) in
@@ -163,7 +164,7 @@ class ScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             }
            
         } else { // not a double valued qrcode
-            playSound(sound: "fail")
+            //playSound(sound: "fail")
             print(code)
             let alert = UIAlertController(title: "Invalid QR Code", message: "QR Code scanned is invalid.", preferredStyle: .alert)
             

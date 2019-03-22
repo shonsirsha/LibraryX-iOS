@@ -32,19 +32,36 @@ class SingleBookVC: UIViewController {
         super.viewDidLoad()
        
         DataService.instance.getABookStatus(imgTitleInMS: imgTitleinMs) { (returnedArr) in
-            if returnedArr[1] == "avail"{ // 1 is status, 0 is aisle place.
-                self.currentlyBorrowing = false
-               
-                self.toScanVCbtn.isHidden = false
-                #if Client
+            if returnedArr[1] == "avail"{ // 1 is status in general (qty available), 0 is aisle place, 2 is am i borrowing it
+                if returnedArr[2] == "borrowing"{
+                    self.currentlyBorrowing = false
+                    
+                    self.toScanVCbtn.isHidden = false
+                    DataService.instance.getLastBookDetailFromActivity(uid: (Auth.auth().currentUser?.uid)!, imgTitleInMS: self.imgTitleinMs, bookStart: { (returnedStartDate) in
+                        self.startDate = returnedStartDate
+                        self.currentlyBorrowing = true
+                        self.toScanVCbtn.backgroundColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
+                        self.toScanVCbtn.isHidden = false
+                        self.toScanVCbtn.setTitle("See Borrowing Details", for: UIControl.State.normal)
+                        self.statusLabel.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
+                        
+                        self.statusLabel.text = "This book is available at aisle number: \(returnedArr[0]), but you are currently borrowing this book."
+                    })
+                }else{
+                    self.currentlyBorrowing = false
+                    
+                    self.toScanVCbtn.isHidden = false
+                    #if Client
                     self.toScanVCbtn.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
                     self.toScanVCbtn.setTitle("How to borrow this book?", for: UIControl.State.normal)
-                #else
+                    #else
                     self.toScanVCbtn.backgroundColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
                     self.toScanVCbtn.setTitle("Scan & Borrow!", for: UIControl.State.normal)
-                #endif
-                self.statusLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
-                self.statusLabel.text = "Available at aisle number: \(returnedArr[0])"
+                    #endif
+                    self.statusLabel.textColor = #colorLiteral(red: 0, green: 0.5882352941, blue: 1, alpha: 1)
+                    self.statusLabel.text = "Available at aisle number: \(returnedArr[0])"
+                }
+                
             }else{
                 DataService.instance.amIBorrowing(uid: (Auth.auth().currentUser?.uid)!, imgTitleInMS: self.imgTitleinMs, statusBorrowing: { (returnedStatus) in
                     if returnedStatus == "borrow"{

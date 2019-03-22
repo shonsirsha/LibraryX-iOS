@@ -38,16 +38,29 @@ class AfterBarcodeVC: UIViewController {
         }) { (returnedMaxDays) in
            
             DataService.instance.getABookStatus(imgTitleInMS: self.imgTitleInMS, handler: { (returnedArr) in
-                if returnedArr[1] == "avail"{ // 1 is status, 0 is aisle
-                    self.statusBook = "gonnaBorrow"
-                    self.maxDays = returnedMaxDays
-                    self.maxDaysLabel.text = "Maximum: \(returnedMaxDays) days"
-                    self.days = self.maxDays
-                    self.daysLabel.text = "\(self.days)"
-                    self.minusBtn.isHidden = false
-                    self.addBtn.isHidden = false
-                    self.borrowingPeriodPlaceholder.text = "Borrowing period (days):"
-                    self.borrowBtn.isHidden = false
+                if returnedArr[1] == "avail" { // 1 is status, 0 is aisle
+                    if returnedArr[2] == "borrowing"{
+                        self.statusBook = "gonnaReturn"
+                        self.minusBtn.isHidden = true
+                        self.addBtn.isHidden = true
+                        self.borrowBtn.isHidden = false
+                        self.borrowBtn.setTitle("Return", for: UIControl.State.normal)
+                        self.borrowingPeriodPlaceholder.textColor = #colorLiteral(red: 0.2057651579, green: 0.6540608406, blue: 0.4572110176, alpha: 1)
+                        self.borrowingPeriodPlaceholder.text = "You're currently borrowing this book. Return now?"
+                        self.maxDaysLabel.text = ""
+                        self.daysLabel.text = ""
+                    }else{
+                        self.statusBook = "gonnaBorrow"
+                        self.maxDays = returnedMaxDays
+                        self.maxDaysLabel.text = "Maximum: \(returnedMaxDays) days"
+                        self.days = self.maxDays
+                        self.daysLabel.text = "\(self.days)"
+                        self.minusBtn.isHidden = false
+                        self.addBtn.isHidden = false
+                        self.borrowingPeriodPlaceholder.text = "Borrowing period (days):"
+                        self.borrowBtn.isHidden = false
+                    }
+                   
                     
                 }else{
                     DataService.instance.amIBorrowing(uid: (Auth.auth().currentUser?.uid)!, imgTitleInMS: self.imgTitleInMS, statusBorrowing: { (status) in
